@@ -15,6 +15,8 @@
     - #chapter("notes/Analysis/ch1_measures/measures.typ")[Measures]
       - #chapter("notes/Analysis/ch1_measures/measure-theory.typ")[Measure Theory]
       - #chapter("notes/Analysis/ch1_measures/sigma-algebras.typ")[sigma-Algebras]
+      - #chapter("notes/Analysis/ch1_measures/construct-of-measures.typ")[Construct of Measures]
+      - #chapter("notes/Analysis/ch1_measures/1-d-lebesgue-measure.typ")[1-D Lebesgue Measure]
 
     = Scientific Computing
     - #chapter("notes/ScientificComputing/ch1-intro-to-scicomp/intro-to-scicomp.typ", section: "1")[Introduction to Scientific Computing]

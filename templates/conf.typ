@@ -23,6 +23,13 @@
   base_level: 0
 )
 
+#let lem = thmbox(
+  "lemma",
+  "Lemma",
+  stroke: 0.5pt,
+  base_level: 0
+)
+
 #let def = thmbox(
   "definition",
   "Definition",
