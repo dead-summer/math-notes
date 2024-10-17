@@ -20,6 +20,9 @@
   "corollary",
   "Corollary",
   titlefmt: strong,
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
   base_level: 0
 )
 
@@ -42,7 +45,10 @@
   "example",
   "Example",
   titlefmt: strong,
-  inset: (top: 0.8em),
+  inset: (top: 0.8em, bottom: 0.5em),
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
   base: "heading",
   base_level: 0
 )
@@ -61,6 +67,9 @@
   "remark", 
   "Remark", 
   titlefmt: strong,
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
   base_level: 0
 )
 

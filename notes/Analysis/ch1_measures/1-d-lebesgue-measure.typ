@@ -71,7 +71,7 @@ Then $mu((a_j, b_j + delta_j)) <= mu((a_j, b_j]) + epsilon/2^j$ , so
 $
 mu(E) >= sum_1^infinity mu((a_j, b_j]) - epsilon >= sum_1^infinity mu((a_j, b_j + delta_j)) - 2epsilon
 $
-where $E subset union.big_1^infinity (a_j, b_j + delta_j)$ . Send $epsilon -> 0$ , the result follows.
+where $E subset union.big_1^infinity (a_j, b_j + delta_j)$ . Sending $epsilon -> 0$ , the result follows.
 
 ]
 
