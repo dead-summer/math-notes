@@ -15,6 +15,7 @@
     - #chapter("notes/Analysis/ch1_measures/ch1-measures.typ")[Measures]
       - #chapter("notes/Analysis/ch1_measures/measure-theory.typ")[Measure Theory]
       - #chapter("notes/Analysis/ch1_measures/sigma-algebras.typ")[sigma-Algebras]
+      - #chapter(none)[Measures]
       - #chapter("notes/Analysis/ch1_measures/construct-of-measures.typ")[Construct of Measures]
       - #chapter("notes/Analysis/ch1_measures/1-d-lebesgue-measure.typ")[1-D Lebesgue Measure]
 
