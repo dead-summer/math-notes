@@ -34,12 +34,11 @@
       number = none
     }
     if number == auto and numbering != none {
-      result = context {
-        let heading-counter = counter(heading).get()
+      result = locate(loc => {
         return thmcounters.update(thmpair => {
           let counters = thmpair.at("counters")
           // Manually update heading counter
-          counters.at("heading") = heading-counter
+          counters.at("heading") = counter(heading).at(loc)
           if not identifier in counters.keys() {
             counters.insert(identifier, (0, ))
           }
@@ -75,11 +74,11 @@
             "latest": latest
           )
         })
-      }
+      })
 
-      number = context {
-        global_numbering(numbering, ..thmcounters.get().at("latest"))
-      }
+      number = thmcounters.display(x => {
+        return global_numbering(numbering, ..x.at("latest"))
+      })
     }
 
     return figure(
@@ -162,13 +161,10 @@
 // Track whether the qed symbol has already been placed in a proof
 #let thm-qed-done = state("thm-qed-done", false)
 
-// The configured QED symbol
-#let thm-qed-symbol = state("thm-qed-symbol", "a")
-
 // Show the qed symbol, update state
 #let thm-qed-show = {
-  thm-qed-done.update(true)
-  context [#thm-qed-symbol.get()]
+  thm-qed-done.update("thm-qed-symbol")
+  thm-qed-done.display()
 }
 
 // If placed in a block equation/enum/list, place a qed symbol to its right
@@ -204,12 +200,12 @@
 #let proof-bodyfmt(body) = {
   thm-qed-done.update(false)
   body
-  context {
-    if thm-qed-done.at(here()) == false {
+  locate(loc => {
+    if thm-qed-done.at(loc) == false {
       h(1fr)
       thm-qed-show
     }
-  }
+  })
 }
 
 #let thmproof(..args) = thmplain(
@@ -222,8 +218,6 @@
 
 #let thmrules(qed-symbol: $qed$, doc) = {
 
-  show figure.where(kind: "thmenv"): set block(breakable: true)
-  show figure.where(kind: "thmenv"): set align(start)
   show figure.where(kind: "thmenv"): it => it.body
 
   show ref: it => {
@@ -243,7 +237,7 @@
     }
 
     let loc = it.element.location()
-    let thms = query(selector(<meta:thmenvcounter>).after(loc))
+    let thms = query(selector(<meta:thmenvcounter>).after(loc), loc)
     let number = thmcounters.at(thms.first().location()).at("latest")
     return link(
       it.target,
@@ -278,7 +272,7 @@
     it
   }
 
-  thm-qed-symbol.update(qed-symbol)
+  show "thm-qed-symbol": qed-symbol
 
   doc
 }

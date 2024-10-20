@@ -45,7 +45,7 @@
   "example",
   "Example",
   titlefmt: strong,
-  inset: (top: 0.8em, bottom: 0.5em),
+  inset: (top: 0.8em, bottom: 1em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
@@ -58,6 +58,7 @@
   "Proof",
   titlefmt: smallcaps,
   inset: (x: 1.2em, y: 1em),
+  // breakable: true,
   bodyfmt: body => [
     #body #v(0.5pt) #h(1fr) $square$ // float a QED symbol to the right
   ]
@@ -67,9 +68,22 @@
   "remark", 
   "Remark", 
   titlefmt: strong,
+  inset: (top: 0.8em, bottom: 1em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
+  base_level: 0
+)
+
+#let exr = thmplain(
+  "exercise",
+  "Exercise",
+  titlefmt: strong,
+  inset: (top: 0.8em, bottom: 1em),
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
+  base: "heading",
   base_level: 0
 )
 
