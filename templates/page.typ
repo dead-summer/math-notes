@@ -24,8 +24,8 @@
   "Source Han Serif SC",
   "Source Han Serif TC",
   // shiroa's embedded font
-  // "Linux Libertine",
-  "Libertinus Serif",
+  "Linux Libertine",
+  // "Libertinus Serif",
 )
 #let code-font = (
   "BlexMono Nerd Font Mono",
@@ -50,10 +50,10 @@
 #let project(title: "Typst Book", authors: (), kind: "page", body) = {
 
   // set basic document metadata
-  // set document(
-  //   author: authors,
-  //   title: title,
-  // ) if not is-pdf-target
+  set document(
+  author: authors,
+  title: title, 
+  ) if not is-pdf-target
 
   // set web/pdf page properties
   set page(
