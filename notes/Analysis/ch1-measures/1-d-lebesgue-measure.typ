@@ -75,3 +75,102 @@ where $E subset union.big_1^infinity (a_j, b_j + delta_j)$ . Sending $epsilon ->
 
 ]
 
+Let $mu_F :=$ the (implies uniqueness) measure on $sigma({"h-integralerbals"})$ obtained via Hahn extension.
+
+Convention: Denote by $mu_F$ its own completion.
+
+Recall:
+$
+mu(E) = inf{sum_(j=1)^(infinity) mu((a_j, b_j)): E subset union.sq.big_(j=1)^(infinity) (a_j, b_j), forall E in cal(M)_mu},
+$
+and the fact that
+$
+U subset RR "is open" <=> U = union.sq.big_(j=1)^(infinity) I_j,
+$
+where ${I_j}$ are disjoint open intervals. We may deduce that $mu := mu_F$ , the Lebesgue-Stieltjes measure, is regular.
+
+#thm[
+
+Let $E in cal(M)_mu$ be arbitrary, then
+$
+mu(E) &= inf{mu(O): O "is open", O supset E} quad & "(outer regular)" \
+      &= sup{mu(K): K "is compact", K subset E}quad & "(inner regular)"
+$
+
+]
+
+Proof is left as an exercise.
+
+For sets $A, B$ , $A Delta B := (A \\ B) union (B \\ A)$ .
+In fact, Borel set ($E in cal(B)_RR$) $Delta$ "good set" = null set. 
+
+#def[
+
+A $G_delta$ - set is a countable insections of open sets. An $F_sigma$ - set is a countable unions of closed sets.
+
+]
+
+"Every Borel set on $RR$ is nearly a (finite unions of) open intervals." ------ _Littlewood's First Principle_
+
+#thm[
+
+Let $E subset RR$ , TFAT(the following are equivalent)
+
+1. $E in cal(M)_mu$,
+2. $E = V \\ N_1$ with $V$ is $G_delta$-set, $mu(N_1) = 0$,
+3. $E = H union N_2$ with $H$ is $F_sigma$-set, $mu(N_2) = 0$.
+
+]
+
+#prf[
+
+2, 3 $=>$ 1:
+
+Since $mu$ is complete on $cal(M)_mu$ and $G_delta, F_sigma$-sets are Borel sets. Hence $E in cal(M)_mu$ .
+
+1 $=>$ 2 & 3:
+
+By regularing of $mu$, $forall E in cal(M)_mu, forall j in NN, exists$ open set $O_j subset RR$ , compact set $K_j subset RR$ , s.t.
+$
+cases(
+  K_j subset E subset O_j  \
+  mu(O_j) - 2^(-j) <= mu(E) <= mu(K_j) + 2^(-j) quad "if" mu(E) < infinity .
+)
+$
+Then take $V = sect.big_(j=1)^(infinity) O_j, H = union.big_(j=1)^(infinity) K_j$ .
+
+TODO: the general case: $mu(E) = infinity$ .
+
+]
+
+#def[
+
+When $F$ is identity mapping, $mu_F = cal(L)^1$ is the Lebesgue measure on $RR$. Its domain $cal(M)_mu$ is the set of Lebesgue measurable sets.
+
+]
+
+In fact, we have $cal(M)_mu supset cal(B)_RR$ and the supset sign is strict.
+
+About Lebesgue measurable, we have some key (pathological) examples.
+
+#exm[
+
+There are open, dense subsets of $(0, 1)$ of arbitrary small $cal(L)^1$-measure. In orther words, topological big $arrow.r.double.not$ measure-theoretically big.
+
+]
+
+A specific example is as follows.
+
+#exm[
+
+Take $q_1, q_2, ...$ be an enumenation of $QQ sect (0, 1)$ . Fix any $epsilon$ , and let
+$
+O = union.big_(j=1)^(infinity) (q_j - epsilon/(2j), q_j + epsilon/(2j))
+$
+then
+$
+cal(L)^1(O) <= sum_(j=1)^(infinity) mu((q_j - epsilon/(2j), q_j + epsilon/(2j))) <= 2 epsilon.
+$
+
+
+]
