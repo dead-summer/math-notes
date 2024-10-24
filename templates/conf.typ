@@ -58,7 +58,7 @@
   "proof",
   "Proof",
   titlefmt: smallcaps,
-  inset: (x: 1.2em, y: 1em),
+  inset: (x: .5em, y: .5em),
   bodyfmt: body => [
     #body #v(0.5pt) #h(1fr) $square$ // float a QED symbol to the right
   ]
@@ -68,7 +68,7 @@
   "solution",
   "Solution",
   titlefmt: smallcaps,
-  inset: (x: 1.2em, y: 1em),
+  inset: (x: .5em, y: .5em),
 ).with(numbering: none)
 
 #let rmk = thmplain(
