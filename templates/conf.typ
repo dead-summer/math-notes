@@ -59,10 +59,16 @@
   "Proof",
   titlefmt: smallcaps,
   inset: (x: 1.2em, y: 1em),
-  // breakable: true,
   bodyfmt: body => [
     #body #v(0.5pt) #h(1fr) $square$ // float a QED symbol to the right
   ]
+).with(numbering: none)
+
+#let sln = thmplain(
+  "solution",
+  "Solution",
+  titlefmt: smallcaps,
+  inset: (x: 1.2em, y: 1em),
 ).with(numbering: none)
 
 #let rmk = thmplain(
