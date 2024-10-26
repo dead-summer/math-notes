@@ -110,7 +110,10 @@ A $G_delta$ - set is a countable insections of open sets. An $F_sigma$ - set is 
 
 ]
 
-"Every Borel set on $RR$ is nearly a (finite unions of) open intervals." ------ _Littlewood's First Principle_
+
+#quote(author: "Littlewood's First Principle")[
+Every Borel set on $RR$ is nearly a (finite unions of) open intervals.
+]
 
 #thm[
 

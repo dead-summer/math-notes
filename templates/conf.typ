@@ -140,3 +140,14 @@
 )
 }
 
+
+#let quote(body, author: none) = {
+  rect(fill: luma(240), stroke: (left: 0.25em))[
+    #text(style: "italic")[#body #h(1fr)]
+    #if(author != none) {
+      align(right)[
+        ------ #author
+      ]
+    }
+  ]
+}
