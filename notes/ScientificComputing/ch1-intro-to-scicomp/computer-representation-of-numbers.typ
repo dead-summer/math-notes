@@ -24,7 +24,7 @@ The corresponding numbers are called floating point numbers. The finite precisio
 #include <cstdlib>
 #include <iostream>
 
-int main(int argc, char *argv[ ])
+int main(int argc, char *argv[])
 {
   float eps = M PI;
   int count = 0;
@@ -33,7 +33,7 @@ int main(int argc, char *argv[ ])
     std::cout << "count = " << count << ", eps = " << eps << std::endl;
     eps *= 0.1;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[ ])
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-int main(int argc, char *argv[ ])
+int main(int argc, char *argv[])
 {
   float eps = M PI;
   int count = 0;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[ ])
     eps *= 0.1;
     c = 1.0 + eps;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 
@@ -64,7 +64,7 @@ The next code tells us what value the computer round-off of floating point data 
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-int main(int argc, char *argv[ ])
+int main(int argc, char *argv[])
 {
   int count = 0;
   float eps = 1.0;
@@ -75,7 +75,7 @@ int main(int argc, char *argv[ ])
     eps *= 0.5;
     c = 1.0 + eps;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 
@@ -97,6 +97,6 @@ int main(int argc, char *argv[ ])
     eps *= 0.5;
     c = 1.0 + eps;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```

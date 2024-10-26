@@ -57,18 +57,18 @@ int main(int argc, char *argv[])
     float z = x;
     for (int k = 1; k <= n; k++) {
       if ((k%2) == 0) {
-        sum −= z / k;
+        sum -= z / k;
       } else {
         sum += z / k;
       }
       z *= x;
       }
-      float error = fabs(sum − log(2.0));
+      float error = fabs(sum - log(2.0));
       std::cout << "n = " << n << ", sum = " << sum
       << ", error = " << error << std::endl;
       n *= 10;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 
@@ -97,12 +97,12 @@ int main(int argc, char *argv[])
       m += 2;
     }
     sum *= 2;
-    float error = fabs(sum − log(2.0));
-    std::cout << ′′n = ′′ << n << ′′, sum = ′′ << sum
-    << ′′, error = ′′ << error << std::endl;
+    float error = fabs(sum - log(2.0));
+    std::cout << "n = " << n << ", sum = " << sum
+    << ", error = " << error << std::endl;
     n++;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 

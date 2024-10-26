@@ -40,12 +40,12 @@ int main(int argc, char *argv[])
 {
   float x = 1.0;
   for (int i = 0; i < 10; i++) {
-    float f = sqrt(x + 1) − sqrt(x);
+    float f = sqrt(x + 1) - sqrt(x);
     float g = 1.0 / (sqrt(x + 1) + sqrt(x));
     std::cout << "x = " << x << ", f = " << f << ", g = " << g << std::endl;
     x *= 10;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 
@@ -95,12 +95,12 @@ int main(int argc, char *argv[ ])
       float c = 1.0 / k;
       sum += c * c;
     }
-    float error = fabs(sum − M PI * M PI / 6.0);
+    float error = fabs(sum - M PI * M PI / 6.0);
     std::cout << "n = " << n << ", sum = " << sum
               << ", error = " << error << std::endl;
     n *= 10;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 
@@ -119,16 +119,16 @@ int main(int argc, char *argv[ ])
   int n = 100;
   for (int i = 0; i <= 4; i++) {
     float sum = 0.0;
-    for (int k = n; k >= 1; k−−) {
+    for (int k = n; k >= 1; k--) {
       float c = 1.0 / k;
       sum += c * c;
     }
-    float error = fabs(sum − M PI * M PI / 6.0);
+    float error = fabs(sum - M PI * M PI / 6.0);
     std::cout << "n = " << n << ", sum = " << sum
               << ", error = " << error << std::endl;
     n *= 10;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 

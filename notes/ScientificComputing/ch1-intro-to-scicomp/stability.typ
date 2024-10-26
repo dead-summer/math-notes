@@ -44,11 +44,11 @@ int main(int argc, char *argv[])
   int n = 20;
   float I0 = log(1.1);
   for (int i = 1; i <= n; i++) {
-    float I = 1.0 / i − 10.0 * I0;
+    float I = 1.0 / i - 10.0 * I0;
     std::cout << "i = " << i << ", I = " << I << std::endl;
     I0 = I;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 
@@ -93,7 +93,7 @@ int main(int argc, char *argv[ ])
     std::cout << "i = " << i << ", I = " << I << std::endl;
     I1 = I;
   }
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 

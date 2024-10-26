@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
   }
   std::cout << "An approximate solution found, x = " << c << std::endl;
 
-  return EXIT SUCCESS;
+  return EXIT_SUCCESS;
 }
 ```
 

@@ -2,7 +2,7 @@
 #import "../../../templates/conf.typ": *
 #import "@preview/mitex:0.2.4": *
 
-#show: book-page.with(title: "EfficiThe Fixed Point Methodency")
+#show: book-page.with(title: "The Fixed Point Method")
 #show: codly-init.with()
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
