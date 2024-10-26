@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
   double d = b - a;
   double tol = 1.0E-8;
   int count = 0;
-  int max itr num = 100;
+  int max_iter_num = 100;
 
   do {
     count++;
@@ -64,11 +64,11 @@ int main(int argc, char *argv[])
     }
     c = 0.5 * (a + b);
     d *= 0.5;
-  } while ((d > tol) && (count < max itr num));
+  } while ((d > tol) && (count < max_iter_num));
 
-  if (count == max itr num) {
+  if (count == max_iter_num) {
     std::cout << "The bisection method failed to converge." << std::endl;
-    exit(EXIT FAILURE);
+    exit(EXIT_FAILURE);
   }
   std::cout << "An approximate solution found, x = " << c << std::endl;
 
