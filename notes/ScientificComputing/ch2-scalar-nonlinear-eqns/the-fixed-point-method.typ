@@ -216,20 +216,20 @@ $ phi (x) = x - p (x) f (x) $
 
 with $p (x)$ be called a preconditioner. The derivative reads
 
-$ phi^(') (x) = 1 - p^(') (x) f (x) - p (x) f^(') (x) . $
+$ phi' (x) = 1 - p^(') (x) f (x) - p (x) f^(') (x) . $
 
 For the absolute value of derivative has an upper bound
-$L in \[ 0 , 1 \)$,
+$L in [ 0 , 1 )$,
 
 $ lr(|phi^(') (x)|) = lr(|1 - p^(') (x) f (x) - p (x) f^(') (x)|) lt.eq L , $
 
 we should have
 
-$ 1 - L ^{}( x) f( x) + p( x) {f}^{}( x) + L. $
+$ 1 - L <= p'(x) f( x) + p( x) f'(x) + L. $
 
 If $p (x)$ is a constant, we get $p^(') (x) = 0$ and the condition becomes
 
-$ 1 - L p( x) {f}^{}( x) + L. $
+$ 1 - L <= p( x) f^'(x) <= 1 + L. $
 
 This means that at least the constant $p$ should take the same sign as the derivative $f^(') (x)$.
 
