@@ -69,6 +69,9 @@
   "Solution",
   titlefmt: smallcaps,
   inset: (x: .5em, y: .5em),
+  bodyfmt: body => [
+    #body #v(0.5pt) #h(1fr) $square.filled.medium$ // float a QED symbol to the right
+  ]
 ).with(numbering: none)
 
 #let rmk = thmplain(

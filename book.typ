@@ -29,6 +29,7 @@
       - #chapter("notes/ScientificComputing/ch1-intro-to-scicomp/stability.typ")[stability]
     - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/scalar-nonlinear-eqns.typ")[Iterative Methods for Scalar Nonlinear Equations]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-bisection-method.typ")[The Bisection Method]
+      - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-fix-point-method.typ")[The Fixed Point Method]
   ]
 )
 
