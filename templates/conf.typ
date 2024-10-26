@@ -68,7 +68,7 @@
   "solution",
   "Solution",
   titlefmt: smallcaps,
-  inset: (x: .5em, y: .5em),
+  inset: (x: 0em, y: 0em),
   bodyfmt: body => [
     #body #v(0.5pt) #h(1fr) $square.filled.medium$ // float a QED symbol to the right
   ]
