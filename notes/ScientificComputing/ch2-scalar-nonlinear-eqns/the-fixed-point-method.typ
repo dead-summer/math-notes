@@ -229,7 +229,7 @@ $ 1 - L <= p'(x) f( x) + p( x) f'(x) + L. $
 
 If $p (x)$ is a constant, we get $p^(') (x) = 0$ and the condition becomes
 
-$ 1 - L <= p( x) f^'(x) <= 1 + L. $
+$ 1 - L <= p( x) f^' (x) <= 1 + L. $
 
 This means that at least the constant $p$ should take the same sign as the derivative $f^(') (x)$.
 
