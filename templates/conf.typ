@@ -46,7 +46,7 @@
   "example",
   "Example",
   titlefmt: strong,
-  inset: (top: 0.8em, bottom: 1em),
+  inset: (top: 0.8em, bottom: .5em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
@@ -78,7 +78,7 @@
   "remark", 
   "Remark", 
   titlefmt: strong,
-  inset: (top: 0.8em, bottom: 1em),
+  inset: (top: 0.8em, bottom: .5em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
@@ -89,7 +89,7 @@
   "exercise",
   "Exercise",
   titlefmt: strong,
-  inset: (top: 0.8em, bottom: 1em),
+  inset: (top: 0.8em, bottom: .5em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
