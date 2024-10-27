@@ -15,7 +15,7 @@ x_0 arrow.r x_1 arrow.r x_2 arrow.r x_3 arrow.r dots.h.c
 $
 by a procedure/map,
 $
-x_(k + 1) = phi (x_k) , "for" k = 0 , 1 , 2 , dots.c
+x_(k + 1) = phi (x_k) , quad k = 0 , 1 , 2 , dots.c
 $
 
 If the sequence ${x_k}$ converges to a limit $x^(*)$, then $x^(*)$ is
@@ -148,7 +148,7 @@ then the map has a fixed point and the fixed point is unique.
 
 Note that for any values $x$ and $y$, we have
 
-$phi (x) - phi (y) = phi^(') (xi) (x - y) .$
+$ phi (x) - phi (y) = phi^(') (xi) (x - y) . $
 
 Then
 
@@ -164,7 +164,7 @@ $
 The method to generate a sequence ${x_k}$ by the map
 
 $
-x_(k + 1) = phi (x_k) , k = 0 , 1 , 2 , dots.c
+x_(k + 1) = phi (x_k) , quad k = 0 , 1 , 2 , dots.c
 $
 
 is called a *fixed point method*.
@@ -187,7 +187,7 @@ $ phi (x) = x^3 - x^2 - 1 , $
 
 $ phi (x) = sqrt(x^3 - x - 1) $
 
-$ phi (x) = x^3 - 1 - 1 / x , $
+$ phi (x) = x^2 - 1 - 1 / x , $
 
 $ phi (x) = 1 - 1 / x - 1 / x^2 $
 
@@ -225,7 +225,7 @@ $ lr(|phi^(') (x)|) = lr(|1 - p^(') (x) f (x) - p (x) f^(') (x)|) lt.eq L , $
 
 we should have
 
-$ 1 - L <= p'(x) f( x) + p( x) f'(x) + L. $
+$ 1 - L <= p'(x) f( x) + p( x) f'(x) <= 1 + L. $
 
 If $p (x)$ is a constant, we get $p^(') (x) = 0$ and the condition becomes
 
@@ -250,7 +250,7 @@ for some $L in \[ 0 , 1 \)$. Then
 
 $ lr(|e_(n + 1)|) = lr(|phi (x^(*)) - phi (x_n)|) lt.eq L lr(|x^(*) - x_n|) = L lr(|e_n|) . $
 
-The consecutive errors have linear (inequality) relation. We say the fixed point iteration has a linear or first-order convergence rate.
+The consecutive errors have linear (inequality) relation. We say the fixed point iteration has a *linear or first-order convergence rate*.
 
 #exr[
 
