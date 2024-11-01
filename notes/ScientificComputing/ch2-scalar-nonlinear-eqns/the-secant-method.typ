@@ -7,7 +7,7 @@
 #codly_init()
 
 // 带有 label 的公式才编号
-#set math.equation(numbering: "(1)", supplement: none)
+#set math.equation(numbering: "(1)", supplement: none, number-align: bottom)
 #show math.equation.where(block: true): it => {
  if not it.has("label") {
    let fields = it.fields()
@@ -52,7 +52,7 @@ be the iteration error. We have
 
 $ e_(n + 1) &= e_n + frac(x_n - x_(n - 1), f (x_n) - f (x_(n - 1))) f (x_n) , \
 &= e_n - frac(x_n - x_(n - 1), f (x_n) - f (x_(n - 1))) [f (x^(\*)) - f (x_n)] , \
-&= e_n - frac(x_n - x_(n - 1), f (x_n) - f (x_(n - 1))) frac(f (x^(\*)) - f (x_n), x^(\*) - x_n) e_n \
+&= e_n - frac(x_n - x_(n - 1), f (x_n) - f (x_(n - 1))) frac(f (x^(\*)) - f (x_n), x^(\*) - x_n) e_n , \
 &= (1 - frac(x_n - x_(n - 1), f (x_n) - f (x_(n - 1))) frac(f (x^(\*)) - f (x_n), x^(\*) - x_n)) e_n . $<3>
 
 One can verify that there is a number $xi_n$ so that
