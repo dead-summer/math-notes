@@ -1,5 +1,5 @@
 
-#import "@preview/shiroa:0.1.1": *
+#import "@preview/shiroa:0.1.2": *
 
 #show: book
 
@@ -30,6 +30,7 @@
     - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/scalar-nonlinear-eqns.typ")[Iterative Methods for Scalar Nonlinear Equations]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-bisection-method.typ")[The Bisection Method]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-fixed-point-method.typ")[The Fixed Point Method]
+      - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-newton-method.typ")[The Newton Method]
   ]
 )
 

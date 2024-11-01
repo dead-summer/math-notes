@@ -1,5 +1,4 @@
-#import "/templates/theorems1.1.2.typ": *
-// #import "@preview/ctheorems:1.1.2": *
+#import "@preview/ctheorems:1.1.3": *
 #import "@preview/codly:1.0.0": *
 
 // Theorem
