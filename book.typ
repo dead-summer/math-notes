@@ -31,6 +31,8 @@
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-bisection-method.typ")[The Bisection Method]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-fixed-point-method.typ")[The Fixed Point Method]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-newton-method.typ")[The Newton Method]
+      - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-secant-method.typ")[The Secant Method]
+      - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/zeros-of-polynomials.typ")[Zeros of Polynomials]
   ]
 )
 
