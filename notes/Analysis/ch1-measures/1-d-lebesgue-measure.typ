@@ -12,7 +12,6 @@ Consider intervals of the type "h-intervals":
 sets of the form $]a, b]$ or $[a, +infinity[$ or $diameter$ for $-infinity <= a < b <= +infinity$.
 
 #prp[
-
 $cal(A) = {"finite disjointegral unions of h-intervals"}$ is an algebra, and
 $
 cases(
@@ -28,7 +27,6 @@ Since $sigma(cal(A)) = cal(B)_(RR^1)$ , we can apply _Hahn extension_ to
 extend $mu_0$ to a unique Borel measure on $RR$ , called the Lebesgue-Stieltjes measure $mu_F$.
 
 #prp[
-
 $mu_F = mu_G <=> F = G + "constant"$.
 
 ]
@@ -49,7 +47,6 @@ $
 ]
 
 #prf[
-
 Suppose $E subset union.big_1^infinity (a_j, b_j)$.
 Since $(a_j, b_j) = union.big_1^infinity (a_j, b_j - 1/n] =: union.sq.big_(j, n = 1)^infinity I_(j, n)$ for some disjoint h-intervals $I_(j, n)$, so
 $
@@ -90,7 +87,6 @@ $
 where ${I_j}$ are disjoint open intervals. We may deduce that $mu := mu_F$ , the Lebesgue-Stieltjes measure, is regular.
 
 #thm[
-
 Let $E in cal(M)_mu$ be arbitrary, then
 $
 mu(E) &= inf{mu(O): O "is open", O supset E} quad & "(outer regular)" \
@@ -105,7 +101,6 @@ For sets $A, B$ , $A Delta B := (A \\ B) union (B \\ A)$ .
 In fact, Borel set ($E in cal(B)_RR$) $Delta$ "good set" = null set. 
 
 #def[
-
 A $G_delta$ - set is a countable insections of open sets. An $F_sigma$ - set is a countable unions of closed sets.
 
 ]
@@ -116,7 +111,6 @@ Every Borel set on $RR$ is nearly a (finite unions of) open intervals.
 ]
 
 #thm[
-
 Let $E subset RR$ , TFAT(the following are equivalent)
 
 1. $E in cal(M)_mu$,
@@ -126,7 +120,6 @@ Let $E subset RR$ , TFAT(the following are equivalent)
 ]
 
 #prf[
-
 2, 3 $=>$ 1:
 
 Since $mu$ is complete on $cal(M)_mu$ and $G_delta, F_sigma$-sets are Borel sets. Hence $E in cal(M)_mu$ .
@@ -147,7 +140,6 @@ TODO: the general case: $mu(E) = infinity$ .
 ]
 
 #def[
-
 When $F$ is identity mapping, $mu_F = cal(L)^1$ is the Lebesgue measure on $RR$. Its domain $cal(M)_mu$ is the set of Lebesgue measurable sets.
 
 ]
@@ -157,7 +149,6 @@ In fact, we have $cal(M)_mu supset cal(B)_RR$ and the supset sign is strict.
 About Lebesgue measurable, we have some key (pathological) examples.
 
 #exm[
-
 There are open, dense subsets of $(0, 1)$ of arbitrary small $cal(L)^1$-measure. In orther words, topological big $arrow.r.double.not$ measure-theoretically big.
 
 ]
@@ -165,7 +156,6 @@ There are open, dense subsets of $(0, 1)$ of arbitrary small $cal(L)^1$-measure.
 A specific example is as follows.
 
 #exm[
-
 Take $q_1, q_2, ...$ be an enumenation of $QQ sect (0, 1)$ . Fix any $epsilon$ , and let
 $
 O = union.big_(j=1)^(infinity) (q_j - epsilon/(2j), q_j + epsilon/(2j))

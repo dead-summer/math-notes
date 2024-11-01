@@ -12,7 +12,6 @@
 The rule to improve efficiency is (obviously) to minimize the number of arithmetic operations.
 
 #exm[
-
 Evaluate the polynomial
 $
 p_n(x) = a_n + a_(n-1) x + a_(n-1) x^2 + dots.c + a_1 x^(n-1) + a_0 x^n.
@@ -35,7 +34,6 @@ We can start with $p_0(x) = a_0$ and use the recursion above for $k = 1,2, dots.
 ]
 
 #exm[
-
 Evaluate $ln(2)$ with the Taylor series expansion
 $
 ln(1+x) = x - x^2/2 + x^3/3 - x^4/4 +x^5 + dots.c

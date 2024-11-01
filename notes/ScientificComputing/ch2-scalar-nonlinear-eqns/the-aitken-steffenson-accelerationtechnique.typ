@@ -25,10 +25,10 @@ be the iteration error. We have
 
 $ e_(k + 1) = x^(\*) - x_(k + 1) = phi (x^(\*)) - phi (x_k) = phi^(') (xi_k) (x^(\*) - x_k) = phi^(') (xi_k) e_k $
 
-with $xi_k$ in the middle of $x^(\*)$ and $x_k$ ,provided that $phi (x)$
+with $xi_k$ in the middle of $x^(\*)$ and $x_k$ , provided that $phi (x)$
 is continuously differentiable in the neighborhood of $x^(\*)$ .
 
-As $xi_k$ is assumed to be close to $x^(\*)$ ,we may treat
+As $xi_k$ is assumed to be close to $x^(\*)$ , we may treat
 $phi^(') (xi_k)$ as a constant $c$ . Then we get
 
 $ e_(k + 1) = phi^(') (xi_k) e_k approx c e_k $
@@ -42,15 +42,13 @@ that the fixed point iteration has first-order convergence rate when the
 absolute value of the coefficient constant has a positive lower bound.
 We consider the relation between the first three errors,
 
-$ e_1 approx c e_0 , $
-
-$ e_2 approx c e_1 $
+$ e_1 &approx c e_0 , \
+  e_2 &approx c e_1 , $
 
 i.e.,
 
-$ x^(\*) - x_1 approx c (x^(\*) - x_0) $
-
-$ x^(\*) - x_2 approx c (x^(\*) - x_1) . $
+$ x^(\*) - x_1 &approx c (x^(\*) - x_0) , \
+  x^(\*) - x_2 &approx c (x^(\*) - x_1) . $
 
 Assume none of the errors are identically zero. Eliminating the constant
 $c$ yields
@@ -73,7 +71,7 @@ as a more accurate approximation of $x^(\*)$ than $x_0 , x_1$ and $x_2$
 .
 
 We have the accelerated fixed point iteration: for
-$k = 0 , 1 , 2 , dots.h.c$ ,do as follows
+$k = 0 , 1 , 2 , dots.h.c$ , do as follows
 
 - Step 1. Let $y_0 = x_k , y_1 = phi (y_0)$ and $y_2 = phi (y_1)$ .
   Compute $x_(k + 1)$ by
@@ -82,24 +80,21 @@ $ x_(k + 1) = frac(y_0 y_2 - y_1^2, y_0 + y_2 - 2 y_1) $
 
 - Step 2. Check if the difference $lr(|x_(k + 1) - phi (x_(k + 1))|)$ is
   less than some pre-specified tolerance $epsilon.alt > 0$ . If it
-  is,stop the iteration; otherwise,increase $k$ by one and go back to
+  is, stop the iteration; otherwise,increase $k$ by one and go back to
   Step 1 .
 
 #rmk[
-
-In the fixed point iteration,one may alternatively check $lr(|x_(k + 1) - x_k|)$ to determine whether to stop the iteration. 
+In the fixed point iteration, one may alternatively check $lr(|x_(k + 1) - x_k|)$ to determine whether to stop the iteration. 
 
 ]
 
 #rmk[
-
-The tolerance for the termination can not be arbitrarily small, i.e., can not be too close to the computer round-off. Otherwise, the assumption on the linear relation between errors is invalid.
+The tolerance for the termination can not be arbitrarily small,  i.e., can not be too close to the computer round-off. Otherwise, the assumption on the linear relation between errors is invalid.
 
 ]
 
 #exr[
-
-Consider for $k gt.eq 0$ the following fixed point method,known as Steffensen’s method,
+Consider for $k gt.eq 0$ the following fixed point method, known as Steffensen's method,
 
 $ x_(k + 1) = x_k - frac(f (x_k), g (x_k)) $
 

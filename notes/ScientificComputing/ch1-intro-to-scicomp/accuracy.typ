@@ -18,7 +18,6 @@ There are two rules to minimize computer round-offs:
 They help improve accuracy.
 
 #exm[
-
 Compare
 
 $
@@ -50,7 +49,6 @@ int main(int argc, char *argv[])
 ```
 
 #exm[
-
 The roots of the quadratic equation
 $
 f(x) = a x^2 + b x + c = 0
@@ -72,7 +70,6 @@ $
 ]
 
 #exm[
-
 Compute partial sums of the Euler series,
 $
 s_n = sum_(k=1)^n 1 + 1/4 + 1/9 + dots.c + 1/n^2

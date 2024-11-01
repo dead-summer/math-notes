@@ -18,13 +18,11 @@ Ref/Nomenclature:
 6. $mu$ is semifinite if $forall E in cal(F), mu(E) < infinity$ , there exists a set $F subset E, F in cal(F)$ , s.t. $0 < mu(F) < infinity$ .
 
 #exr[
-
 (5) $=>$ (6).
 
 ]
 
 #exm[
-
 Counting measure $cal(H)^0$ on $(X, cal(P)(X))$ :
 $
 cal(H)^0 = cases(
@@ -37,13 +35,11 @@ $
 ]
 
 #rmk[
-
 $cal(H)^k, k >= 0$ is the Hausdroff measures. $k=0$ , $cal(H)^0$ is the counting measure, $k in NN$ , $cal(H)^k = cal(L)^k$ on $RR^k$ .
 
 ]
 
 #exm[
-
 Dirac measure on $(X, cal(P)(X))$: fix any $x_0 in X$ , define $delta_x: cal(P)(X) -> {0, 1}$ , s.t. 
 $
 bb(1)_E(x_0) := delta_x_0(E) = cases(
@@ -56,7 +52,6 @@ $bb(1)_E(x_0)$ is called indicator function.
 ]
 
 #exm[
-
 Let $(X, cal(F), mu)$ be a measure space, let $E in cal(F)$ . Then $(X, cal(F), mu|_E)$ is a measure spcae where $mu|_E(F) := mu(E sect F)$ .
 
 ]
@@ -79,13 +74,11 @@ $
 It's easy to see that if $mu = cal(L)^1, E_n = [n, +infinity)$ , then $mu(E_n) = infinity$ but $sect.big_(j=1)^(infinity) E_n = diameter$ .
 
 #def[
-
 $(X, cal(F), mu)$ is a measure space, $E in cal(F)$ is $mu$-null if $mu(E) = 0$ .
 
 ]
 
 #def[
-
 $(X, cal(F), mu)$ is a complete measure space, if $forall E in cal(F)$ is $mu$-null, s.t. $forall tilde(E) subset E$ , it holds that $tilde(E) in cal(F)$ .
 
 ]
@@ -93,7 +86,6 @@ $(X, cal(F), mu)$ is a complete measure space, if $forall E in cal(F)$ is $mu$-n
 Idea: $cal(F)$ contains all $mu$-null sets.
 
 #prp[
-
 Let $(X, cal(F), mu)$ be a measure space, set $cal(Z) = {E in cal(F): mu(E) = 0}$ . Then
 $
 macron(cal(F)) := {A union B : A in cal(F), B subset N "for some" N in cal(Z)}
@@ -103,7 +95,6 @@ is a $sigma$-algebra, and $exists!$ measure $macron(mu)$ on $cal(F)$ that extend
 ]
 
 #prf[
-
 *Step 1: prove that $macron(cal(F))$ is a $sigma$-algebra.*
 
 Clearly, $macron(cal(F))$ is closed under countable unions. Now let $A union B in cal(F)$ with $A in cal(F), B subset N in cal(Z)$ and $mu(N) = 0$. Then
@@ -151,7 +142,6 @@ $
 ]
 
 #def[
-
 $(X, macron(cal(F)), macron(mu))$ is the completion of $(X, cal(F), mu)$ .
 
 ]

@@ -12,7 +12,6 @@
 Stability means sensitivity of solution to external perturbation. We say a numerical method is stable if its solution to a problem is insensitive to external perturbation; otherwise, a numerical method is unstable if its solution is sensitive to external perturbation.
 
 #exm[
-
 Evaluate the integral
 $
 I_n = integral_0^1 x^n/(10+x) dif x

@@ -20,7 +20,6 @@ $
 if $f(a)f(c) > 0$ , replace $a$ with $c$ ; otherwise, replace $b$ with $c$ . Repeat the process. Each time the length/size of the interval $[a, b]$ is reduced by a half. When the interval $[a, b]$ is sufficiently small, any value on interval $[a, b]$ can be used as an approximate solution to the equation with error not greater than the size $(b - a)$ of the interval.
 
 #exm[
-
 Consider the nonlinear equation
 $
 f(x) = x - e^(-x), quad x in [-1, 1].
