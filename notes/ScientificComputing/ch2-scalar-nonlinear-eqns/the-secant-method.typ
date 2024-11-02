@@ -34,9 +34,10 @@ i.e.,
 
 $ x_(n + 1) = x_n - frac(x_n - x_(n - 1), f (x_n) - f (x_(n - 1))) f (x_n) . $
 
-Example 5.1.
-
+#exm[
 $ f (x) = (x - 1) exp (- 1 / (1 - x)^2) . $
+]
+
 
 == 5.1 Convergence Rate
 
