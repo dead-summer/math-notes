@@ -4,9 +4,12 @@
 
 #show: book-page.with(title: "Modelling, Discretization and Implementation")
 
+#counter(heading).update(0)
+#set heading(numbering: "1.1.1")
 
 
-= 1 Modelling, Discretization and Implementation
+
+= Modelling, Discretization and Implementation
 
 Scientific problems are often raised (or proposed) as mathematical models, which are typically described by differential equations, either or dinary differential equations or partial differential equations. After discretization by appropriate numerical algorithms, mathematical equations are further solved by computer programs.
 

@@ -6,7 +6,10 @@
 #show: codly-init.with()
 #codly_init()
 
-= 3 Computer Representation of Numbers
+#counter(heading).update(2)
+#set heading(numbering: "1.1.1")
+
+= Computer Representation of Numbers
 
 We should first recognize that real numbers (numbers with decimal points) can only be represented
 

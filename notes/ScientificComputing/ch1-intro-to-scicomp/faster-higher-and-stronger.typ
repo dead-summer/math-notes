@@ -2,7 +2,10 @@
 
 #show: book-page.with(title: "Modelling, Discretization and Implementation")
 
-= 2 Faster, Higher and Stronger
+#counter(heading).update(1)
+#set heading(numbering: "1.1.1")
+
+= Faster, Higher and Stronger
 
 There are three themes in scientific computing. They are efficiency, accuracy and stability, associated with which is the spirit of numerics: "faster, higher and stronger".
 

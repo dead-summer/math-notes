@@ -7,7 +7,10 @@
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
 
-= 2 The Fixed Point Method
+#counter(heading).update(1)
+#set heading(numbering: "1.1.1")
+
+= The Fixed Point Method
 
 Suppose an initial guess $x_0$ to the solution of the scalar nonlinearequation is given. One may construct a sequence of approximate solutions
 $

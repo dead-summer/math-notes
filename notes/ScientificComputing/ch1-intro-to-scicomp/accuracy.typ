@@ -7,7 +7,10 @@
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
 
-= 4 Accuracy
+#counter(heading).update(3)
+#set heading(numbering: "1.1.1")
+
+= Accuracy
 
 There are two rules to minimize computer round-offs:
 

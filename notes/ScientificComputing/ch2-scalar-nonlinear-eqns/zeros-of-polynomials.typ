@@ -6,14 +6,17 @@
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
 
+#counter(heading).update(5)
+#set heading(numbering: "1.1.1")
 
-= 6 Zeros of Polynomials
+
+= Zeros of Polynomials
 
 In this section, we are interested in finding zeros of a polynomial.
 
 We can apply one of the iterative methods that we have so far studied to find a zero of a polynomial. Once a zero is found, we may work with polynomial division to get a polynomial with a lower degree and then also apply one of the studied methods to find another zero. The process can be repeated so that other real zeros are found.
 
-== 6.1 Polynomial Division
+== Polynomial Division
 
 Consider a polynomial of degree $n gt.eq 1$ with
 
@@ -52,7 +55,7 @@ Please write a computer program to find all zeros of the polynomials below:
 ]
 
 
-== 6.2 Complex Zeros of a Polynomial
+== Complex Zeros of a Polynomial
 
 We know that zeros of a polynomial may be complex even though all coefficients are real. The methods that we studied are only for scalar nonlinear equations and can not be directly applied to find complex zeros of a polynomial.
 

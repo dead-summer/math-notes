@@ -6,6 +6,9 @@
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
 
+#counter(heading).update(4)
+#set heading(numbering: "1.1.1")
+
 // 带有 label 的公式才编号
 #set math.equation(numbering: "(1)", supplement: none, number-align: bottom)
 #show math.equation.where(block: true): it => {
@@ -18,7 +21,7 @@
  return it
 }
 
-= 5 The Secant Method
+= The Secant Method
 
 In some situations, it is difficult, complicated or expensive to evaluate the derivative of function $f (x)$ . One may prefer to a derivative-free iterative method. The secant method to be introduced here is such a method.
 
@@ -39,7 +42,7 @@ $ f (x) = (x - 1) exp (- 1 / (1 - x)^2) . $
 ]
 
 
-== 5.1 Convergence Rate
+== Convergence Rate
 
 The secant iteration reads
 

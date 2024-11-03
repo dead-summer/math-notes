@@ -7,7 +7,10 @@
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
 
-= 1 The Bisection Method
+#counter(heading).update(0)
+#set heading(numbering: "1.1.1")
+
+= The Bisection Method
 
 Assume the values of function $f(x)$ at the end points of the interval $[a, b]$ take opposite signs, i.e.,
 $

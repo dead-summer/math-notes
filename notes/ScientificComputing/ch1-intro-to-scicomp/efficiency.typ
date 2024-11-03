@@ -7,7 +7,10 @@
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
 
-= 5 Efficiency
+#counter(heading).update(4)
+#set heading(numbering: "1.1.1")
+
+= Efficiency
 
 The rule to improve efficiency is (obviously) to minimize the number of arithmetic operations.
 

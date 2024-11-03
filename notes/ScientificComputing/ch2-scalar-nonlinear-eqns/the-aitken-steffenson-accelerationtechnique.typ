@@ -7,6 +7,9 @@
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
 
+#counter(heading).update(2)
+#set heading(numbering: "1.1.1")
+
 = The Aitken/Steffenson Acceleration Technique
 
 Consider the fixed point iteration
@@ -84,13 +87,8 @@ $ x_(k + 1) = frac(y_0 y_2 - y_1^2, y_0 + y_2 - 2 y_1) $
   Step 1 .
 
 #rmk[
-In the fixed point iteration, one may alternatively check $lr(|x_(k + 1) - x_k|)$ to determine whether to stop the iteration. 
-
-]
-
-#rmk[
-The tolerance for the termination can not be arbitrarily small,  i.e., can not be too close to the computer round-off. Otherwise, the assumption on the linear relation between errors is invalid.
-
+1) In the fixed point iteration, one may alternatively check $lr(|x_(k + 1) - x_k|)$ to determine whether to stop the iteration. 
+2) The tolerance for the termination can not be arbitrarily small,  i.e., can not be too close to the computer round-off. Otherwise, the assumption on the linear relation between errors is invalid.
 ]
 
 #exr[
