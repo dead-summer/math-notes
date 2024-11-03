@@ -4,6 +4,8 @@
 
 #show: book-page.with(title: "Measures")
 
+#counter(heading).update(2)
+#set heading(numbering: "1.1.1")
 
 = Measures
 

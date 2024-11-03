@@ -2,8 +2,10 @@
 #import "../../../templates/conf.typ": *
 #import "@preview/mitex:0.2.4": *
 #show: thmrules.with(qed-symbol: $square$)
+#show: book-page.with()
 
-#show: book-page.with(title: "1-D Lebesgue Measure")
+#counter(heading).update(4)
+#set heading(numbering: "1.1.1")
 
 = 1-D Lebesgue Measure
 

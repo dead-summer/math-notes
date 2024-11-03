@@ -2,6 +2,9 @@
 
 #show: book-page.with(title: "Measure Theory")
 
+#counter(heading).update(0)
+#set heading(numbering: "1.1.1")
+
 = Motivation
 
 Motivation: Lebesgue measure ($cal(L)^n$) on $bb(R)^n$ is approximately

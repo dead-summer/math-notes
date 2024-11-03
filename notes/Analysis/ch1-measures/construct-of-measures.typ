@@ -5,6 +5,9 @@
 
 #show: book-page.with(title: "Construct of Measures")
 
+#counter(heading).update(3)
+#set heading(numbering: "1.1.1")
+
 = Construct of Measures
 
 #def[

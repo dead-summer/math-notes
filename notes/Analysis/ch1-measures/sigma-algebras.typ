@@ -4,6 +4,8 @@
 
 #show: book-page.with(title: "Sigma Algebra")
 
+#counter(heading).update(1)
+#set heading(numbering: "1.1.1")
 
 = $sigma$-algebra
 
