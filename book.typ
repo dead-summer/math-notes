@@ -30,9 +30,15 @@
     - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/scalar-nonlinear-eqns.typ")[Iterative Methods for Scalar Nonlinear Equations]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-bisection-method.typ")[The Bisection Method]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-fixed-point-method.typ")[The Fixed Point Method]
+      - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-aitken-steffenson-acceleration-technique.typ")[The Aitken/Steffenson Acceleration Technique]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-newton-method.typ")[The Newton Method]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/the-secant-method.typ")[The Secant Method]
       - #chapter("notes/ScientificComputing/ch2-scalar-nonlinear-eqns/zeros-of-polynomials.typ")[Zeros of Polynomials]
+    - #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/direct-methods-linsys.typ")[Direct Methods for Linear Systems]
+      - #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/the-gauss-elimination-method.typ")[The Gauss Elimination Method]
+      - #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/the-lu-decomposition-method.typ")[The LU Decomposition Method]
+      - #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/the-qr-method.typ")[The QR Method]
+      -  #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/stability-analysis.typ")[Stability Analysis]
   ]
 )
 

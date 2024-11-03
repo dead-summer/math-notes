@@ -1,7 +1,7 @@
 #import "/book.typ": book-page, cross-link
 #import "../../../templates/conf.typ": *
 
-#show: book-page.with(title: "Direct Methods for Linear Systems")
+#show: book-page.with()
 #show: codly-init.with()
 #show: thmrules.with(qed-symbol: $square$)
 #codly_init()
