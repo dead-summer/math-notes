@@ -6,14 +6,14 @@
   "theorem",
   "Theorem",
   fill: rgb("#eeffee"),
-  base_level: 0
+  base_level: 1
 )
 
 #let prp = thmbox(
   "proposition",
   "Proposition",
   stroke: 0.5pt,
-  base_level: 0
+  base_level: 1
 )
 
 #let cor = thmplain(
@@ -23,14 +23,14 @@
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
-  base_level: 0
+  base_level: 1
 )
 
 #let lem = thmbox(
   "lemma",
   "Lemma",
   stroke: 0.5pt,
-  base_level: 0
+  base_level: 1
 )
 
 #let def = thmbox(
@@ -38,7 +38,7 @@
   "Definition",
   // inset: (top: 1em),
   stroke: 0.5pt,
-  base_level: 0
+  base_level: 1
 )
 
 #let exm = thmplain(
@@ -50,7 +50,7 @@
     #text(style: "italic")[#body]
   ],
   base: "heading",
-  base_level: 0
+  base_level: 1
 )
 
 #let prf = thmplain(
@@ -81,7 +81,7 @@
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
-  base_level: 0
+  base_level: 1
 )
 
 #let exr = thmplain(
@@ -93,7 +93,7 @@
     #text(style: "italic")[#body]
   ],
   base: "heading",
-  base_level: 0
+  base_level: 1
 )
 
 // 定义代码块格式
