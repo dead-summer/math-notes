@@ -286,11 +286,11 @@ Choose the right hand side $upright(bold(b)) in bb(R)^n$ such that the exact sol
 
 $ upright(bold(x)) = (x_1 , x_2 , dots.h.c , x_n)^T = (1 , 1 , dots.h.c , 1)^T . $
 
-Solve the system with the Gauss elimination method for different $n$ ’s. Denote the computed solution by $tilde(upright(bold(x))) = (tilde(x)_1 , tilde(x)_2 , dots.h.c , tilde(x)_n)^T$ . Print out the maximum-norm error
+Solve the system with the Gauss elimination method for different $n$'s. Denote the computed solution by $tilde(upright(bold(x))) = (tilde(x)_1 , tilde(x)_2 , dots.h.c , tilde(x)_n)^T$ . Print out the maximum-norm error
 
 $ norm(upright(bold(x)) - tilde(upright(bold(x))))_oo equiv max_(1 lt.eq i lt.eq n) lr(|x_i - tilde(x)_i|) $
 
-for $n = 4 , 5 , 6 , dots.h.c$ ,until the Gauss elimination method fails to work. Report on what you observe and make your own explanation.
+for $n = 4 , 5 , 6 , dots.h.c$ , until the Gauss elimination method fails to work. Report on what you observe and make your own explanation.
 ]
 
 #prp[
