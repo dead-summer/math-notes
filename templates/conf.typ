@@ -5,14 +5,22 @@
 #let thm = thmbox(
   "theorem",
   "Theorem",
-  fill: rgb("#eeffee"),
+  // fill: rgb("#eeffee"),
+  inset: (top: 0.5em, bottom: .5em),
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
   base_level: 1
 )
 
 #let prp = thmbox(
   "proposition",
   "Proposition",
-  stroke: 0.5pt,
+  // stroke: 0.5pt,
+  inset: (top: 0.5em, bottom: .5em),
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
   base_level: 1
 )
 
@@ -20,6 +28,7 @@
   "corollary",
   "Corollary",
   titlefmt: strong,
+  inset: (top: 0.5em, bottom: .5em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
@@ -29,15 +38,22 @@
 #let lem = thmbox(
   "lemma",
   "Lemma",
-  stroke: 0.5pt,
+  // stroke: 0.5pt,
+  inset: (top: 0.5em, bottom: .5em),
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
   base_level: 1
 )
 
 #let def = thmbox(
   "definition",
   "Definition",
-  // inset: (top: 1em),
-  stroke: 0.5pt,
+  // stroke: 0.5pt,
+  inset: (top: 0.5em, bottom: .5em),
+  bodyfmt: body => [
+    #text(style: "italic")[#body]
+  ],
   base_level: 1
 )
 
@@ -45,7 +61,7 @@
   "example",
   "Example",
   titlefmt: strong,
-  inset: (top: 0.8em, bottom: .5em),
+  inset: (top: 0.5em, bottom: .5em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
@@ -57,7 +73,8 @@
   "proof",
   "Proof",
   titlefmt: smallcaps,
-  inset: (x: .5em, y: .5em),
+  // inset: (x: .5em, y: .5em),
+  inset: (bottom: .5em),
   bodyfmt: body => [
     #body #v(0.5pt) #h(1fr) $square$ // float a QED symbol to the right
   ]
@@ -67,7 +84,8 @@
   "solution",
   "Solution",
   titlefmt: smallcaps,
-  inset: (x: 0em, y: 0em),
+  // inset: (x: 0em, y: 0em),
+  inset: (bottom: .5em),
   bodyfmt: body => [
     #body #v(0.5pt) #h(1fr) $square.filled.medium$ // float a QED symbol to the right
   ]
@@ -77,7 +95,7 @@
   "remark", 
   "Remark", 
   titlefmt: strong,
-  inset: (top: 0.8em, bottom: .5em),
+  inset: (top: 0.5em, bottom: .5em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
@@ -88,7 +106,7 @@
   "exercise",
   "Exercise",
   titlefmt: strong,
-  inset: (top: 0.8em, bottom: .5em),
+  inset: (top: 0.5em, bottom: .5em),
   bodyfmt: body => [
     #text(style: "italic")[#body]
   ],
