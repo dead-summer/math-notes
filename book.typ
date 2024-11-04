@@ -39,6 +39,13 @@
       - #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/the-lu-decomposition-method.typ")[The LU Decomposition Method]
       - #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/the-qr-method.typ")[The QR Method]
       -  #chapter("notes/ScientificComputing/ch3-direct-methods-linsys/stability-analysis.typ")[Stability Analysis]
+    - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/iterative-methods-linsys.typ")[Stationary Iterative Methods for Linear Systems]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/abstract-framework-and-spectral-radius.typ")[Abstract Framework and Spectral Radius]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-richardson-iteration.typ")[The Richardson Iteration]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-jacobi-method.typ")[The Jacobi Method]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-gauss-seidel-method.typ")[The Gauss-Seidel method]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-sor-method.typ")[The SOR method]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/stopping-criterion.typ")[Stopping Criterion]
   ]
 )
 
