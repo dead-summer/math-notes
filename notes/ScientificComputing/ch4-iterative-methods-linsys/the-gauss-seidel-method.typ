@@ -54,7 +54,7 @@ The iteration matrix of the Gauss-Seidel method reads
 $ upright(bold(B)) = upright(bold(I)) - upright(bold(P))^(- 1) upright(bold(A)) = (upright(bold(D)) - upright(bold(L)))^(- 1) upright(bold(U)) . $
 
 #thm[
-If the matrix $upright(bold(A))$ is a strictly diagonally dominant or irreducibly diagonally dominant matrix,the Gauss-Seidel method for $upright(bold(A x)) = upright(bold(b))$ converges.
+If the matrix $upright(bold(A))$ is a strictly diagonally dominant or irreducibly diagonally dominant matrix, the Gauss-Seidel method for $upright(bold(A x)) = upright(bold(b))$ converges.
 ]
 
 #prf[
@@ -106,9 +106,8 @@ $ upright(bold(P)) = (upright(bold(D)) - upright(bold(L))) upright(bold(D))^(- 1
 
 By the Sarmarskii theorem, we only need to show that the matrix $upright(bold(P)) - upright(bold(A)) \/ 2$ is positive definite. In fact, straightforward calculation shows that
 
-$ upright(bold(P)) - upright(bold(A)) \/ 2 = (upright(bold(D)) - upright(bold(L))) upright(bold(D))^(- 1) (upright(bold(D)) - upright(bold(L))^(upright(T))) - 1 / 2 (upright(bold(D)) - upright(bold(L)) - upright(bold(L))^(upright(T))) $
-
-$ = 1 / 2 upright(bold(D)) - 1 / 2 upright(bold(L)) - 1 / 2 upright(bold(L))^(upright(T)) + upright(bold(L D))^(- 1) upright(bold(L))^(upright(T)) = 1 / 2 upright(bold(A)) + upright(bold(L D))^(- 1) upright(bold(L))^(upright(T)) . $
+$ upright(bold(P)) - upright(bold(A)) \/ 2 &= (upright(bold(D)) - upright(bold(L))) upright(bold(D))^(- 1) (upright(bold(D)) - upright(bold(L))^(upright(T))) - 1 / 2 (upright(bold(D)) - upright(bold(L)) - upright(bold(L))^(upright(T)))\
+&= 1 / 2 upright(bold(D)) - 1 / 2 upright(bold(L)) - 1 / 2 upright(bold(L))^(upright(T)) + upright(bold(L D))^(- 1) upright(bold(L))^(upright(T)) = 1 / 2 upright(bold(A)) + upright(bold(L D))^(- 1) upright(bold(L))^(upright(T)) . $
 
 It is obvious to see that the matrix $upright(bold(P)) - upright(bold(A)) \/ 2$ is symmetric and positive definite.
 ]

@@ -39,24 +39,13 @@ $ 1 / h^2 mat(delim: "(", 2, - 1, , , ; - 1, 2, - 1, , ; #none, dots.down, dots.
 
 Here, $f_j = f (x_j)$ and $u_j$ is the finite difference approximation to $u (x_j)$ .
 
-Let $upright(bold(A))_h$ be the coefficient matrix of the linear system; $upright(bold(u))_h = (u_1 , u_2 , dots.h.c , u_(J - 1))^(upright(T))$ and $upright(bold(b))_h = (f_1 , f_2 , dots.h.c , f_(J - 1))^(upright(T))$ be the unknown and known vectors. In matrix-vector notation, the linear system takes
+Let $upright(bold(A))_h$ be the coefficient matrix of the linear system; $upright(bold(u))_h = (u_1 , u_2 , dots.h.c , u_(J - 1))^T$ and $upright(bold(b))_h = (f_1 , f_2 , dots.h.c , f_(J - 1))^T$ be the unknown and known vectors. In matrix-vector notation, the linear system takes
 
 $ upright(bold(A))_h upright(bold(u))_h = upright(bold(b))_h $
 
 Let $upright(bold(D))_h$ be the diagonal part of matrix $upright(bold(A))_h$ , i.e.,
 
 $ upright(bold(D))_h = "diag" (2 / h^2 , 2 / h^2 , dots.h.c , 2 / h^2) . $
-
-#subpar.grid(
-  figure(image("../img/eigenvector-image1.svg"), caption: [$k=1$]),
-  figure(image("../img/eigenvector-image2.svg"), caption: [$k=2$]),
-  figure(image("../img/eigenvector-image3.svg"), caption: [$k=3$]),
-  figure(image("../img/eigenvector-image4.svg"), caption: [$k=4$]),
-  columns: (15em, 15em),
-  v(0.5pt),
-  caption: [Plots of four eigenvectors]
-)
-
 
 
 The weighted Jacobi method for iteratively solving the discrete equations reads
@@ -71,13 +60,21 @@ $ lambda_k (upright(bold(A))_h) = 4 / h^2 sin^2 frac(k pi h, 2) quad "for" k = 1
 
 and the associated eigenvectors
 
-$ upright(bold(g))_k = (g_k^((1)) , g_k^((2)) , dots.h.c , g_k^((J - 1)))^(upright(T)) $
+$ upright(bold(g))_k = (g_k^((1)) , g_k^((2)) , dots.h.c , g_k^((J - 1)))^T $
 
-with $upright(bold(g))_k = sin (k pi j h)$ .
+with $g_k^((j)) = sin (k pi j h)$ .
 
-Note that large mode index $k (k gt.eq J \/ 2)$ corresponds to high frequency modes while small mode index $k (k < J \/ 2)$ corresponds to low frequency modes. The eigenvalue $lambda_k (upright(bold(A))_h)$ increases as the
+#subpar.grid(
+  figure(image("../img/eigenvector-image1.svg"), caption: [$k=1$]),
+  figure(image("../img/eigenvector-image2.svg"), caption: [$k=2$]),
+  figure(image("../img/eigenvector-image3.svg"), caption: [$k=3$]),
+  figure(image("../img/eigenvector-image4.svg"), caption: [$k=4$]),
+  columns: (15em, 15em),
+  v(0.5pt),
+  caption: [Plots of four eigenvectors]
+)
 
-mode index $k$ increases,
+Note that large mode index $k (k gt.eq J \/ 2)$ corresponds to high frequency modes while small mode index $k (k < J \/ 2)$ corresponds to low frequency modes. The eigenvalue $lambda_k (upright(bold(A))_h)$ increases as the mode index $k$ increases,
 
 $ lambda_1 (upright(bold(A))_h) lt.eq lambda_2 (upright(bold(A))_h) lt.eq dots.h.c lt.eq lambda_(J - 1) (upright(bold(A))_h) $
 
@@ -148,11 +145,11 @@ For the low frequency part, there is a positive number $c_1 > 0$ such that
 
 $ norm(upright(bold(e))_(h , "low")^((n + 1)))_2 lt.eq (1 - c_1 h^2) norm(upright(bold(e))_(h , "low")^((n)))_2 $
 
-while for the high frequency part of the error,there is another positive number $c_2 in (0 , 1)$ , independent of mesh parameter $h$ ,such that
+while for the high frequency part of the error, there is another positive number $c_2 in (0 , 1)$ , independent of mesh parameter $h$ , such that
 
 $ norm(upright(bold(e))_(h , "high")^((n + 1)))_2 lt.eq (1 - c_2) norm(upright(bold(e))_(h , "high")^((n)))_2 $
 
-By the weighted Jacobi method with $omega < 1$ ,the high frequency components of the iteration error $upright(bold(e))_h^((n))$ are associated with (absolute value) small eigenvalues $lambda_k (upright(bold(B))_h)$ and thus decay faster than low frequency components.
+By the weighted Jacobi method with $omega < 1$ , the high frequency components of the iteration error $upright(bold(e))_h^((n))$ are associated with (absolute value) small eigenvalues $lambda_k (upright(bold(B))_h)$ and thus decay faster than low frequency components.
 
 It is the fact that the eigenvalues of the iteration matrix associated with the low frequency error components are too close to one which makes the weighted Jacobi method converges extremely slowly on a fine grid.
 
@@ -174,7 +171,7 @@ The iteration on the fine grid in step 1 of the two-grid iteration is standard. 
 
 Denote the fine and coarse grids by $cal(T)_h$ and $cal(T)_(2 h)$ , respectively. Let $J$ be a positive even integer and $h = 1 \/ J$ . Let ${x_h^((j)) = h j}_(j = 0)^J$ be the nodes of the fine grid $cal(T)_h ; {x_(2 h)^((i)) = 2 h i}_(i = 0)^(J \/ 2)$ be the nodes of the coarse grid $cal(T)_(2 h)$ .
 
-Assume the discrete linear system for the model two-point BVP (1)-(2) on the fine grid $cal(T)_h$ reads
+Assume the discrete linear system for the model two-point BVP (@eq:1)-(@eq:2) on the fine grid $cal(T)_h$ reads
 
 $ upright(bold(A))_h upright(bold(u))_h = upright(bold(b))_h $
 
@@ -184,9 +181,9 @@ Recall that a stationary iterative method for the linear system takes the form
 
 $ upright(bold(u))_h^((n + 1)) = upright(bold(u))_h^((n)) + upright(bold(P))_h^(- 1) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h^((n))) quad "for" n = 0 , 1 , dots.h.c , $
 
-with $upright(bold(P))_h$ being a preconditioner. The closer is the preconditioner $upright(bold(P))_h$ to $upright(bold(A))_h$ ,the faster the iteration converges. The weighted Jacobi method corresponds to the case that $upright(bold(P))_h = upright(bold(D))_h \/ omega$ with $omega in \( 0 , 1 \]$ and $upright(bold(D))_h$ be the diagonal part of $upright(bold(A))_h$ .
+with $upright(bold(P))_h$ being a preconditioner. The closer is the preconditioner $upright(bold(P))_h$ to $upright(bold(A))_h$ , the faster the iteration converges. The weighted Jacobi method corresponds to the case that $upright(bold(P))_h = upright(bold(D))_h \/ omega$ with $omega in \( 0 , 1 \]$ and $upright(bold(D))_h$ be the diagonal part of $upright(bold(A))_h$ .
 
-For step 2 of the two-grid method,the preconditioner $upright(bold(P))_h$ will be chosen to be close to the (stiffness) matrix $upright(bold(A))_(2 h)$ on the coarse grid $cal(T)_(2 h)$ . However,because of the difference in dimensions of the matrices and vectors on the fine and coarse grids, any vector on the fine grid must be appropriately restricted from the fine grid to the coarse grid before it is multiplied by the inverse of matrix $upright(bold(A))_(2 h)$ and the correction vector on the coarse grid must be prolonged from coarse grid to the fine grid before it is added to the approximate solution vector on the fine grid. We do this in four sub-steps:
+For step 2 of the two-grid method, the preconditioner $upright(bold(P))_h$ will be chosen to be close to the (stiffness) matrix $upright(bold(A))_(2 h)$ on the coarse grid $cal(T)_(2 h)$ . However, because of the difference in dimensions of the matrices and vectors on the fine and coarse grids, any vector on the fine grid must be appropriately restricted from the fine grid to the coarse grid before it is multiplied by the inverse of matrix $upright(bold(A))_(2 h)$ and the correction vector on the coarse grid must be prolonged from coarse grid to the fine grid before it is added to the approximate solution vector on the fine grid. We do this in four sub-steps:
 
 - *Step 2.1.* we first restrict the fine residual
 
@@ -222,7 +219,7 @@ The four sub-steps above can be all put together by a single equation
 
 $ upright(bold(u))_h^((n + 1)) = upright(bold(u))_h^((n)) + upright(bold(I))_(2 h)^h upright(bold(A))_(2 h)^(- 1) upright(bold(I))_h^(2 h) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h^((n))) . $
 
-Note that $upright(bold(I))_h^(2 h)$ and $upright(bold(I))_(2 h)^h$ are actually rectangular matrices,which are called the restriction and prolongation matrices respectively,while the matrix $upright(bold(I))_(2 h)^h upright(bold(A))_(2 h)^(- 1) upright(bold(I))_h^(2 h)$ is square. Even though the square matrix may not be invertible, it is an approximation of the inverse of matrix $upright(bold(A))_(2 h)$ or $upright(bold(A))_h$ . In the next, we will consider specific instances of the restriction and prolongation matrices.
+Note that $upright(bold(I))_h^(2 h)$ and $upright(bold(I))_(2 h)^h$ are actually rectangular matrices, which are called the restriction and prolongation matrices respectively, while the matrix $upright(bold(I))_(2 h)^h upright(bold(A))_(2 h)^(- 1) upright(bold(I))_h^(2 h)$ is square. Even though the square matrix may not be invertible, it is an approximation of the inverse of matrix $upright(bold(A))_(2 h)$ or $upright(bold(A))_h$ . In the next, we will consider specific instances of the restriction and prolongation matrices.
 
 First, we can make the prolongation by linear interpolation
 
@@ -241,9 +238,9 @@ mat(delim: "(",
   0, 0, 1
   ) vec(d_(2 h)^0, , d_(2 h)^1, , d_(2 h)^2) equiv upright(bold(I))_(2 h)^h upright(bold(d))_(2 h) . $
 
-For the preconditioning matrix $upright(bold(P))_h$ to be symmetric, we often choose the restriction matrix $upright(bold(I))_h^(2 h)$ as the transpose/adjoint of the prolongation matrix $upright(bold(I))_(2 h)^h$ scaled by an appropriate constant, i.e., $upright(bold(I))_h^(2 h) = mu (upright(bold(I))_(2 h)^h)^(upright(T))$ for some constant $mu$ . For the example above, we have
+For the preconditioning matrix $upright(bold(P))_h$ to be symmetric, we often choose the restriction matrix $upright(bold(I))_h^(2 h)$ as the transpose/adjoint of the prolongation matrix $upright(bold(I))_(2 h)^h$ scaled by an appropriate constant, i.e., $upright(bold(I))_h^(2 h) = mu (upright(bold(I))_(2 h)^h)^T$ for some constant $mu$ . For the example above, we have
 
-$ (upright(bold(I))_(2 h)^h)^(upright(T)) = mat(delim: "(", 1, 1 \/ 2, 0, 0, 0; 0, 1 \/ 2, 1, 1 \/ 2, 0; 0, 0, 0, 1 \/ 2, 1) $
+$ (upright(bold(I))_(2 h)^h)^T = mat(delim: "(", 1, 1 \/ 2, 0, 0, 0; 0, 1 \/ 2, 1, 1 \/ 2, 0; 0, 0, 0, 1 \/ 2, 1) $
 
 We may write down the coarse residual entry by entry,
 
@@ -267,7 +264,7 @@ on the fine grid $cal(T)_h$ with
 
 $ lim_(h arrow.r 0) d_h^((i)) = d (x_h^((i))) $
 
-for each fixed value of $h i$ . Assume the projected system
+for each fixed value of $i$ and $d_h^((i))$ is the i-th element in $upright(bold(d))_h$ . Assume the projected system
 
 $ upright(bold(A))_(2 h) upright(bold(d))_(2 h) = upright(bold(r))_(2 h) $
 
@@ -275,15 +272,15 @@ is an approximation of the same differential equation on the coarse grid $cal(T)
 
 $ lim_(h arrow.r 0) d_(2 h)^((i)) = d (x_(2 h)^((i))) $
 
-for each fixed value of $2 h i$ .
+for each fixed value of $i$ and $d_(2h)^((i))$ is the i-th element in $upright(bold(d))_(2h)$ .
 
 In general, if $norm(upright(bold(r))_h)_oo approx h^k norm(s)_oo$ , we should choose the constant $mu$ such that
 
-$ mu norm((upright(bold(I))_(2 h)^h)^(upright(T)) upright(bold(r))_h)_oo = norm(upright(bold(I))_h^(2 h) upright(bold(r))_h)_oo = norm(upright(bold(r))_(2 h))_oo approx (2 h)^k norm(s)_oo approx 2^k norm(upright(bold(r))_h)_oo . $
+$ mu norm((upright(bold(I))_(2 h)^h)^T upright(bold(r))_h)_oo = norm(upright(bold(I))_h^(2 h) upright(bold(r))_h)_oo = norm(upright(bold(r))_(2 h))_oo approx (2 h)^k norm(s)_oo approx 2^k norm(upright(bold(r))_h)_oo . $
 
 Assume
 
-$ norm((upright(bold(I))_(2 h)^h)^(upright(T)) upright(bold(r))_h)_oo approx 2^m norm(upright(bold(r))_h)_oo $
+$ norm((upright(bold(I))_(2 h)^h)^T upright(bold(r))_h)_oo approx 2^m norm(upright(bold(r))_h)_oo $
 
 for some integer $m > 0$ . When $upright(bold(I))_h^(2 h)$ is defined by piecewise linear interpolation, $m$ is the space dimensions. Anyway, we have
 
@@ -297,11 +294,11 @@ $ - d^('') (x) = s (x) $
 
 is discretized with the finite difference method, entries of the right hand side in the discrete equations are simply the values of $s (x)$ at the grid nodes, i.e.,
 
-$ upright(bold(r))_h = (s (x_h^((1)) , x_h^((2)) , dots.h.c , s (x_h^((J - 1)))))^(upright(T)) . $
+$ upright(bold(r))_h = [s (x_h^((1))) , s(x_h^((2))) , dots.h.c , s (x_h^((J - 1)))]^T . $
 
 In this case, $norm(upright(bold(r))_h)_oo approx norm(s)_oo$ , i.e., $k = 0$ and $m = 1$ . As a result, $mu = 2^(k - m) = 1 \/ 2$ . If the ODE is discretized with the finite element method, entries of the right hand side in the discrete equations are roughly the values of $s (x)$ at the grid nodes multiplied by the mesh parameter $h$ , i.e.,
 
-$ upright(bold(r))_h approx h (s (x_h^((1)) , x_h^((2)) , dots.h.c , s (x_h^((J - 1)))))^(upright(T)) . $
+$ upright(bold(r))_h approx h [s (x_h^((1))) , s(x_h^((2))) , dots.h.c , s (x_h^((J - 1)))]^T . $
 
 In this case, $norm(upright(bold(r))_h)_oo approx h norm(s)_oo$ , i.e., $k = 1$ and $m = 1$ . As a result, $mu = 2^(k - m) = 1$ .
 
@@ -316,7 +313,7 @@ In this case, $norm(upright(bold(r))_h)_oo approx h norm(s)_oo$ , i.e., $k = 1$ 
       
       + make the weighted Jacobi relaxation several times
 
-      + $u_h arrow.l u_h + omega upright(bold(D))_h^(- 1) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h)$
+      + $upright(bold(u))_h arrow.l upright(bold(u))_h + omega upright(bold(D))_h^(- 1) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h)$
 
       + *step 2.* residual restriction
 
@@ -362,7 +359,7 @@ However, even though the coarse grid solution space has a much lower space dimen
 
       + make the weighted Jacobi relaxation several times
 
-      + $u_h arrow.l u_h + omega upright(bold(D))_h^(- 1) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h)$
+      + $upright(bold(u))_h arrow.l upright(bold(u))_h + omega upright(bold(D))_h^(- 1) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h)$
 
       + *step 2.* residual restriction
 
@@ -386,7 +383,7 @@ However, even though the coarse grid solution space has a much lower space dimen
 
       + make the weighted Jacobi relaxation several times
 
-      + $u_h arrow.l u_h + omega upright(bold(D))_h^(- 1) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h)$
+      + $upright(bold(u))_h arrow.l upright(bold(u))_h + omega upright(bold(D))_h^(- 1) (upright(bold(b))_h - upright(bold(A))_h upright(bold(u))_h)$
   ]
 )
 

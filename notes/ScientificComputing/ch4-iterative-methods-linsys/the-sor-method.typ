@@ -47,7 +47,7 @@ Multiplying both sides of the identity above by $a_(i , i)$ yields
 
 $ a_(i , i) x_i^((k + 1)) = (1 - omega) a_(i , i) x_i^((k)) + omega [b_i - sum_(j = 1)^(i - 1) a_(i , j) x_j^((k + 1)) - sum_(j = i + 1)^n a_(i , j) x_j^((k))] $
 
-for $i = 1 , 2 , dots.h.c , n$ . In the matrix-vector notation,the SOR iteration reads
+for $i = 1 , 2 , dots.h.c , n$ . In the matrix-vector notation, the SOR iteration reads
 
 $ upright(bold(D)) upright(bold(x))_(k + 1) = (1 - omega) upright(bold(D)) upright(bold(x))_k + omega (upright(bold(b)) + upright(bold(L)) upright(bold(x))_(k + 1) + upright(bold(U)) upright(bold(x))_k) . $
 
@@ -74,7 +74,7 @@ If the SOR method converges, then the relaxation parameter $omega$ must be in th
 ]
 
 #prf[
-That the SOR method converges implies that the spectral radius of the iteration matrix $upright(bold(B))$ is less than one. In other words,all eigenvalues of $upright(bold(B))$ have modulus less than one. The absolute value of the determinant of $upright(bold(B))$ is less than one since the determinant of a matrix equals the product of its eigenvalues. Now we see the determinant of $upright(bold(B))$ should satisfy
+That the SOR method converges implies that the spectral radius of the iteration matrix $upright(bold(B))$ is less than one. In other words, all eigenvalues of $upright(bold(B))$ have modulus less than one. The absolute value of the determinant of $upright(bold(B))$ is less than one since the determinant of a matrix equals the product of its eigenvalues. Now we see the determinant of $upright(bold(B))$ should satisfy
 
 $ lr(|det (upright(bold(B)))|) = lr(|det [(upright(bold(D)) - omega upright(bold(L)))^(- 1)] det [(1 - omega) upright(bold(D)) + omega upright(bold(U))]|) = lr(|(1 - omega)^n|) < 1 . $
 

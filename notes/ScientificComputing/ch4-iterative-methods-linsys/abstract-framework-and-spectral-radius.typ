@@ -38,7 +38,7 @@ Let
 
 $ f (x) = b - a x . $<eq:2>
 
-Now please do not ask me why I did not define the function $f (x)$ to be ax - b. There is no reason that we could not define the function in other ways. It is just personal taste to define the function as shown in (@eq:2). Now in terms of the function $f (x)$ ,the equation (@eq:1) becomes
+Now please do not ask me why I did not define the function $f (x)$ to be ax - b. There is no reason that we could not define the function in other ways. It is just personal taste to define the function as shown in (@eq:2). Now in terms of the function $f (x)$ , the equation (@eq:1) becomes
 
 $ f (x) = 0 . $<eq:3>
 
@@ -52,7 +52,7 @@ may be the first one that comes up to our mind. In particular, we may recall the
 
 $ x_(k + 1) = phi (x_k) = x_k + f (x_k) = (1 - a) x_k + b "for" k = 0 , 1 , 2 , dots.h.c . $<eq:4>
 
-As we know,the iteration (@eq:4) may fail to yield a convergent sequence ${x_k}$ . In general, we only know,when the first derivative of $phi (x)$ is less than one in absolute value, i.e.,
+As we know, the iteration (@eq:4) may fail to yield a convergent sequence ${x_k}$ . In general, we only know,when the first derivative of $phi (x)$ is less than one in absolute value, i.e.,
 
 $ lr(|phi^(') (x)|) = lr(|1 + f^(') (x)|) = lr(|1 - a|) < 1 , $<eq:5>
 
@@ -79,7 +79,7 @@ $ 0 < p^(- 1) a < 2 $
 If $a > 0 , p$ should satisfy $p > a \/ 2$ ; if $a < 0 , p$ should satisfy $p < a \/ 2$ . To emphasize the importance of the condition, we put the condition as a theorem.
 
 #thm[
-For the iteration (7) to converge,the parameter $p$ should be chosen to satisfy the condition below
+For the iteration (@eq:7) to converge, the parameter $p$ should be chosen to satisfy the condition below
 
 $ cases(
 p > a \/ 2 \, & "if" a > 0,
@@ -183,11 +183,11 @@ Let $upright(bold(T))$ be an invertible matrix. The one given by
 
 $ norm(upright(bold(A)))_T equiv norm(upright(bold(T A T))^(- 1)) $
 
-introduces an induced matrix norm for $upright(bold(A)) in bb(R)^(n times n)$ ,which is associated with the vector norm $norm(upright(bold(x)))_T =$ $norm(upright(bold(T x)))$ for $upright(bold(x)) in bb(R)^n .$
+introduces an induced matrix norm for $upright(bold(A)) in bb(R)^(n times n)$ , which is associated with the vector norm $norm(upright(bold(x)))_T =$ $norm(upright(bold(T x)))$ for $upright(bold(x)) in bb(R)^n .$
 ]
 
 #prp[
-Given a matrix $upright(bold(A)) in bb(R)^(n times n)$ ,for any $epsilon.alt > 0$ ,there exists an induced matrix norm $norm(dot.op)_epsilon.alt$ such that
+Given a matrix $upright(bold(A)) in bb(R)^(n times n)$ , for any $epsilon.alt > 0$ , there exists an induced matrix norm $norm(dot.op)_epsilon.alt$ such that
 
 $ norm(upright(bold(A)))_epsilon.alt lt.eq rho (upright(bold(A))) + epsilon.alt $
 ]
@@ -362,7 +362,7 @@ which implies that
 
 $ rho (upright(bold(B))) lt.eq norm(upright(bold(B))^k)^(1 / k) $
 
-Next,we will show that for any $epsilon.alt > 0$ ,there exists a large integer $N > 0$ such that for any $k > N$
+Next,we will show that for any $epsilon.alt > 0$ , there exists a large integer $N > 0$ such that for any $k > N$
 
 $ norm(upright(bold(B))^k)^(1 / k) < rho (upright(bold(B))) + epsilon.alt , $
 
@@ -374,11 +374,11 @@ with
 
 $ upright(bold(B))_epsilon.alt = frac(upright(bold(B)), rho (upright(bold(B))) + epsilon.alt) . $
 
-As a matter of fact,since the spectral radius of $upright(bold(B))_epsilon.alt$ is less than one,there exists an induced matrix norm $norm(dot.op)_a$ such that
+As a matter of fact,since the spectral radius of $upright(bold(B))_epsilon.alt$ is less than one, there exists an induced matrix norm $norm(dot.op)_a$ such that
 
 $ norm(upright(bold(B))_epsilon.alt)_a < 1 $
 
-As a result,the sequence of scalars ${norm(upright(bold(B))_epsilon.alt^k)_a}$ converges to zero. This further indicates that the sequence of matrices ${upright(bold(B))_epsilon.alt^k}$ converges to the zero matrix and the sequence of scalars ${norm(upright(bold(B))_epsilon.alt^k)}$ also converges to zero as $k$ tends to infinity (this step can also be shown by the equivalence of the two norms $norm(dot.op)$ and $norm(dot.op)_a$ ). The rest of the proof just follows naturally.
+As a result, the sequence of scalars ${norm(upright(bold(B))_epsilon.alt^k)_a}$ converges to zero. This further indicates that the sequence of matrices ${upright(bold(B))_epsilon.alt^k}$ converges to the zero matrix and the sequence of scalars ${norm(upright(bold(B))_epsilon.alt^k)}$ also converges to zero as $k$ tends to infinity (this step can also be shown by the equivalence of the two norms $norm(dot.op)$ and $norm(dot.op)_a$ ). The rest of the proof just follows naturally.
 ]
 
 By this theorem, for large $k$ , we have
