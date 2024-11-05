@@ -43,9 +43,14 @@
       - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/abstract-framework-and-spectral-radius.typ")[Abstract Framework and Spectral Radius]
       - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-richardson-iteration.typ")[The Richardson Iteration]
       - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-jacobi-method.typ")[The Jacobi Method]
-      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-gauss-seidel-method.typ")[The Gauss-Seidel method]
-      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-sor-method.typ")[The SOR method]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-gauss-seidel-method.typ")[The Gauss-Seidel Method]
+      - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/the-sor-method.typ")[The SOR Method]
       - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/stopping-criterion.typ")[Stopping Criterion]
+  
+
+    #suffix-chapter("notes\ScientificComputing\appendix\vector-and-matrix-norms.typ")[Appendix. Vector and Matrix Norms]
+    #suffix-chapter("notes\ScientificComputing\appendix\multigrid-method.typ")[Appendix. Multigrid Method]
+
   ]
 )
 
