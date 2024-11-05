@@ -48,8 +48,8 @@
       - #chapter("notes/ScientificComputing/ch4-iterative-methods-linsys/stopping-criterion.typ")[Stopping Criterion]
   
 
-    #suffix-chapter("notes\ScientificComputing\appendix\vector-and-matrix-norms.typ")[Appendix. Vector and Matrix Norms]
-    #suffix-chapter("notes\ScientificComputing\appendix\multigrid-method.typ")[Appendix. Multigrid Method]
+    #suffix-chapter("notes/ScientificComputing/appendix/vector-and-matrix-norms.typ")[Appendix. Vector and Matrix Norms]
+    #suffix-chapter("notes/ScientificComputing/appendix/multigrid-method.typ")[Appendix. Multigrid Method]
 
   ]
 )
