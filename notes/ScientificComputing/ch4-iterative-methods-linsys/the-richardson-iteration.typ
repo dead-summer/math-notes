@@ -40,15 +40,14 @@ Here, I remark that the parameter $Delta t$ may be positive or negative.
 #exr[
 Let $upright(bold(A)) in bb(R)^(n times n)$ be a symmetric and positive definite matrix. Denote the maximum and minimum eigenvalues of $upright(bold(A))$ by $lambda_max$ and $lambda_min$ ,respectively. We consider the following iteration
 
-$ upright(bold(x))_(k + 1) = upright(bold(x))_k + Delta t (upright(bold(b)) - upright(bold(A)) upright(bold(x))_k) #h(0em) upright(" for ") k = 0 , 1 , 2 , dots.h.c $
+$ upright(bold(x))_(k + 1) = upright(bold(x))_k + Delta t (upright(bold(b)) - upright(bold(A)) upright(bold(x))_k) quad "for" k = 0 , 1 , 2 , dots.h.c $
 
 with $Delta t$ be a parameter.
 
-1. Show that the iteration converges for any initial guess $upright(bold(x))^((0))$ if the parameter $Delta t$ satisfies $0 <$
+1. Show that the iteration converges for any initial guess $upright(bold(x))^((0))$ if the parameter $Delta t$ satisfies 
+$ 0 < Delta t < 2 / lambda_max $
 
-$ Delta t < 2 / lambda_max $
-
-2. find the best parameter $Delta t^(\*)$ such that the iteration converges fastest.
+1. find the best parameter $Delta t^(\*)$ such that the iteration converges fastest.
 ]
 
 

@@ -207,7 +207,7 @@ $ upright(bold(D))^(- 1) upright(bold(P A P))^(- 1) upright(bold(D)) = "diag" (u
 
 with
 
-$ upright(bold(J))_k^epsilon.alt = mat(delim: "(", lambda_k, epsilon.alt, , , ; #none, lambda_k, epsilon.alt, , ; #none, , dots.down, dots.down, ; #none, , , lambda_k, epsilon.alt; #none, , , , lambda_k)_(m times m times m) $
+$ upright(bold(J))_k^epsilon.alt = mat(delim: "(", lambda_k, epsilon.alt, , , ; #none, lambda_k, epsilon.alt, , ; #none, , dots.down, dots.down, ; #none, , , lambda_k, epsilon.alt; #none, , , , lambda_k)_(m_k times m) $
 
 for $k = 1 , 2 , dots.h.c , K$ . It is obvious that
 
