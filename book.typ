@@ -18,6 +18,10 @@
       - #chapter("notes/Analysis/ch1-measures/measures.typ")[Measures]
       - #chapter("notes/Analysis/ch1-measures/construct-of-measures.typ")[Construct of Measures]
       - #chapter("notes/Analysis/ch1-measures/1-d-lebesgue-measure.typ")[1-D Lebesgue Measure]
+    - #chapter("notes/Analysis/ch3-differentiation/differentiation.typ")[Differentiation]
+      - #chapter("notes/Analysis/ch3-differentiation/differentiation-of-measures.typ")[Differentiation of Measures]
+      - #chapter("notes/Analysis/ch3-differentiation/lebesgue-decomposition.typ")[Lebesgue Decomposition]
+      - #chapter("notes/Analysis/ch3-differentiation/signed-measures.typ")[Signed Measures]
 
     = Scientific Computing
     - #chapter("notes/ScientificComputing/ch1-intro-to-scicomp/intro-to-scicomp.typ", section: "1")[Introduction to Scientific Computing]

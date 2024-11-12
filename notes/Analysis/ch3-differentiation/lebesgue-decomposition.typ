@@ -9,8 +9,6 @@
 
 = Lebesgue Decomposition
 
-
-
 #def[
 Let $mu, nu in cal(M)^+(RR^n)$ .
 
@@ -68,7 +66,7 @@ nu(A) = sum_(m in ZZ) nu(A_m) &<= sum_(m in ZZ) lambda^(m+1) \
 $
 On the other hand,
 $
-v(A) = sum_(m in ZZ) nu(A_m) &>= sum_(m in ZZ) lambda^m mu(A_m)
+nu(A) = sum_(m in ZZ) nu(A_m) &>= sum_(m in ZZ) lambda^m mu(A_m)
                              &= lambda^(-1) sum_(m in ZZ) lambda^(m+1) mu(A_m)
                              &>= lambda^(-1) integral_A cal(D)_mu nu dif mu .
 $
@@ -101,7 +99,7 @@ Then we set
 $
 nu^("ac") := nu|_B_infinity , quad nu^("s") := m=nu|_(RR^n without B_infinity)
 $
-which are both Radon measures. Here, $v^("ac")(RR^n without B_infinity) = 0 = nu^("s")(B_infinity)$ , hence, $nu^"s" bot nu^"ac"$ .
+which are both Radon measures. Here, $nu^("ac")(RR^n without B_infinity) = 0 = nu^("s")(B_infinity)$ , hence, $nu^"s" bot nu^"ac"$ .
 
 Claim: $nu^"ac" lt.double mu$ . Suppose there exists Borel set C , s.t. $mu(C) = 0, nu^"ac" eq.not 0$ .
 Then $mu(RR^n without (B_infinity without C)) <= mu(RR^n without B_infinity) + mu(C) = 0$ . So $B_infinity without C in cal(E)$ ,
@@ -337,7 +335,7 @@ $
 That is, for such $G$ with $cal(L)^n (RR^n without G) = 0$ , then 
 $
 & "ap" lim_(y -> x) f(y) = f(x), quad forall x in G \
-<==> & "every" x in G "is a pointegral of aroximate continuity of" f
+<==> & "every" x in G "is a point of aroximate continuity of" f
 $
 
 ]
