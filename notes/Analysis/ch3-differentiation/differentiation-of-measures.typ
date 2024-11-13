@@ -105,7 +105,7 @@ $ sup { "diam" B : B in F } < oo . $
 
 $exists$ disjoint countable collections of balls. $cal(G)_1 dots.h cal(G)_(Lambda (n))$ s.t.
 
-$ {" centers of" B "in" cal(F) } subset union.big_(i = 1)^(Lambda (n)) (union.big.sq cal(G)_i) $
+$ {" centers of" B "in" cal(F) } subset union.big_(i = 1)^(Lambda (n)) (union.sq cal(G)_i) $
 ]
 
 #rmk[

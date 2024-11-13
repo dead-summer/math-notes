@@ -22,6 +22,8 @@
       - #chapter("notes/Analysis/ch3-differentiation/differentiation-of-measures.typ")[Differentiation of Measures]
       - #chapter("notes/Analysis/ch3-differentiation/lebesgue-decomposition.typ")[Lebesgue Decomposition]
       - #chapter("notes/Analysis/ch3-differentiation/signed-measures.typ")[Signed Measures]
+      - #chapter("notes/Analysis/ch3-differentiation/complex-measures.typ")[Complex Measures]
+      - #chapter("notes/Analysis/ch3-differentiation/monotone-functions.typ")[Monotone Functions]
 
     = Scientific Computing
     - #chapter("notes/ScientificComputing/ch1-intro-to-scicomp/intro-to-scicomp.typ", section: "1")[Introduction to Scientific Computing]
