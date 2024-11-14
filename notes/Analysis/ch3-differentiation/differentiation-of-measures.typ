@@ -19,7 +19,7 @@ For the moment, we restrict to $cal(L)^n$ on $bb(R)^n$.
 
 *Notations.*
 
-- For $B = macron(BB)_r (x) C bb(R)^n$, with $hat(B) = 5 B := macron(BB)_(5 r) (x)$.
+- For $B = overline(BB)_r (x) subset bb(R)^n$, with $hat(B) = 5 B := overline(BB)_(5 r) (x)$.
 - For $A subset bb(R)^n$ and $cal(F)$ is the collection of closed balls in $bb(R)^n$, say $cal(F)$ is a cover of $A$ iff $A subset union cal(F) := union.big_(B in cal(F)) B$
 - Let $cal(F)$ be a cover of $A$, say that $cal(F)$ is fine (Vitali) iff $forall x in A$, we have inf ${ "diam" B : x in B , B in cal(F)} = 0$ .
 
@@ -28,7 +28,7 @@ Let $cal(F)$ be any collection of (nondegenerate) closed balls in $bb(R)^n$, s.t
 
 $ D = sup { "diam" B : B in cal(F) } < oo . $
 
-Then we can choose a countable subcollection $cal(G) subset cal(F)$ of disjoint balls, s.t. $union cal(F) subset.eq union.big_(B in cal(G)) hat(B)$.
+Then we can choose a countable subcollection $cal(G) subset cal(F)$ of disjoint balls, s.t. $union cal(F) subset.eq union.big_(B in cal(G)) hat(B')$.
 ]
 
 #prf[
@@ -36,15 +36,15 @@ Then we can choose a countable subcollection $cal(G) subset cal(F)$ of disjoint 
 
 $ {B in cal(F)_k : B sect B^(') = diameter "for all " B^(') in union.big_(j = 1)^(k - 1) cal(G)_j} . $
 
-Set $cal(G) : union.big_(k = 1)^oo cal(G)_k$, it is a countable (since $forall B in cal(G)_k$, then $B subset bb(R)^n$, so $cal(G)_k$ is always countable) collection of disjoint balls. To see the coverage properties, pick any $B in cal(F)$ and prove that $exists B^(') in cal(G)$, s.t. $ B subset hat(B^('))$ . Say $B in cal(F)_k$. Then by construction (maximality of $cal(G)_1 , cal(G)_k$ )
+Set $cal(G) : union.big_(k = 1)^oo cal(G)_k$, it is a countable (since $RR^n$ is sepatated, so $cal(G)_k$ is always countable) collection of disjoint balls. To see the coverage properties, pick any $B in cal(F)$ and prove that $exists B^(') in cal(G)$, s.t. $ B subset hat(B^('))$ . Say $B in cal(F)_k$. Then by construction (maximality of $cal(G)_1 ,..., cal(G)_k$ )
 $ B sect B^(') eq.not diameter "for some" B^(') in union.big_(j = 1)^k cal(G)_j , $
 
 (If $forall B^(') in union.big_(j = 1)^k cal(G)_j , B sect B^(') = diameter$, and $B in cal(F)_k$, then $B in cal(G)_k$. This is a contraction.)
 
 Note that $"diam" B^(') > D \/ 2^k$, diam $B lt.eq D \/ 2^(k - 1)$, Let $y , y'$ be the center of $B , B^(')$, respectively. Then $forall x in B$
 $ abs(x - y') & lt.eq abs(x - y) + abs(y - y^('))\
- & lt.eq (D / 2^(k-2)) + (D / 2^(k + 1) + D / 2^(k + 2))\
- & = 5 dot.op D / 2^(k - 1) $
+ & lt.eq (D / 2^(k)) + (D / 2^(k) + 1/2 "diam"(B'))\
+ & = 5/2 "diam"(B') $
 
 ie., $B subset hat(B^('))$
 ]
@@ -52,13 +52,12 @@ ie., $B subset hat(B^('))$
 #rmk[
 1. It's easy to improve $hat(B^(')) = 5 B^(')$ to $(3 + epsilon) B^(')$ :
 
-  Let $cal(F)_j = {B in cal(F) : D \/ delta^j < "diam" B lt.eq D \/ delta^(j - 1)}$ , then $abs(x - y) lt.eq delta^2 / 2 rho $
-
+  Let $cal(F)_j = {B in cal(F) : D \/ delta^j < "diam" B lt.eq D \/ delta^(j - 1)}$ , then $abs(x - y) lt.eq (4/delta + 1/2)"diam"(B') $
 2. Woks for compact metric space.
 ]
 
 #cor[
-1. Let $f$ be a fine cover of closed balls for $A subset bb(R)^n$. s.t.
+1. Let $cal(F)$ be a fine cover of closed balls for $A subset bb(R)^n$. s.t.
 
   $ D = sup { "diam" B : B in cal(F) } < oo . $
 
@@ -126,7 +125,7 @@ We define derivative between two measures via density.
 
 #def[
 Let $mu , nu in cal(M)^(+) (bb(R)^n) \("Radon"$ nonnegative measure on $bb(R)^n\)$, $x in bb(R)^n$. Define
-$ macron(cal(D))_mu nu (x) := cases(delim: "{", limsup_(r gt.eq 0) frac(nu (BB_r (x)), mu (BB_r (x))) & "if" mu (BB_r (x)) > 0 quad forall r > 0,
+$ overline(cal(D))_mu nu (x) := cases(delim: "{", limsup_(r gt.eq 0) frac(nu (BB_r (x)), mu (BB_r (x))) & "if" mu (BB_r (x)) > 0 quad forall r > 0,
 + oo & "if" exists r > 0 \, "s.t." mu (BB_r (x)) = 0) $
 
 and
@@ -136,7 +135,7 @@ $ underline(cal(D))_mu nu (x) := cases(delim: "{", liminf_(r > 0) frac(nu (BB_r 
 ]
 
 #def[
-If $macron(cal(D))_mu nu (x) = cal(D)_mu nu (x)$, then say $nu$ is differentiable w.r.t (with respect to) $mu$ at $x in bb(R)^n$. Write $cal(D)_mu nu (x)$, call it the derivative of $nu$ w.r.t $mu$ at $x$.
+If $overline(cal(D))_mu nu (x) = underline(cal(D))_mu nu (x)$, then say $nu$ is differentiable w.r.t (with respect to) $mu$ at $x in bb(R)^n$. Write $cal(D)_mu nu (x)$, call it the derivative of $nu$ w.r.t $mu$ at $x$.
 ]
 
 
@@ -150,7 +149,7 @@ If $macron(cal(D))_mu nu (x) = cal(D)_mu nu (x)$, then say $nu$ is differentiabl
 For any $0 < alpha < oo , mu , nu in M^(+) (bb(R)^n)$.
 
 1. If $A subset {underline(cal(D))_mu nu lt.eq alpha}$, then $nu(A) lt.eq alpha mu (A)$ .
-2. If $A subset {macron(cal(D))_mu nu gt.eq alpha}$, then $nu (A) gt.eq alpha mu (A)$
+2. If $A subset {overline(cal(D))_mu nu gt.eq alpha}$, then $nu (A) gt.eq alpha mu (A)$
 ]
 
 #prf([of 1])[
@@ -175,7 +174,7 @@ Let $mu , nu in M^(+) (bb(R)^n)$. Then $cal(D)_mu nu$ exists and is finite $mu$-
 
 #prf[
 WLOG $mu (bb(R)^n) + nu (bb(R)^n) < oo$ . Consider $ I = {cal(D)_mu nu = oo}$, and for some $0 < a < b < oo$,
-$J (a , b) = & {underline(cal(D))_mu nu < a < b < macron(cal(D))_mu nu}$ . Note that
+$J (a , b) = & {underline(cal(D))_mu nu < a < b < overline(cal(D))_mu nu}$ . Note that
 
 $ {cal(D)_mu nu "doesn't exist"} = union.big_(0 < a < b < oo\
 a , b in bb(R)) J (a , b) . $
@@ -191,7 +190,7 @@ $ 0 lt.eq b mu (J (a , b)) lt.eq nu (J (a , b)) lt.eq a mu (J (a , b)) < oo $
 
 Hence, $mu (J (a , b)) = 0 arrow.r.double {cal(D)_mu nu$ doesn't exist $}$ is $mu$-null. If $cal(D)_mu nu$ is $mu$-measuraile, then $integral_B cal(D)_mu nu dif mu$ makes sense. To see this, consider
 
-$ f_nu (x) := cases(delim: "{", frac(nu (divides BB_r (x)), mu (I BB_r (x))) \, & "if" mu (BB_r (x)) > 0, + oo \, & "if" mu (BB_r (x)) = 0 .) $
+$ f_nu (x) := cases(delim: "{", frac(nu (BB_r (x)), mu (BB_r (x))) \, & "if" mu (BB_r (x)) > 0, + oo \, & "if" mu (BB_r (x)) = 0 .) $
 
 *Fact*: $x arrow.r.bar nu (BB_r (x)) , x arrow.r.bar mu (BB_r (x))$ are Borel measurable. Then, $cal(D)_mu nu (x) = lim_(n arrow.r oo) f_(1 \/ n) (x)$ for $mu$-a.e. $x in bb(R)^n$. so $cal(D)_mu nu$ is $mu$-measnucble.
 ]
