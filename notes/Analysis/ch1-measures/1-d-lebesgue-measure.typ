@@ -155,7 +155,7 @@ There are open, dense subsets of $(0, 1)$ of arbitrary small $cal(L)^1$-measure.
 
 ]
 
-A specific example is as follows.
+Some specific examples are as follows.
 
 #exm[
 Take $q_1, q_2, ...$ be an enumenation of $QQ sect (0, 1)$ . Fix any $epsilon$ , and let
@@ -166,6 +166,69 @@ then
 $
 cal(L)^1(O) <= sum_(j=1)^(infinity) mu((q_j - epsilon/(2j), q_j + epsilon/(2j))) <= 2 epsilon.
 $
+]
 
+#exm[
+Take $q_1, q_2 dots.h$ be an enumeration of $Q sect (0 , 1)$. Fix any $epsilon < 10^(- 10)$. Then
 
+$ 0 = & union.big_(j = 1)^oo\] q_j - frac(epsilon, 2 j) , q_j + epsilon / 2_j \[\
+ & cal(L)^1 (0) lt.eq sum_(j = 1)^oo mu (J q_j - frac(epsilon, 2 j) , q_j + epsilon / 2) c\) lt.eq 2 epsilon . $
+]
+
+#exm[
+$cal(L)^1$ -null sets may be uncountable. Let
+$
+C = sect.big_(j=0)^(infinity) C_j
+$
+be cantor set, and let Cantor-Lebesgue function (Devil's Staircase) be
+$
+phi: C -> [0, 1] , \
+sum_(j=1)^(infinity) (a_j)/3^j |-> sum_(j=1)^(infinity)(a_j\/2)/(2^j)
+$
+with $a_j in {0, 2}$ . Extending to $phi.alt : [0 , 1] arrow.r [0 , 1]$ by setting $phi$ constant on each interval removed from $C$ . Then $phi|_C: C -> [0, 1]$ is surjection. So $C$ is uncountable. Moreover,  $phi|_([0, 1] without C)$ is piecewise constant, so $phi^(') = 0$ on $[0 , 1] without C$ and $cal(L)^1 (C) = 0$ ($cal(L)^1 (C) = 1 - sum_(j = 1)^oo 2^(j - 1) \/ 3^j = 0$) so $phi^(') = 0$ almost everywhere and 
+$
+integral_0^1 phi'(x) dif x = 0 eq.not 1 = phi(1) - phi(0) .
+$
+
+]
+
+#exm[
+$cal(B)_(RR) subset.eq.not cal(M)_(cal(L)^1)$, i.e., there are lebesgue measurable sets that are not Borel measurable.
+]
+#prf[
+Since $cal(L)^1(C) = 0$ and $cal(L)^1$ is complete on $cal(M)_(cal(L)^1)$ , so
+$
+&cal(M)_(cal(L)^1) supset.eq cal(P)(C) \
+=>& "card"(cal(M)_(cal(L)^1)) >= alef_2 \
+=>& "card"(cal(B)_RR) = alef_1 .
+$
+
+]
+
+#exm[
+There are "non-full" Borel sets in $(0, 1)$ which meets every interval.
+]
+
+#exm[
+$cal(M)_(cal(L)^1) subset.eq.not cal(P)(RR)$ .
+]
+
+#prf[
+Since $QQ <= (RR, +)$ is the subgroup. Let $A$ be a set of coset representation of $RR \/ QQ$ , i.e.,
+$
+RR = union.big.sq_(a in A) (a + QQ) .
+$
+Then $forall r in RR, exists ! (a, q) in A times QQ$ , s.t., $r = a+q$ .
+
+*Claim.* $A$ is non-Lebesgue measurable.
+
+Proof of Claim: Suppose not. Fix any $[a , b] subset bb(R)$ and set $cal(S) = [0 , 1] sect QQ$. Consider the countable collection
+
+$ Lambda := { s + A sect [a , b] : s in cal(S) } $
+
+Its elements are pairwise disjoint, and of the same $cal(L)^(')$-measure (invariant under translations) and all lie in $[a , b + 1]$ . So every $lambda in Lambda$ is a null set ($sum_(j = 1)^oo cal(L)^1 (lambda_j) = sum_(j = 1)^oo alpha^1 (lambda_1) lt.eq b + 1 - a$). Then $cal(L)^1 (A sect [a , b]) = 0$ (by countable additivity of $cal(L)^1$ ). Hence
+
+$ L^1 (A) = 0 $
+
+But $bb(R) = union.big_(q in bb(Q)) (A + q)$ , which leads to a contradiction that $cal(L)^1 (bb(R)) = 0$.
 ]

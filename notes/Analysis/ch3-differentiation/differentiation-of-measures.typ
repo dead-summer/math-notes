@@ -23,7 +23,7 @@ For the moment, we restrict to $cal(L)^n$ on $bb(R)^n$.
 - For $A subset bb(R)^n$ and $cal(F)$ is the collection of closed balls in $bb(R)^n$, say $cal(F)$ is a cover of $A$ iff $A subset union cal(F) := union.big_(B in cal(F)) B$
 - Let $cal(F)$ be a cover of $A$, say that $cal(F)$ is fine (Vitali) iff $forall x in A$, we have inf ${ "diam" B : x in B , B in cal(F)} = 0$ .
 
-#thm([Vital Covering])[
+#thm([Vitali Covering])[
 Let $cal(F)$ be any collection of (nondegenerate) closed balls in $bb(R)^n$, s.t.
 
 $ D = sup { "diam" B : B in cal(F) } < oo . $
@@ -57,7 +57,7 @@ ie., $B subset hat(B^('))$
 ]
 
 #cor[
-1. Let $cal(F)$ be a fine cover of closed balls for $A subset bb(R)^n$. s.t.
+Let $cal(F)$ be a fine cover of closed balls for $A subset bb(R)^n$. s.t.
 
   $ D = sup { "diam" B : B in cal(F) } < oo . $
 
@@ -65,12 +65,15 @@ ie., $B subset hat(B^('))$
   $
   A without union.big_(k = 1)^m B_k subset.eq union.big_(B in cal(G) without {B_1 ,..., B_m}) hat(B)
   $
+]
 
-  #prf[
+#prf[
   Let $cal(G)$ be as in the VCT, suppose $exists x in A without union.big_(k = 1)^m B_k$. As $cal(F)$ is a fine cover, there is $B in cal(F)$ , s.t. $x in B$ and $B sect (union.big_(k = 1)^m B_k) = diameter$. But then, by  VCT, $exists B' in cal(G)$, s.t. $B sect B^(') eq.not diameter , B subset hat(B^('))$ . In particular, $B^(') in cal(G) without {B_1,..., B_m}$ .
   ]
 
-2. Let $U subset bb(R)^n$ be open and $delta > 0$. There exists a countable collection $cal(G)$ of disjoint closed balls in $U$. s.t. diam $B lt.eq delta$. $forall B in cal(G)$. and $cal(L)^n (U without union cal(G)) = 0$ .
+#cor[ 
+Let $U subset bb(R)^n$ be open and $delta > 0$. There exists a countable collection $cal(G)$ of disjoint closed balls in $U$. s.t. diam $B lt.eq delta$. $forall B in cal(G)$. and $cal(L)^n (U without union cal(G)) = 0$ .
+]<cor2:vitali>
 
 #prf[
 WLOG assume $cal(L)^n (U) < oo$ (otherwise let $U_n = U sect bb(B)_n^((0))$ and more details need). Fix $1 - 1 / 5^n < theta < 1$, Let's first pick ${B_1, ... B_J_1} (J_1 < oo)$ of disjoint closed balls in $U$, s.t.
@@ -84,7 +87,6 @@ Thus, $cal(L)^n (U without union.sq cal(G)_1) lt.eq (1 - 1 / 5^n) cal(L)^n (U)$.
 $ {B_1, ... , B_(J_1), B_(J_1 + 1) ... B_(J_2), ... , B_(J_k)} $
 
 s.t. $cal(L)^n (U without union.big.sq_(j=1)^(k) B_j) lt.eq 0^k cal(L)^n (U)$. Send $k arrow.r oo$, the result as follows.
-]
 ]
 
 *Note.* for $forall mu , mu (hat(B)) lt.eq C (n) dot mu (B)$ is not always true. 
@@ -104,7 +106,7 @@ $ sup { "diam" B : B in F } < oo . $
 
 $exists$ disjoint countable collections of balls. $cal(G)_1 dots.h cal(G)_(Lambda (n))$ s.t.
 
-$ {" centers of" B "in" cal(F) } subset union.big_(i = 1)^(Lambda (n)) (union.sq cal(G)_i) $
+$ {"centers of" B "in" cal(F) } subset union.big_(i = 1)^(Lambda (n)) (union.sq cal(G)_i) $
 ]
 
 #rmk[
@@ -124,13 +126,13 @@ A(n) (outer) measure $mu$ is Radon iff $mu$ is Borel regular and $mu (K) < oo , 
 We define derivative between two measures via density.
 
 #def[
-Let $mu , nu in cal(M)^(+) (bb(R)^n) \("Radon"$ nonnegative measure on $bb(R)^n\)$, $x in bb(R)^n$. Define
-$ overline(cal(D))_mu nu (x) := cases(delim: "{", limsup_(r gt.eq 0) frac(nu (BB_r (x)), mu (BB_r (x))) & "if" mu (BB_r (x)) > 0 quad forall r > 0,
+Let $mu , nu in cal(M)^(+) (bb(R)^n)$ (Radon nonnegative measure on $bb(R)^n$) , $x in bb(R)^n$. Define
+$ overline(cal(D))_mu nu (x) := cases(delim: "{", limsup_(r -> 0) frac(nu (BB_r (x)), mu (BB_r (x))) & "if" mu (BB_r (x)) > 0 quad forall r > 0,
 + oo & "if" exists r > 0 \, "s.t." mu (BB_r (x)) = 0) $
 
 and
 
-$ underline(cal(D))_mu nu (x) := cases(delim: "{", liminf_(r > 0) frac(nu (BB_r (x)), mu (BB_r (x))) & "if" mu (BB_r (x)) > 0 quad forall r > 0,
+$ underline(cal(D))_mu nu (x) := cases(delim: "{", liminf_(r -> 0) frac(nu (BB_r (x)), mu (BB_r (x))) & "if" mu (BB_r (x)) > 0 quad forall r > 0,
 + oo & "if" exists r > 0 \, "s.t." mu (BB_r (x)) = 0) $
 ]
 
@@ -150,14 +152,14 @@ For any $0 < alpha < oo , mu , nu in M^(+) (bb(R)^n)$.
 
 1. If $A subset {underline(cal(D))_mu nu lt.eq alpha}$, then $nu(A) lt.eq alpha mu (A)$ .
 2. If $A subset {overline(cal(D))_mu nu gt.eq alpha}$, then $nu (A) gt.eq alpha mu (A)$
-]
+]<lem:1>
 
-#prf([of 1])[
-WLOG, can assume $mu (bb(R)^n) + nu (bb(R)^n) < oo$. Fix $epsilon > 0$, take any $U subset bb(R)^n$ open, s.t. $U supset A$. Assume $A subset {underline(cal(D))_mu nu lt.eq alpha}$, the following is a fine cover of $A$ :
+#prf[
+WLOG, can assume $mu (bb(R)^n) + nu (bb(R)^n) < oo$. If $A subset {underline(cal(D))_mu nu lt.eq alpha}$, take any $U subset bb(R)^n$ open, s.t. $U supset A$. Fix $epsilon > 0$, the following is a fine cover of $A$ :
 
 $ cal(F) = {B = overline(bb(B)_r (x)) : x in A , B subset U , nu (B) lt.eq (alpha + epsilon) mu (B)} $
 
-By the corollary of the covering theorem, we can find $cal(G) subset cal(F)$ countable, disjoint, s.t.
+By the corollary (@cor2:vitali) of Vitali covering theorem, we can find $cal(G) subset cal(F)$ countable, disjoint, s.t.
 
 $ nu (A without union.sq cal(G)) = 0 . $
 
@@ -165,11 +167,11 @@ Hence, $nu(A) lt.eq sum_(B in cal(G)) nu (B) lt.eq (alpha + epsilon) sum_(B in c
 
 $ nu (A) lt.eq (alpha + epsilon) mu (A) $
 
-But $epsilon > 0$ is arbitrary, so $nu (A) lt.eq alpha mu (A)$ .
+But $epsilon > 0$ is arbitrary, so $nu (A) lt.eq alpha mu (A)$ . Another proposition can be proved similarly.
 ]
 
 #thm[
-Let $mu , nu in M^(+) (bb(R)^n)$. Then $cal(D)_mu nu$ exists and is finite $mu$-a.e. In addition, $cal(D)_mu nu$ is $mu$-measurable.
+Let $mu , nu in cal(M)^(+) (bb(R)^n)$. Then $cal(D)_mu nu$ exists and is finite $mu$-a.e. In addition, $cal(D)_mu nu$ is $mu$-measurable.
 ]
 
 #prf[
@@ -177,20 +179,20 @@ WLOG $mu (bb(R)^n) + nu (bb(R)^n) < oo$ . Consider $ I = {cal(D)_mu nu = oo}$, a
 $J (a , b) = & {underline(cal(D))_mu nu < a < b < overline(cal(D))_mu nu}$ . Note that
 
 $ {cal(D)_mu nu "doesn't exist"} = union.big_(0 < a < b < oo\
-a , b in bb(R)) J (a , b) . $
+a , b in bb(Q)) J (a , b) . $
 
-On $I$ , $forall M > 0$ ,
+On $I$ , $forall M > 0$ , by @lem:1 ,
 
 $  cal(D)_mu nu >= M & arrow.r.double oo > nu (I) gt.eq mu (I) dot M\
  & arrow.r.double mu (I) = 0 . $
 
-On $J (a , b)$, by the same lemma.
+On $J (a , b)$, similarly by @lem:1 ,
 
 $ 0 lt.eq b mu (J (a , b)) lt.eq nu (J (a , b)) lt.eq a mu (J (a , b)) < oo $
 
-Hence, $mu (J (a , b)) = 0 arrow.r.double {cal(D)_mu nu$ doesn't exist $}$ is $mu$-null. If $cal(D)_mu nu$ is $mu$-measuraile, then $integral_B cal(D)_mu nu dif mu$ makes sense. To see this, consider
+Hence, $mu (J (a , b)) = 0 arrow.r.double {cal(D)_mu nu$ doesn't exist $}$ is $mu$-null. If $cal(D)_mu nu$ is $mu$-measurable, then $integral_B cal(D)_mu nu dif mu$ makes sense. To see this, consider
 
-$ f_nu (x) := cases(delim: "{", frac(nu (BB_r (x)), mu (BB_r (x))) \, & "if" mu (BB_r (x)) > 0, + oo \, & "if" mu (BB_r (x)) = 0 .) $
+$ f_r (x) := cases(delim: "{", frac(nu (BB_r (x)), mu (BB_r (x))) \, & "if" mu (BB_r (x)) > 0, + oo \, & "if" mu (BB_r (x)) = 0 .) $
 
 *Fact*: $x arrow.r.bar nu (BB_r (x)) , x arrow.r.bar mu (BB_r (x))$ are Borel measurable. Then, $cal(D)_mu nu (x) = lim_(n arrow.r oo) f_(1 \/ n) (x)$ for $mu$-a.e. $x in bb(R)^n$. so $cal(D)_mu nu$ is $mu$-measnucble.
 ]

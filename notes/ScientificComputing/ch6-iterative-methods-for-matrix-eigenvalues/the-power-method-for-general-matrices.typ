@@ -23,7 +23,7 @@
  return it
 }
 
-= 1 The power method for general matrices
+= The power method for general matrices
 <the-power-method-for-general-matrices>
 For simplicity, we first assume that real matrix $upright(bold(A)) in bb(R)^(n times n)$ has $n$ eigenvectors $upright(bold(v))_1 , upright(bold(v))_2 , dots.h.c , upright(bold(v))_n$ with the associated eigenvalues $lambda_1 , lambda_2 , dots.h.c , lambda_n$ , respectively.
 
@@ -33,7 +33,7 @@ We also assume that
 
 $ abs(lambda_1) > abs(lambda_2) gt.eq dots.h.c gt.eq abs(lambda_n) . $
 
-That is, the first eigenvalue $lambda_1$ has the maximum modulus. Since the matrix $upright(bold(A))$ is real, the first eigenvalue must be a real number.
+That is, the first eigenvalue $lambda_1$ has the maximum modulus. Since the matrix $upright(bold(A))$ is real and $abs(lambda_1) > abs(lambda_j), j>1$, the first eigenvalue must be a real number.
 
 Let $upright(bold(x))_0$ be a given vector, which has the decomposition
 
@@ -64,7 +64,7 @@ The terms except the first one on the right hand side of the identity above will
 
 $ abs(lambda_j / lambda_1) < 1 quad "for" j = 2 , dots.h.c , n . $
 
-From @eq:1), we see
+From (@eq:1), we see
 
 $
 &lim_(k arrow.r oo) abs(s_k) / abs(alpha_1 lambda_1^k) = lim_(k arrow.r oo) abs(s_k) / abs(alpha_1 lambda_1^k) norm(upright(bold(x))_k)_oo \
@@ -79,7 +79,7 @@ and in particular, for large $k$ ,
 
 $ abs(s_k) approx abs(alpha_1 lambda_1^k) . $<eq:3>
 
-In addition, we assume the components of $upright(bold(v))_1$ which reach the maximum modulus all have the same sign or the eigenvector $upright(bold(v))_1$ has only one single component which reachs the maximum modulus. By the selection of $s_k$ , we may conclude that, for sufficiently large $k$ , the first modulus-maximum entry of $upright(bold(x))_k$ will have the same sign as the corresponding entry of $upright(bold(v))_1$ . This means that $s_k$ and $alpha_1 lambda_1^k$ have the same sign for large $k$ . Furthermore, from @eq:2)-@eq:3), we get
+In addition, we assume the components of $upright(bold(v))_1$ which reach the maximum modulus all have the same sign or the eigenvector $upright(bold(v))_1$ has only one single component which reachs the maximum modulus. By the selection of $s_k$ , we may conclude that, for sufficiently large $k$ , the first modulus-maximum entry of $upright(bold(x))_k$ will have the same sign as the corresponding entry of $upright(bold(v))_1$ . This means that $s_k$ and $alpha_1 lambda_1^k$ have the same sign for large $k$ . Furthermore, from (@eq:2)-(@eq:3), we get
 
 $ lim_(k arrow.r oo) frac(alpha_1 lambda_1^k, s_k) = 1 $
 
@@ -102,7 +102,7 @@ for large $k$ . Moreover, we obtain the error estimate
 
 $ norm(upright(bold(x))_k - upright(bold(v))_1)_oo lt.tilde [abs(alpha_2) / abs(alpha_1) + abs(alpha_3) / abs(alpha_1) + dots.h.c + abs(alpha_n) / abs(alpha_1)] (abs(lambda_2) / abs(lambda_1))^k . $<eq:6>
 
-The approximation @eq:5) also implies that there exists a non-zero vector $upright(bold(w))_k in bb(R)^n$ such that
+The approximation (@eq:5) also implies that there exists a non-zero vector $upright(bold(w))_k in bb(R)^n$ such that
 
 $ upright(bold(x))_k - upright(bold(v))_1 approx (lambda_2 / lambda_1)^k upright(bold(w))_k $
 
@@ -138,7 +138,7 @@ The limit of the sequence of scalars ${r_k}_(k = 1)^oo$ is the modulus-maximum e
 
 $ lambda_1 = lim_(k arrow.r oo) r_k . $
 
-To see the convergence rate of $r_k$ to $lambda_1$ , we start with the approximation @eq:5). Multiplying @eq:5) by A gives us
+To see the convergence rate of $r_k$ to $lambda_1$ , we start with the approximation (@eq:5). Multiplying (@eq:5) by $upright(bold(A))$ gives us
 
 $ upright(bold(A)) upright(bold(x))_k approx lambda_1 upright(bold(v))_1 + [alpha_2 / alpha_1 (lambda_2 / lambda_1)^k lambda_2 upright(bold(v))_2 + alpha_3 / alpha_1 (lambda_3 / lambda_1)^k lambda_3 upright(bold(v))_3 + dots.h.c + alpha_n / alpha_1 (lambda_n / lambda_1)^k lambda_n upright(bold(v))_n] . $
 
@@ -154,7 +154,7 @@ This indicates
 
 $ abs(r_(k + 1) - lambda_1) lt.tilde [abs(alpha_2) / abs(alpha_1) abs(lambda_2) + abs(alpha_3) / abs(alpha_1) abs(lambda_3) + dots.h.c + abs(alpha_n) / abs(alpha_1) abs(lambda_n)] (abs(lambda_2) / abs(lambda_1))^k . $
 
-In the case that $abs(lambda_2) > abs(lambda_3)$ , from approximation @eq:8), we see that there exists a vector $upright(bold(w)) in bb(R)^n$ such
+In the case that $abs(lambda_2) > abs(lambda_3)$ , from approximation (@eq:8), we see that there exists a vector $upright(bold(w)) in bb(R)^n$ such
 
 that
 
@@ -199,7 +199,7 @@ $ upright(bold(A)) = upright(bold(P D P))^(- 1) = upright(bold(P D P)) $
 
 with
 
-$ upright(bold(P)) = 1 / 2 mat(delim: "[", 1, 1, 1, 1; 1, 1, - 1, - 1; 1, - 1, - 1, 1; 1, - 1, 1, - 1) #h(0em) upright(" and ") #h(0em) upright(bold(D)) = 1 / 2 mat(delim: "[", 1, , , ; #none, 1, , ; #none, , 1, ; #none, , , 1; #none, , , ) . $
+$ upright(bold(P)) = 1 / 2 mat(delim: "[", 1, 1, 1, 1; 1, 1, - 1, - 1; 1, - 1, - 1, 1; 1, - 1, 1, - 1) #h(0em) upright(" and ") #h(0em) upright(bold(D)) = 1 / 2 mat(delim: "[", 1, , , ; #none, 1, , ; #none, , 1, ; #none, , , 1) . $
 
 The matrix $upright(bold(P))$ is symmetric and orthogonal. Its column vectors are the eigenvectors of $upright(bold(A))$ . The diagonal entries of $upright(bold(D))$ are the corresponding eigenvalues. For the matrix $upright(bold(A))$ , we have $lambda_1 = 1$ and the associated eigenvector $upright(bold(v))_1 = (1 , - 1 , 1 , - 1)^T$ . All components of the eigenvector $upright(bold(v))_1$ reach the maximum in modulus but have different signs. Thus, the eigenvector $upright(bold(v))_1$ does not satisfy our assumption. As a matter of fact, the sequence of vectors ${upright(bold(x))_k}$ generated by the power method may converge to a different limit when a different initial vector $upright(bold(x))_0$ is used.
 ]
@@ -226,7 +226,7 @@ To guarantee the convergence of the power method for the case when the eigenvect
 
   $ upright(bold(x))_(k + 1) = 1 / r_(k + 1) upright(bold(z))_(k + 1) $
 
-  is equal to one and the $i_(k + 1)^(t h)$ entry of $upright(bold(x))_(k + 1)$ is positive. Increase $k$ by one and go to step1 unless that $norm(upright(bold(x))_(k + 1) - upright(bold(x))_k)_oo$ is less than a specified tolerance.
+  is equal to one and the $i_(k + 1)^(t h)$ entry of $upright(bold(x))_(k + 1)$ is positive. Increase $k$ by one and go to step 1 unless that $norm(upright(bold(x))_(k + 1) - upright(bold(x))_k)_oo$ is less than a specified tolerance.
 
 The second step above avoids sign-alternating vectors.
 
@@ -235,14 +235,14 @@ The sequence of indices ${i_k}_(k = 1)^oo$ will become invariant as $k$ increase
 ]
 
 #prf[
-Let $epsilon.alt = (1 - theta) \/ 4$ . By @eq:2) and our assumption on the eigenvalues, there exists a large integer $K > 0$ such that for any $k > K$
+Let $epsilon.alt = (1 - theta) \/ 4$ . By (@eq:2) and our assumption on the eigenvalues, there exists a large integer $K > 0$ such that for any $k > K$
 
 $ 1 - epsilon.alt < abs(s_k) / abs(alpha_1 lambda_1^k) < 1 + epsilon.alt upright(" and ") norm(upright(bold(w))_k)_oo < epsilon.alt . $
 Now we claim that the sequence of indices ${i_k}_(k = 1)^oo$ will change at most once for $k > K$ . Assume the index changes at $k = k_0 > K$ , i.e., $i_(k_0) eq.not i_(k_0 + 1)$ . Step 2 indicates the $i_(k_0 + 1)^(t h)$ component of the vector $upright(bold(x))_(k_0 + 1)$ has absolute value equal to one. Let
 
 $ upright(bold(w))_k = alpha_2 / alpha_1 (lambda_2 / lambda_1)^k upright(bold(v))_2 + dots.h.c + alpha_n / alpha_1 (lambda_n / lambda_1)^k upright(bold(v))_n . $
 
-We rewrite @eq:1) as
+We rewrite (@eq:1) as
 
 $ frac(s_k, alpha_1 lambda_1^k) upright(bold(x))_k = upright(bold(v))_1 + upright(bold(w))_k $<eq:9>
 
@@ -293,7 +293,7 @@ $ v_1^((i_(k_0 + 1))) + w_k^((i_(k_0 + 1))) = frac(s_k, alpha_1 lambda_1^k) x_k^
 Note that $v_1^((i_(k_0 + 1))) + w_k^((i_(k_0 + 1)))$ and $v_1^((i_(k_0 + 1)))$ have the same sign since $v_1^((i_(k_0 + 1)))$ dominates $w_k^((i_(k_0 + 1)))$ . As $x_k^((i_(k_0) + 1))$ is fixed to be positive, from the identity above, we see that the sign of $s_k \/ lambda_1^k$ is the same as $alpha_1 v_1^((i_(k_0 + 1)))$ and will not change for all $k > K$ .
 ]
 
-As a result of the proposition above, together with @eq:2), we get
+As a result of the proposition above, together with (@eq:2), we get
 
 $ lim_(k arrow.r oo) frac(s_k, alpha_1 lambda_1^k) = 1 #h(0em) upright(" or ") #h(0em) lim_(k arrow.r oo) frac(s_k, alpha_1 lambda_1^k) = - 1 . $
 

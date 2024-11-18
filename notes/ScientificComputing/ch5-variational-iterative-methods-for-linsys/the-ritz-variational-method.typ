@@ -27,7 +27,7 @@
 <the-ritz-variational-method>
 Assume matrix $upright(bold(A)) in bb(R)^(n times n)$ is symmetric and positive definite. We will see that that the quadratic functional
 
-$ phi (upright(bold(y))) = 1 / 2 (upright(bold(y)) - upright(bold(x)))^(upright(T)) upright(bold(A)) (upright(bold(y)) - upright(bold(x))) - 1 / 2 upright(bold(x))^(upright(T)) upright(bold(A)) upright(bold(x)) = 1 / 2 upright(bold(y))^(upright(T)) upright(bold(A)) upright(bold(y)) - upright(bold(b))^(upright(T)) upright(bold(y)) . $
+$ phi (upright(bold(y))) = 1 / 2 (upright(bold(y)) - upright(bold(x)))^(upright(T)) upright(bold(A)) (upright(bold(y)) - upright(bold(x))) - 1 / 2 upright(bold(x))^(upright(T)) upright(bold(A)) upright(bold(x)) = 1 / 2 upright(bold(y))^(upright(T)) upright(bold(A)) upright(bold(y)) - upright(bold(b))^(upright(T)) upright(bold(y)) , $
 
 has a unique minimizer $upright(bold(x))$ ,
 
@@ -68,7 +68,7 @@ The equality holds if and only if $upright(bold(z)) = 0$ or $upright(bold(y)) = 
 
 "$arrow.l.double$": Assume $upright(bold(x))$ is the minimizer of the quadratic functional. For any vector $upright(bold(z))$ and any scalar $lambda in bb(R)$ , we have
 
-$ phi (upright(bold(x)) + lambda upright(bold(z))) gt.eq phi (upright(bold(x))) $
+$ phi (upright(bold(x)) + lambda upright(bold(z))) gt.eq phi (upright(bold(x))) . $
 
 For fixed $upright(bold(z)) in bb(R)^n$ , let
 
@@ -80,7 +80,7 @@ $ psi^(') (lambda) = upright(bold(z))^(upright(T)) upright(bold(A z)) lambda + u
 
 Since $lambda = 0$ is the point where the function $psi (lambda)$ reaches its minimum, we have
 
-$ 0 = psi^(') (0) = upright(bold(z))^(upright(T)) (upright(bold(A x)) - upright(bold(b))) $
+$ 0 = psi^(') (0) = upright(bold(z))^(upright(T)) (upright(bold(A x)) - upright(bold(b))) , $
 
 the right hand side of which is called the first variation of the quadratic functional $phi (upright(bold(y)))$ at $upright(bold(x))$ along direction $upright(bold(z))$ . The identity above is true for all $upright(bold(z)) in bb(R)^n$ . Letting $upright(bold(z)) = upright(bold(A x)) - upright(bold(b))$ , we get
 

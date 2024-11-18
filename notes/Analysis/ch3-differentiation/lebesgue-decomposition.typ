@@ -13,23 +13,23 @@
 Let $mu, nu in cal(M)^+(RR^n)$ .
 
 1. Say $nu$ is absolutely continuous w.r.t. $mu$ , denoted $nu lt.double mu$ , iff $forall A subset RR^n$ , if $mu(A) = 0$ , then $nu(A) = 0$ .
-2. Say $nu$ and $mu$ are mutally singular, denoted as $nu bot mu$ , iff there exists a Borel set $B subset RR^n$ , s.t. $mu(B) = 0 = nu(RR^n without B)$ .
+2. Say $nu$ and $mu$ are mutally singular, denoted as $nu perp mu$ , iff there exists a Borel set $B subset RR^n$ , s.t. $mu(B) = 0 = nu(RR^n without B)$ .
 ]
 
 #exm[
-Let $mu = cal(L)^n$ and $nu = delta_0$ , then $mu bot nu$ . Consider $B = {0}$ , then $mu(B) = nu(RR^n without B)$ .
+Let $mu = cal(L)^n$ and $nu = delta_0$ , then $mu perp nu$ . Consider $B = {0}$ , then $mu(B) = 0 = nu(RR^n without B)$ .
 ]
 
-#exm("Devil's Stair")[
-Recall $phi(sum_(n=1)^(infinity) a_n\/3^n) = sum_(n=1)^(infinity)a_n\/2^(n+1), a_n in {0, 1}$ .Then $phi$ is constant on each connected component of $[0, 1] without C$ with $C$ is Cantor set.
-Since $cal(L)^n(C) = 0$ , then $phi' = 0, cal(L)^n$ -a.e. .and
+#exm("Devil's Staircase")[
+Recall $phi(sum_(n=1)^(infinity) a_n\/3^n) = sum_(n=1)^(infinity)a_n\/2^(n+1), a_n in {0, 2}$ .Then $phi$ is constant on each connected component of $[0, 1] without C$ where $C$ is Cantor set.
+Since $cal(L)^1 (C) = 0$ , then $phi' = 0, cal(L)^1$ -a.e. .and
 $
 integral_0^1 phi(x) dif x = 0 eq.not phi(1) - phi(0) = 1 - 0.
 $
-$phi'$ defines a measure supported on $C bot cal(L)^1$ .
+$phi'$ defines a measure supported on $C perp cal(L)^1$ .
 ]
 
-#thm("Radon-Nikodym")[
+#thm("The Radon-Nikodym Theorem")[
 Let $mu, nu in cal(M)^+(RR^n)$ , s.t. $nu lt.double mu$ . Then
 $
 nu(A) = integral_A cal(D)_mu nu dif mu
@@ -44,11 +44,11 @@ Consider
 $
 Z = {cal(D)_mu nu = 0}, quad I = {cal(D)_mu nu = infinity} .
 $
-Claim: $Z$ and $I$ both are $nu$-null.
+*Claim*: $Z$ and $I$ both are $nu$-null.
 
 Indeed, we've proved that $mu(I) = 0$ , hence $nu(I) = 0 = integral_I cal(D)_mu nu dif mu$ .
 
-For $Z$ , if $cal(D)_mu nu = 0$ , then $nu(Z) <= alpha mu(Z) < infinity, forall alpha > 0$ . Then $nu(Z) = 0 = integral_Z cal(D)_mu nu dif mu$ . (Recal $integral_A f d mu = 0$ , if $mu(A) = 0$ and $integral_E g dif mu = 0$ , if $g = 0$, $mu$-a.e.)
+For $Z$ , if $cal(D)_mu nu = 0$ , then $nu(Z) <= alpha mu(Z) < infinity, forall alpha > 0$ . Then $nu(Z) = 0 = integral_Z cal(D)_mu nu dif mu$ . (Recall $integral_A f d mu = 0$ , if $mu(A) = 0$ and $integral_E g dif mu = 0$ , if $g = 0$, $mu$-a.e.)
 
 *Step 2.* For general $A subset RR^n, mu$-measurable.
 
@@ -56,10 +56,10 @@ Fix any $lambda in (1, + infinity)$ and consider
 $
 A_m := {lambda^n <= cal(D)_mu nu < lambda^(n+1)} .
 $
-Then $A without union.big.sq_(m in ZZ) nu(A_m) = Z union {cal(D)_mu nu "dosen't exist"}$ ,
+Then $A without union.big.sq_(m in ZZ) A_m = Z union {cal(D)_mu nu "dosen't exist"}$ ,
 which is $nu$-null. Thus
 $
-nu(A) = sum_(m in ZZ) nu(A_m) &<= sum_(m in ZZ) lambda^(m+1) \
+nu(A) = sum_(m in ZZ) nu(A_m) &<= sum_(m in ZZ) lambda^(m+1) mu(A_m) \
                               &= lambda sum_(m in ZZ) lambda^m mu(A_m) \
                               &<= lambda sum_(m in ZZ) integral_A_m cal(D)_mu nu dif mu \
                               &<= lambda integral_A cal(D)_mu nu dif mu .
@@ -70,11 +70,11 @@ nu(A) = sum_(m in ZZ) nu(A_m) &>= sum_(m in ZZ) lambda^m mu(A_m)
                              &= lambda^(-1) sum_(m in ZZ) lambda^(m+1) mu(A_m)
                              &>= lambda^(-1) integral_A cal(D)_mu nu dif mu .
 $
-Sending $lambda arrow.br 1$, the result as follows
+Sending $lambda arrow.br 1$, the result as follows.
 ]
 
-#thm("Lebesgue Decomposition theorem")[
-Let $nu, mu in cal(M)^+(RR^n)$ . Then $nu = nu^("ac") + nu^("s")$ where $nu^("ac") lt.double mu, nu^("s") bot mu$ ,
+#thm("Lebesgue Decomposition Theorem")[
+Let $nu, mu in cal(M)^+(RR^n)$ . Then $nu = nu^("ac") + nu^("s")$ where $nu^("ac") lt.double mu, nu^("s") perp mu$ ,
 and $nu^("ac"), nu^("s") in cal(M)^+(RR^n)$ . Moreover, $cal(D)_mu nu = cal(D)_mu nu^("ac")$ ($mu$-a.e.)
 and $cal(D)_mu nu^("s") = 0$ ($mu$-a.e.) .
 ]
@@ -97,17 +97,17 @@ Thus, $B_infinity in cal(E)$ and $nu(B_infinity) = inf_(A in cal(E))nu(A)$ .
 
 Then we set
 $
-nu^("ac") := nu|_B_infinity , quad nu^("s") := m=nu|_(RR^n without B_infinity)
+nu^("ac") := nu|_B_infinity , quad nu^("s") := nu|_(RR^n without B_infinity) ,
 $
-which are both Radon measures. Here, $nu^("ac")(RR^n without B_infinity) = 0 = nu^("s")(B_infinity)$ , hence, $nu^"s" bot nu^"ac"$ .
+which are both Radon measures. Here, $nu^("ac")(RR^n without B_infinity) = 0 = nu^("s")(B_infinity)$ , hence, $nu^"s" perp nu^"ac"$ .
 
-Claim: $nu^"ac" lt.double mu$ . Suppose there exists Borel set C , s.t. $mu(C) = 0, nu^"ac" eq.not 0$ .
+*Claim*: $nu^"ac" lt.double mu$ . Suppose there exists Borel set C , s.t. $mu(C) = 0, nu^"ac" eq.not 0$ .
 Then $mu(RR^n without (B_infinity without C)) <= mu(RR^n without B_infinity) + mu(C) = 0$ . So $B_infinity without C in cal(E)$ ,
 but $nu(B_infinity) eq.not inf_(A in cal(E)) nu(A)$ , which leads to a contradiction.
 
-Claim: $cal(D)_mu nu^"s" = 0$, $mu$-a.e. . Fix $alpha >0$ , consider $B_infinity supset {cal(D)_mu nu^"s" >= alpha} =: Z_alpha$ .
-Then by the definition of $B_infinity$ , $alpha mu(Z_alpha) <= nu^"s"(Z_alpha) = 0$ .
-Hence $mu(Z_alpha) = 0, forall alpha >0$ . So $mu((B_infinity sect {cal(D)_mu nu eq.not 0}) = mu(B_infinity sect (union.big_(alpha > 0, alpha in QQ) Z_alpha))) = 0$
+*Claim*: $cal(D)_mu nu^"s" = 0$, $mu$-a.e. . Fix $alpha >0$ , consider $B_infinity sect {cal(D)_mu nu^"s" >= alpha} =: Z_alpha$ .
+Then by the definition of $nu^("s")$ , $alpha mu(Z_alpha) <= nu^"s" (Z_alpha) = 0$ .
+Hence $mu(Z_alpha) = 0, forall alpha >0$ . So $mu(B_infinity sect {cal(D)_mu nu eq.not 0}) = mu(B_infinity sect (union.big_(alpha > 0, alpha in QQ) Z_alpha)) = 0$
 
 
 ]
@@ -115,17 +115,17 @@ Hence $mu(Z_alpha) = 0, forall alpha >0$ . So $mu((B_infinity sect {cal(D)_mu nu
 #cor[
 For any $A subset RR^n$ Borel,
 $
-nu(A) &= nu^("ac") + nu^("s") \
+nu(A) &= nu^("ac")(A) + nu^("s")(A) \
       &= integral_A cal(D)_mu nu^("ac") dif mu + nu^("s")(A) .
 $
 ]
 
 #def[
-$f in L^1_"loc" (RR^n, mu)$ is called locally integrable (with respect to  Lebesgue measure), if any open set $U$ , s.t. $macron(U)$ is compact, $f|_macron(U) in L^1(U, mu)$
+$f in L^1_"loc" (RR^n, mu)$ is called locally integrable (with respect to  Lebesgue measure), if any open set $U$ , s.t. $overline(U)$ is compact, $f|_overline(U) in L^1(U, mu)$
 ]
 
 #exm[
-If $f equiv 1$ , then $f in L^1_("loc")(RR^n, mu)$ but $L in.not L^1(RR^n, mu)$ .
+If $f equiv 1$ , then $f in L^1_("loc")(RR^n, mu)$ but $f in.not L^1(RR^n, mu)$ .
 ]
 
 *Notation:*
@@ -135,14 +135,14 @@ $
 
 
 #thm("Lebesgue-Besikovitch's Differentiation")[
-Let $mu in cal(M)^+(RR^+)$ , $f in L^1_"loc" (RR^n, mu)$ . Then
+Let $mu in cal(M)^+(RR^n)$ , $f in L^1_"loc" (RR^n, mu)$ . Then
 $
-(integral_(BB_r (x)) f dif mu) / (mu(BB_r (x))) arrow.long^(r arrow.br) f(x) quad "for" mu-"a.e." , x in RR^n
+(integral_(BB_r (x)) f dif mu) / (mu(BB_r (x))) arrow.long^(r arrow.br 0) f(x) quad "for" mu-"a.e." , x in RR^n
 $
 ]<thm:LBT>
 
 #prf[
-Consider $nu^(plus.minus)(A) := integral_A f^(plus.minus) dif mu$ . Here $nu^(plus.minus) in cal(M)^+(RR^+), nu^(plus.minus) lt.double mu$ , so
+Consider $nu^(plus.minus)(A) := integral_A f^(plus.minus) dif mu$ . Here $nu^(plus.minus) in cal(M)^+(RR^n), nu^(plus.minus) lt.double mu$ , so
 $
 nu^(plus.minus) (A) = integral_A cal(D)_mu nu^(plus.minus) dif mu = integral_A f^(plus.minus) dif mu .
 $
@@ -179,11 +179,11 @@ $
 ]
 
 #thm[
-In the above setting, $mu$-a.e. $x in RR^n$ is a Lebesgue point of $f$ .
+Let $mu in cal(M)^+(RR^n), 1<=p <infinity, f in L^p_("loc")(RR^n, mu)$ , then $mu$-a.e. $x in RR^n$ is a Lebesgue point of $f$ .
 ]
 
 #prf[
-Say $QQ = {q_j}$ , by @thm:LBT (Lebesgue Decomposition theorem), for any fixed $j in NN$ , we have,
+Say $QQ = {q_j}$ , by @thm:LBT (Lebesgue-Besikovitch's Differentiation), for any fixed $j in NN$ , we have,
 $
 integral.slash_(BB_r (x)) abs(f(y) - q_j)^p dif mu(y) arrow.long^(r arrow.br 0) abs(f(x) - q_j)^p
 $
@@ -196,23 +196,22 @@ $
 Then,
 $
 integral.slash_(BB_r (x)) abs(f(y) - f(x))^p dif mu(y) &<= integral.slash_(BB_r (x)) 2^(p-1) dot (abs(f(x) - q_j)^p + abs(f(y) - q_j)^p) dif mu(y) \
-&<= epsilon/2 + 2^(p-1)abs(f(x) - q_j)^p \
-&<= epsilon/2 + epsilon/2 = epsilon .
+&<= epsilon/2 + 2^(p-1)integral.slash_(BB_r (x)) abs(f(y) - q_j)^p dif mu(y) .
 $
 Take supremum both sides, then
 $
-limsup_(r arrow.br 0) integral.slash_(BB_r (x)) abs(f(y) - f(x))^p dif mu(y) < epsilon
+limsup_(r arrow.br 0) integral.slash_(BB_r (x)) abs(f(y) - f(x))^p dif mu(y) <= epsilon/2 + epsilon/2 = epsilon .
 $
 
 ]
 
-Back to Lebesgue's differentiation theorem and set $mu = cal(L)^p$ , then
+Back to Lebesgue's differentiation theorem (@thm:LBT) and set $mu = cal(L)^p$ , then
 $
 integral.slash_(BB_r (x)) f(y) dif y arrow.long^(r arrow.br 0) f(x), quad cal(L)^p -"a.e."
 $
 Take $f = bb(1)_E$ where $E subset RR^n$ is Borel. Then
 $
-(cal(L)^n (E sect BB_r(x))) / (cal(L)^n (BB_r(x))) -> bb(1)_E(x) = cases(
+(cal(L)^n (E sect BB_r (x))) / (cal(L)^n (BB_r (x))) -> bb(1)_E (x) = cases(
       1 \, & x in E \, \
       0 \, & x in.not E \,
 ) quad "for" cal(L)^n"-a.e." x in RR^n
@@ -240,7 +239,7 @@ f^* = cases(
       0 & "if else"
 )
 $
-which is called precise representation of $f$ ($f^* = f cal(L)^n$-a.e.).
+which is called precise representation of $f$ ($f^* = f, cal(L)^n$-a.e.).
 
 
 We now introduce that approximate limit in the measure-theoretic sense.
@@ -279,24 +278,24 @@ $
 But for any $y in BB_r (x)$ , we have
 $
 & 3 epsilon =abs(L - L') <= abs(f(y) - L) + abs(f(y) - L') \
-=> & BB_r (x) subset.eq {abs(f(y) - L)} union {abs(f(y) - L')} \
-=> &  cal(L)^n (BB_r (x)) <= cal(L)^n ({abs(f(y) - L)}) +  cal(L)^n ({abs(f(y) - L')}) , \
+=> & BB_r (x) subset.eq {abs(f(y) - L) >= epsilon} union {abs(f(y) - L') >= epsilon } \
+=> &  cal(L)^n (BB_r (x)) <= cal(L)^n ({abs(f(y) - L)>= epsilon}) +  cal(L)^n ({abs(f(y) - L')>= epsilon}) , \
 $
 which is a contradiction
 ]
 
 *Littlewood's 3 principles* for real analysis:
 1. Every (measurable) set is nearly a Borel set.
-2. (*Egroff*) Every sequence of (measurable) functions is nearly uniformly convergent.
+2. (*Egoroff*) Every sequence of (measurable) functions is nearly uniformly convergent.
 3. (*Lusin*) Every (measurable) functions is nearly continuous.
 
 #lem[
-Let $f: RR^n -> RR^m$ be $cal(L)^n$-measurable. Then there exist disjoint compcat sets ${K_i}_i^infinity subset RR^n$ ,
+Let $f: RR^n -> RR^m$ be $cal(L)^n$-measurable. Then there exist disjoint compact sets ${K_i}_(i=1)^infinity subset RR^n$ ,
 s,t. $cal(L)^n (RR^n without union.big.sq_(i=1)^infinity K_i) = 0$ and $f|_K_i$ is continuous.
 ]
 
 #prf[
-Let $B_i = BB_i(0)$ . By Lusin's Theorem, $exists K_1 subset B_1$ compact,
+Let $B_i = BB_i (0)$ . By Lusin's Theorem, $exists K_1 subset B_1$ compact,
 s.t. $cal(L)^n (B_1 without K_1) <= 1, f|_K_i$ continuous. Assume $K_1, K_2, dots.h , K_(n-1)$ are constructed,
 then pick compact
 $
@@ -313,21 +312,23 @@ Let $f: RR^n -> RR^m$ be $cal(L)^n$-measurable. Then $f$ is approximately contin
 ]
 
 #prf[
-We prove that $cal(L)^n$-a.e. point in $union.big.sq_(i=1)^(infinity)$ is a point of approximate continuity.
+We prove that $cal(L)^n$-a.e. point in $union.big.sq_(i=1)^(infinity) K_i$ is a point of approximate continuity.
 
 Set
 $
-G := {x in RR^n: exists i "with" x in K_i "and" lim_(r -> 0^+) (cal(L)^n (BB_r (x) without K_i)) / (cal(L)^n (BB_r (x)))} .
+G &:= {x in RR^n: exists i "with" x in K_i "and" lim_(r -> 0^+) (cal(L)^n (BB_r (x) without K_i)) / (cal(L)^n (BB_r (x))) = 0} . \
+// &= {x in union.big.sq_(i=1)^(infinity) K_i: lim_(r -> 0^+) (cal(L)^n (BB_r (x) without union.big.sq_(i=1)^(infinity) K_i)) / (cal(L)^n (BB_r (x))) = 0} .
 $
+// (i.e., $forall x in G$ , then $exists K_i$ , s.t. $x in K_i$ and $x$ in the measure-theoretic exterion of $K_i^c$ .)
 Then $Theta_(G^c) = 0$ , i.e. $cal(L)^n (RR^n without G) = 0$ . Now take any $x in G$ , then $x in K_j$ with
 $
-lim_(r -> 0^+) (cal(L)^n (BB_r (x) without K_j)) / (cal(L)^n (BB_r (x))) .
+lim_(r -> 0^+) (cal(L)^n (BB_r (x) without K_j)) / (cal(L)^n (BB_r (x))) =0 .
 $
 Fix $epsilon > 0$ . Since $f|_K_i$ is continuous, i.e. $exists delta > 0$ , s.t.
 $
 abs(f(x) - f(y)) < epsilon quad "wherever" abs(x - y) < delta, forall y in K_j .
 $
-Here, $forall in (0, delta), BB_r (x) sect {abs(f - f(x)) >= epsilon} subset.eq BB_r (x) without K_j$ .
+Here, $forall r in (0, delta), BB_r (x) sect {abs(f - f(x)) >= epsilon} subset.eq BB_r (x) without K_j$ .
 Then
 $
 (cal(L)^n (BB_r (x) sect {abs(f - f(x)) >= epsilon})) / (cal(L)^n (BB_r (x))) <= (cal(L)^n (BB_r (x) without K_j)) / (cal(L)^n (BB_r (x))) arrow.long^(r arrow.br 0) 0 .

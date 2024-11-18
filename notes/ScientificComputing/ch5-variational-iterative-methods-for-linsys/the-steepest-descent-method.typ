@@ -23,7 +23,7 @@
  return it
 }
 
-= 2 The steepest descent method
+= The steepest descent method
 <the-steepest-descent-method>
 In this section, we also assume matrix $upright(bold(A)) in bb(R)^(n times n)$ is symmetric positive definite. Starting from an initial guess $upright(bold(x))_0$ , the steepest descent method iteratively searches better approximations by finding local minimizers of the quadratic functional in one-dimensional subspaces.
 
@@ -83,11 +83,11 @@ $ alpha_1 = frac(upright(bold(r))_0^(upright(T)) upright(bold(r))_0, upright(bol
 
 Continuing the process above by repeatedly choosing the next search direction to be the steepest descent direction at the present approximation, i.e., $upright(bold(d))_(k + 1) = upright(bold(r))_k$ yields the steepest descent method,
 
-$ upright(bold(x))_(k + 1) = upright(bold(x))_k + alpha_k upright(bold(r))_k , quad "for" k = 0 , 1 , 2 , dots.h.c $<eq:4>
+$ upright(bold(x))_(k + 1) = upright(bold(x))_k + alpha_(k+1) upright(bold(r))_k , quad "for" k = 0 , 1 , 2 , dots.h.c $<eq:4>
 
 with
 
-$ alpha_k = frac(upright(bold(r))_k^(upright(T)) upright(bold(r))_k, upright(bold(r))_k^(upright(T)) upright(bold(A)) upright(bold(r))_k) = norm(upright(bold(r))_k)^2 / norm(upright(bold(r))_k)_(upright(bold(A)))^2 . $
+$ alpha_(k+1) = frac(upright(bold(r))_k^(upright(T)) upright(bold(r))_k, upright(bold(r))_k^(upright(T)) upright(bold(A)) upright(bold(r))_k) = norm(upright(bold(r))_k)^2 / norm(upright(bold(r))_k)_(upright(bold(A)))^2 . $
 
 Alternatively, we restate the steepest descent method as follows: for $k = 0 , 1 , 2 , dots.h.c$ , do
 
@@ -112,9 +112,9 @@ $ upright(bold(A)) upright(bold(e))_k = upright(bold(A)) (upright(bold(x)) - upr
 
 The steepest descent iteration implies
 
-$ norm(upright(bold(e))_(k + 1))_(upright(bold(A)))^2 &= norm(upright(bold(x)) - upright(bold(x))_(k + 1))_(upright(bold(A)))^2 = norm(upright(bold(x)) - (upright(bold(x))_k + alpha_k upright(bold(r))_k))_(upright(bold(A)))^2 = norm((upright(bold(I)) - alpha_k upright(bold(A))) upright(bold(e))_k)_(upright(bold(A)))^2 \
-&= norm(upright(bold(e))_k)_(upright(bold(A)))^2 - 2 alpha_k norm(upright(bold(A e))_k)^2 + alpha_k^2 norm(upright(bold(A e))_k)_(upright(bold(A)))^2 \
-&= norm(upright(bold(e))_k)_(upright(bold(A)))^2 - 2 alpha_k norm(upright(bold(r))_k)^2 + alpha_k^2 norm(upright(bold(r))_k)_(upright(bold(A)))^2 = norm(upright(bold(e))_k)_(upright(bold(A)))^2 - alpha_k norm(upright(bold(r))_k)^2 \
+$ norm(upright(bold(e))_(k + 1))_(upright(bold(A)))^2 &= norm(upright(bold(x)) - upright(bold(x))_(k + 1))_(upright(bold(A)))^2 = norm(upright(bold(x)) - (upright(bold(x))_k + alpha_(k+1) upright(bold(r))_k))_(upright(bold(A)))^2 = norm((upright(bold(I)) - alpha_(k+1) upright(bold(A))) upright(bold(e))_k)_(upright(bold(A)))^2 \
+&= norm(upright(bold(e))_k)_(upright(bold(A)))^2 - 2 alpha_(k+1) norm(upright(bold(A e))_k)^2 + alpha_(k+1)^2 norm(upright(bold(A e))_k)_(upright(bold(A)))^2 \
+&= norm(upright(bold(e))_k)_(upright(bold(A)))^2 - 2 alpha_(k+1) norm(upright(bold(r))_k)^2 + alpha_(k+1)^2 norm(upright(bold(r))_k)_(upright(bold(A)))^2 = norm(upright(bold(e))_k)_(upright(bold(A)))^2 - alpha_(k+1) norm(upright(bold(r))_k)^2 \
 &= (1 - frac(norm(upright(bold(r))_k)^4, norm(upright(bold(r))_k)_(upright(bold(A)))^2 norm(upright(bold(r))_k)_(upright(bold(A))^(- 1))^2)) norm(upright(bold(e))_k)_(upright(bold(A)))^2 .
 $<eq:5>
 

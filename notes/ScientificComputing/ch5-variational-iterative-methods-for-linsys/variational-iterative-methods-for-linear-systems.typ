@@ -23,7 +23,7 @@
  return it
 }
 
-Let $n > 0$ be a positive integer. Let $upright(bold(A)) = (a_(i , j))_(n times n) in bb(R)^(n times n)$ be an invertible matrix. Let $upright(bold(x)) =$ $(x_1 , x_2 , dots.h.c , x_n)^(upright(T)) in bb(R)^n$ and $upright(bold(b)) = (b_1 , b_2 , dots.h.c , b_n)^(upright(T)) in bb(R)^n$ be vectors. In this notes,we consider solving the linear system
+Let $n > 0$ be a positive integer. Let $upright(bold(A)) = (a_(i , j))_(n times n) in bb(R)^(n times n)$ be an invertible matrix. Let $upright(bold(x)) =$ $(x_1 , x_2 , dots.h.c , x_n)^(upright(T)) in bb(R)^n$ and $upright(bold(b)) = (b_1 , b_2 , dots.h.c , b_n)^(upright(T)) in bb(R)^n$ be vectors. In this notes, we consider solving the linear system
 
 $ upright(bold(A x)) = upright(bold(b)) $<eq:1>
 
