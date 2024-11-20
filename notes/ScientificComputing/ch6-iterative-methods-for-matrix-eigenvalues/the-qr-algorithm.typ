@@ -96,12 +96,6 @@ $ upright(bold(H)) = mat(delim: "[", a_(1 , 1), a_(1 , 2), a_(1 , 3), a_(1 , 4),
 
 whose $(i , j)^(t h)$ entry equals zero for $j < i - 1$ , is called an *upper Hessenberg matrix*.
 
-$ mat(delim: "[", X, X, X, X, X; X, X, X, X, X; 0, X, X, X, X; 0, 0, X, X, X; 0, 0, 0, X, X) $
-
-$ upright(bold(A)) = mat(delim: "[", a_(1 , 1), a_(1 , 2), a_(1 , 3), a_(1 , 4), dots.h.c, a_(1 , n); a_(2 , 1), a_(2 , 2), a_(2 , 3), a_(2 , 4), dots.h.c, a_(2 , n); a_(3 , 1), a_(3 , 2), a_(3 , 3), a_(3 , 4), dots.h.c, a_(3 , n); a_(4 , 1), a_(4 , 2), a_(4 , 3), a_(4 , 4), dots.down, dots.v; dots.v, dots.v, dots.v, dots.down, dots.down, a_(n - 1 , n); a_(1 , 1), a_(n , 2), a_(n , 3), dots.h.c, a_(n , n - 1), a_(n , n)) $
-
-$ upright(bold(A)) = mat(delim: "[", a_(1 , 1), a_(1 , 2), a_(1 , 3), dots.h.c, a_(1 , n); a_(2 , 1), a_(2 , 2), a_(2 , 3), dots.h.c, a_(2 , n); a_(3 , 1), a_(3 , 2), a_(3 , 3), dots.down, dots.v; dots.v, dots.v, dots.down, dots.down, a_(n - 1 , n); a_(n , 1), a_(n , 2), dots.h.c, a_(n , n - 1), a_(n , n)) $
-
 We construct a Householder matrix $tilde(upright(bold(H)))_1 in bb(R)^((n - 1) times (n - 1))$ such that
 
 $ tilde(upright(bold(H)))_1 mat(delim: "[", a_(2 , 1); a_(3 , 1); dots.v; a_(n , 1)) = mat(delim: "[", a_(2 , 1)^((1)); 0; dots.v; 0) . $
@@ -118,6 +112,7 @@ To get a similar matrix, we should right-multiply the matrix above by the orthog
 
 $ upright(bold(H))_1 upright(bold(A H))_1 = mat(delim: "[", a_(1 , 1), a_(1 , 2)^((1)), a_(1 , 3)^((1)), dots.h.c, a_(1 , n)^((1)); a_(2 , 1)^((1)), a_(2 , 2)^((2)), a_(2 , 3)^((2)), dots.h.c, a_(2 , n)^((2)); 0, a_(3 , 2)^((2)), a_(3 , 3)^((2)), dots.down, dots.v; dots.v, dots.v, dots.down, dots.down, a_(n - 1 , n)^((2)); 0, a_(n , 3)^((2)), dots.h.c, a_(n , n)^((2)), a_(n , n)^((2))) . $
 
+The construction process of a 5 by 5 upper Hessenberg matrix by the Householder matrix is illustrated below,
 $
 & mat(delim: "[", X, X, X, X, X; X, X, X, X, X; X, X, X, X, X; X, X, X, X, X; X, X, X, X, X) arrow.r mat(delim: "[", X, X, X, X, X; X, X, X, X, X; 0, X, X, X, X; 0, X, X, X, X; 0, X, X, X, X) \
 arrow.r & mat(delim: "[", X, X, X, X, X; X, X, X, X, X; 0, X, X, X, X; 0, 0, X, X, X; 0, 0, X, X, X) arrow.r mat(delim: "[", X, X, X, X, X; X, X, X, X, X; 0, X, X, X, X; 0, 0, X, X, X; 0, 0, 0, X, X) .
@@ -155,6 +150,14 @@ $ upright(bold(v)) = upright(bold(G u)) . $
 A question is for you now. Do we still have the equality if we switch the positions of $upright(bold(u))$ and $upright(bold(v))$ in the identity above?
 ]
 
+#sln[
+We have
+$
+upright(bold(G v)) = 1 / sqrt(a^2 + b^2) mat(delim: "[", a, b; - b, a) mat(delim: "[", c; 0) = mat(delim: "[", a; -b) eq.not upright(bold(u)) .
+$
+
+]
+
 The Givens rotation can also be used for the QR decomposition of a general matrix or applied to reduce a general matrix to the upper Hessenberg form except that it will be more expensive than the Housesholder reflection for dense matrices.
 
 The Givens rotation is especially suited for making orthogonal transformations for sparse vectors or matrices, only a few of whose entries are non-zero.
@@ -183,8 +186,8 @@ $ upright(bold(R))_(k + 1) = upright(bold(G))_(3 , 4) upright(bold(G))_(2 , 3) u
 
 is illustrated as follows,
 
-$ & mat(delim: "[", X, X, X, X; X, X, X, X; #none, X, X, X; #none, , X, X) arrow.long.r^(upright(bold(G))_(1 , 2^(\*))) mat(delim: "[", X, X, X, X, ; #none, X, X, X, ; #none, , X, X, X; #none, , , X, X) \
-arrow.long.r^(upright(bold(G))_(2 , 3^(\*))) & mat(delim: "[", X, X, X, X; #none, X, X, X; #none, , X, X; #none, , , X) arrow.long.r^(upright(bold(G))_(3 , 4^(\*))) mat(delim: "[", X, X, X, X, ; #none, X, X, X, ; #none, , X, X, ; #none, , , X, X; #none, , , , X) . $
+$ & mat(delim: "[", X, X, X, X; X, X, X, X; #none, X, X, X; #none, , X, X) arrow.long.r^(upright(bold(G))_(1 , 2) times) mat(delim: "[", X, X, X, X; #none, X, X, X; #none, X, X, X; #none, , X, X) \
+arrow.long.r^(upright(bold(G))_(2 , 3) times) & mat(delim: "[", X, X, X, X; #none, X, X, X; #none, , X, X; #none, , X, X) arrow.long.r^(upright(bold(G))_(3, 4) times) mat(delim: "[", X, X, X, X; #none, X, X, X; #none, , X, X; #none, , , X) . $
 
 The right-multiplying the right triangular matrix by the Given rotations
 
@@ -192,5 +195,5 @@ $ upright(bold(A))_(k + 1) = upright(bold(R))_(k + 1) upright(bold(Q))_(k + 1) =
 
 is illustrated below,
 
-$ & mat(delim: "[", X, X, X, X; #none, X, X, X; #none, , X, X; #none, , , X) arrow.long.r^(\* upright(bold(G))_(1 , 2)^(upright(T))) mat(delim: "[", X, X, X, X, ; #none, X, X, X, ; #none, , , X, X; #none, , , , X) \
-arrow.long.r^(\* upright(bold(G))_(2 , 3)^(upright(T))) & mat(delim: "[", X, X, X, X; #none, X, X, X; #none, , X, X; #none, , , X) arrow.long.r^(\* upright(bold(G))_(3 , 4)^(upright(T))) mat(delim: "[", X, X, X, X, ; #none, X, X, X, ; #none, , X, X, ; #none, , , X, X) . $
+$ & mat(delim: "[", X, X, X, X; #none, X, X, X; #none, , X, X; #none, , , X) arrow.long.r^(times upright(bold(G))_(1 , 2)^(upright(T))) mat(delim: "[", X, X, X, X; X, X, X, X; #none, , X, X; #none, , , X) \
+arrow.long.r^(times upright(bold(G))_(2 , 3)^(upright(T))) & mat(delim: "[", X, X, X, X; X, X, X, X; #none, X, X, X; #none, , , X) arrow.long.r^(times upright(bold(G))_(3 , 4)^(upright(T))) mat(delim: "[", X, X, X, X; X, X, X, X; #none, X, X, X; #none, ,X, X) . $

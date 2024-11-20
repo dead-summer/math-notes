@@ -237,7 +237,7 @@ The sequence of indices ${i_k}_(k = 1)^oo$ will become invariant as $k$ increase
 #prf[
 Let $epsilon.alt = (1 - theta) \/ 4$ . By (@eq:2) and our assumption on the eigenvalues, there exists a large integer $K > 0$ such that for any $k > K$
 
-$ 1 - epsilon.alt < abs(s_k) / abs(alpha_1 lambda_1^k) < 1 + epsilon.alt upright(" and ") norm(upright(bold(w))_k)_oo < epsilon.alt . $
+$ 1 - epsilon.alt < abs(s_k) / abs(alpha_1 lambda_1^k) < 1 + epsilon.alt "and" norm(upright(bold(w))_k)_oo < epsilon.alt . $
 Now we claim that the sequence of indices ${i_k}_(k = 1)^oo$ will change at most once for $k > K$ . Assume the index changes at $k = k_0 > K$ , i.e., $i_(k_0) eq.not i_(k_0 + 1)$ . Step 2 indicates the $i_(k_0 + 1)^(t h)$ component of the vector $upright(bold(x))_(k_0 + 1)$ has absolute value equal to one. Let
 
 $ upright(bold(w))_k = alpha_2 / alpha_1 (lambda_2 / lambda_1)^k upright(bold(v))_2 + dots.h.c + alpha_n / alpha_1 (lambda_n / lambda_1)^k upright(bold(v))_n . $
@@ -262,7 +262,7 @@ Furthermore, we get a lower bound for the $i_(k_0 + 1)^(t h)$ entry of the vecto
 
 $ abs(x_k^((i_(k_0 + 1)))) gt.eq abs(alpha_1 lambda_1^k) / abs(s_k) [abs(v_1^((i_(k_0 + 1)))) - abs(w_k^((i_(k_0 + 1))))] gt.eq frac(1 - 3 epsilon.alt, 1 + epsilon.alt) > 1 - 4 epsilon.alt = theta quad "for" k gt.eq k_0 + 1 . $
 
-The index will be fixed for all $k gt.eq k_0 + 1$ , i.e., $i_k = i_(k_0 + 1)$ , by Step 2 . Otherwise, we will have $abs(x_k^(i_(k_0 + 1))) < theta$ right after the change. This is a contradiction.
+The index will be fixed for all $k gt.eq k_0 + 1$ , i.e., $i_k = i_(k_0 + 1)$ , by Step 2 . Otherwise, we will have $abs(x_k^((i_(k_0 + 1)))) < theta$ right after the change. This is a contradiction.
 ]
 
 #prp[
@@ -272,7 +272,7 @@ The sign of $s_k / lambda_1^k$ will never change when $k$ becomes sufficiently l
 #prf[
 Let $epsilon.alt = (1 - theta) \/ 4$ . By the previous proposition, we know there exists a large integer $K > 0$ such that for any $k > K$ , the index $i_k$ becomes invariant and
 
-$ 1 - epsilon.alt < abs(s_k) / abs(alpha_1 lambda_1^k) < 1 + epsilon.alt , #h(0em) norm(upright(bold(w))_k)_oo < epsilon.alt . $
+$ 1 - epsilon.alt < abs(s_k) / abs(alpha_1 lambda_1^k) < 1 + epsilon.alt , quad norm(upright(bold(w))_k)_oo < epsilon.alt . $
 
 Assume $i_k = i_(k_0) + 1$ for all $k > K$ . By Step 2, we have
 
@@ -286,7 +286,7 @@ and
 
 $ abs(v_1^((i_(k_0 + 1)))) gt.eq abs(s_k) / abs(alpha_1 lambda_1^k) abs(x_k^((i_(k_0 + 1)))) - abs(w_k^((i_(k_0 + 1)))) gt.eq (1 - epsilon.alt) theta - epsilon.alt gt.eq theta / 2 , $
 
-provided that $theta$ is a sufficiently large number in the interval $(1 \/ 2 , 1)$ . This means that the $i_k^(t h)$ entry of the eigenvector $upright(bold(v))_1$ is non-zero. We rewrite @eq:10) as
+provided that $theta$ is a sufficiently large number in the interval $(1 \/ 2 , 1)$ . This means that the $i_k^(t h)$ entry of the eigenvector $upright(bold(v))_1$ is non-zero. We rewrite (@eq:10) as
 
 $ v_1^((i_(k_0 + 1))) + w_k^((i_(k_0 + 1))) = frac(s_k, alpha_1 lambda_1^k) x_k^((i_(k_0 + 1))) . $
 
@@ -295,8 +295,8 @@ Note that $v_1^((i_(k_0 + 1))) + w_k^((i_(k_0 + 1)))$ and $v_1^((i_(k_0 + 1)))$ 
 
 As a result of the proposition above, together with (@eq:2), we get
 
-$ lim_(k arrow.r oo) frac(s_k, alpha_1 lambda_1^k) = 1 #h(0em) upright(" or ") #h(0em) lim_(k arrow.r oo) frac(s_k, alpha_1 lambda_1^k) = - 1 . $
+$ lim_(k arrow.r oo) frac(s_k, alpha_1 lambda_1^k) = 1 quad "or" quad lim_(k arrow.r oo) frac(s_k, alpha_1 lambda_1^k) = - 1 . $
 
 and correspondingly
 
-$ lim_(k arrow.r oo) upright(bold(x))_k = upright(bold(v))_1 #h(0em) upright(" or ") #h(0em) lim_(k arrow.r oo) upright(bold(x))_k = - upright(bold(v))_1 $
+$ lim_(k arrow.r oo) upright(bold(x))_k = upright(bold(v))_1 quad "or" quad lim_(k arrow.r oo) upright(bold(x))_k = - upright(bold(v))_1 $
