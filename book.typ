@@ -70,6 +70,13 @@
       - #chapter("notes/ScientificComputing/ch6-iterative-methods-for-matrix-eigenvalues/two-methods-for-symmetric-matrices.typ")[Two Methods for Symmetric Matrices]
       - #chapter("notes/ScientificComputing/ch6-iterative-methods-for-matrix-eigenvalues/stability-of-eigenvalue-computation.typ")[Stability of Eigenvalue Computation]
       - #chapter("notes/ScientificComputing/ch6-iterative-methods-for-matrix-eigenvalues/singular-value-decomposition.typ")[Singular Value Decomposition]
+    - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/iterative-methods-for-nonlinear-sys.typ")[Iterative Methods for Nonlinear Systems]
+      - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/basic-iterative-methods.typ")[Basic Iterative Methods]
+      - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-fixed-point-method.typ")[The Fixed Point Method]
+      - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-exact-newton-method.typ")[The Exact Newton Method]
+      - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-quasi-newton-methods.typ")[The Quasi-Newton Methods]
+      - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-broyden-quasi-newton-method.typ")[The Broyden Quasi-Newton Method]
+      - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-nonlinear-least-squares-problem.typ")[The Nonlinear Least Squares Problem]
   
 
     #suffix-chapter("notes/ScientificComputing/appendix/vector-and-matrix-norms.typ")[Appendix. Vector and Matrix Norms]
