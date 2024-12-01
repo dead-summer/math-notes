@@ -18,6 +18,8 @@
       - #chapter("notes/Analysis/ch1-measures/measures.typ")[Measures]
       - #chapter("notes/Analysis/ch1-measures/construct-of-measures.typ")[Construct of Measures]
       - #chapter("notes/Analysis/ch1-measures/1-d-lebesgue-measure.typ")[1-D Lebesgue Measure]
+    - #chapter("notes/Analysis/ch2-integration/integration.typ")[Integration]
+      - #chapter("notes/Analysis/ch2-integration/measurable-functions.typ")[Measurable Functions]
     - #chapter("notes/Analysis/ch3-differentiation/differentiation.typ")[Differentiation]
       - #chapter("notes/Analysis/ch3-differentiation/differentiation-of-measures.typ")[Differentiation of Measures]
       - #chapter("notes/Analysis/ch3-differentiation/lebesgue-decomposition.typ")[Lebesgue Decomposition]
@@ -77,6 +79,14 @@
       - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-quasi-newton-methods.typ")[The Quasi-Newton Methods]
       - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-broyden-quasi-newton-method.typ")[The Broyden Quasi-Newton Method]
       - #chapter("notes/ScientificComputing/ch7-iterative-methods-for-nonlinear-sys/the-nonlinear-least-squares-problem.typ")[The Nonlinear Least Squares Problem]
+    - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/polynomial-interpolation.typ")[Polynomial Interpolation]
+      - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/the-lagrange-interpolation.typ")[The Lagrange Interpolation]
+      - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/newton-divided-difference-formula.typ")[Newton Divided Difference Formula]
+      - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/the-hermite-interpolation.typ")[The Hermite Interpolation]
+      - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/runge-phenomenon.typ")[Runge Phenomenon]
+      - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/the-spline-interpolation.typ")[The Spline Interpolation]
+      - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/the-periodic-c2-cubic-spline.typ")[The Periodic C^2 Cubic Spline]
+      - #chapter("notes/ScientificComputing/ch8-polynomial-interpolation/trigonometric-polynomial-interpolation.typ")[Trigonometric Polynomial Interpolation]
   
 
     #suffix-chapter("notes/ScientificComputing/appendix/vector-and-matrix-norms.typ")[Appendix. Vector and Matrix Norms]
