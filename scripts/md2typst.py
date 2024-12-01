@@ -60,7 +60,7 @@ def convert_markdown_to_typst(markdown_file):
         file.write(new_content)
     
     # 使用 Pandoc 将 Markdown 转换为 Typst
-    subprocess.run(['pandoc', '-f', 'markdown', '-t', 'typst', '-o', typst_file, temp_md_file], check=True)
+    subprocess.run(['pandoc', '-f', 'markdown', '-t', 'typst', '--wrap=none', '-o', typst_file, temp_md_file], check=True)
 
     # 删除临时文件（可选）
     os.remove(temp_md_file)
