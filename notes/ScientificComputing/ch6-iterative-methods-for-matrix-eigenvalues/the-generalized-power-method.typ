@@ -100,7 +100,7 @@ Let $upright(bold(A)) in bb(R)^(n times n)$ be a real square matrix. Assume the 
 
 $ abs(lambda_1) > abs(lambda_2) > dots.h.c > abs(lambda_(n - 1)) > abs(lambda_n) > 0 . $
 
-Denote by $upright(bold(v))_1 , upright(bold(v))_2 , dots.h.c , upright(bold(v))_n$ the eigenvectors associated with the eigenvalues $lambda_1 , lambda_2 , dots.h.c , lambda_n$ , respectively. We consider applying the generalized power method to simultaneously find all eigenvalues of the matrix A. Let
+Denote by $upright(bold(v))_1 , upright(bold(v))_2 , dots.h.c , upright(bold(v))_n$ the eigenvectors associated with the eigenvalues $lambda_1 , lambda_2 , dots.h.c , lambda_n$ , respectively. We consider applying the generalized power method to simultaneously find all eigenvalues of the matrix $upright(bold(A))$. Let
 
 $ upright(bold(X))_0 = [upright(bold(x))_0^((1)) , upright(bold(x))_0^((2)) , dots.h.c , upright(bold(x))_0^((n - 1)) , upright(bold(x))_0^((n))] in bb(R)^(n times n) $
 

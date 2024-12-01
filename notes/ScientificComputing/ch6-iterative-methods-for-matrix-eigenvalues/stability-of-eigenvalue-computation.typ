@@ -57,19 +57,19 @@ $ (mu upright(bold(I)) - upright(bold(Lambda))) upright(bold(z)) = upright(bold(
 
 This implies
 
-$ norm((mu upright(bold(I)) - upright(bold(Lambda))) upright(bold(z))) lt.eq norm(upright(bold(T))^(- 1)) norm(upright(bold(T))) norm(delta upright(bold(A))) norm(delta upright(bold(A))) norm(upright(bold(z))) . $
+$ norm((mu upright(bold(I)) - upright(bold(Lambda))) upright(bold(z))) lt.eq norm(upright(bold(T))^(- 1)) norm(upright(bold(T))) norm(delta upright(bold(A))) norm(upright(bold(z))) . $
 
 In the 2-norm, we have
 
-$ norm(upright(bold(z)))_2 min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq [sum_(i = 1)^n (mu - lambda_i)^2 z_i^2]^(1 \/ 2) lt.eq norm((mu upright(bold(I)) - upright(bold(Lambda))) upright(bold(z)))_2 . $
+$ norm(upright(bold(z)))_2 min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq [sum_(i = 1)^n (mu - lambda_i)^2 z_i^2]^(1 \/ 2) = norm((mu upright(bold(I)) - upright(bold(Lambda))) upright(bold(z)))_2 . $
 
 This yields
 
-$ norm(upright(bold(z)))_2 min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_2 norm(upright(bold(T)))_2 norm(parallel delta upright(bold(A)))_2 norm(upright(bold(z)))_2 . $
+$ norm(upright(bold(z)))_2 min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_2 norm(upright(bold(T)))_2 norm(delta upright(bold(A)))_2 norm(upright(bold(z)))_2 . $
 
 Since $norm(upright(bold(z)))_2 eq.not 0$ , we obtain
 
-$ min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_2 norm(upright(bold(T)))_2 norm(parallel delta upright(bold(A)))_2 . $
+$ min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_2 norm(upright(bold(T)))_2 norm(delta upright(bold(A)))_2 . $
 
 In the 1-norm, we have
 
@@ -77,11 +77,11 @@ $ norm(upright(bold(z)))_1 min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm
 
 This yields
 
-$ norm(upright(bold(z)))_1 min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_1 norm(upright(bold(T)))_1 norm(parallel delta upright(bold(A)))_1 norm(upright(bold(z)))_1 . $
+$ norm(upright(bold(z)))_1 min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_1 norm(upright(bold(T)))_1 norm(delta upright(bold(A)))_1 norm(upright(bold(z)))_1 . $
 
 Since $norm(upright(bold(z)))_1 eq.not 0$ , we obtain
 
-$ min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_1 norm(upright(bold(T)))_1 norm(parallel delta upright(bold(A)))_1 . $
+$ min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_1 norm(upright(bold(T)))_1 norm(delta upright(bold(A)))_1 . $
 
 In the $oo$ -norm, let $k$ be the index such that
 
@@ -93,11 +93,11 @@ $ norm(upright(bold(z)))_oo min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq abs
 
 This yields
 
-$ norm(upright(bold(z)))_oo min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_oo norm(upright(bold(T)))_oo norm(parallel delta upright(bold(A)))_oo norm(upright(bold(z)))_oo . $
+$ norm(upright(bold(z)))_oo min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_oo norm(upright(bold(T)))_oo norm(delta upright(bold(A)))_oo norm(upright(bold(z)))_oo . $
 
 Since $norm(upright(bold(z)))_oo eq.not 0$ , we obtain
 
-$ min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_oo norm(upright(bold(T)))_oo norm(parallel delta upright(bold(A)))_oo . $
+$ min_(1 lt.eq i lt.eq n) abs(mu - lambda_i) lt.eq norm(upright(bold(T))^(- 1))_oo norm(upright(bold(T)))_oo norm(delta upright(bold(A)))_oo . $
 ]
 
 #cor[
@@ -135,7 +135,7 @@ $
 
 We call
 
-$ kappa (upright(bold(A)) , lambda) lt.eq frac(norm(upright(bold(y))) norm(upright(bold(x))), abs(upright(bold(y))^(upright(H)) upright(bold(x)))) $
+$ kappa (upright(bold(A)) , lambda) = frac(norm(upright(bold(y))) norm(upright(bold(x))), abs(upright(bold(y))^(upright(H)) upright(bold(x)))) $
 
 as the _eigenvalue condition number_. Since
 
@@ -157,23 +157,23 @@ $ upright(bold(Y))^(upright(H)) upright(bold(A)) = upright(bold(Lambda)) upright
 
 In this case, the eigenvalue condition number is simply
 
-$ kappa (lambda , upright(bold(A))) = norm(upright(bold(y))) norm(upright(bold(x))) . $
+$ kappa (upright(bold(A)), lambda) = norm(upright(bold(y))) norm(upright(bold(x))) . $
 
-Since $upright(bold(x)) norm(lt.eq) upright(bold(X)) parallel$ and $norm(upright(bold(y))) lt.eq norm(upright(bold(X))^(- 1))$ , we have
+Since $norm(upright(bold(x))) lt.eq norm(upright(bold(X)))$ and $norm(upright(bold(y))) lt.eq norm(upright(bold(X))^(- 1))$ , we have
 
-$ kappa (lambda , upright(bold(A))) lt.eq kappa (upright(bold(X))) , $
+$ kappa (upright(bold(A)), lambda) <= kappa (upright(bold(X))) , $
 
 i.e., the individual eigenvalue condition number is bounded by the condition number of the eigenvector matrix.
 
 Let
 
-$ upright(bold(A)) = mat(delim: "(", - a_1, 1, , , ; - a_2, 0, 1, , ; dots.v, , dots.down, dots.down, ; dots.v, , , 0, 1; - a_n, 0, dots.h.c, dots.h.c, 0) . $
+$ upright(bold(A)) = mat(delim: "(", - a_1, 1, , , ; - a_2, 0, 1, , ; dots.v, , dots.down, dots.down, ; dots.v, , , 0, 1; - a_n, 0, dots.h.c, dots.h.c, 0) , $
 
 and
 
 $ p_n (x) = abs(x upright(bold(I)) - upright(bold(A))) = x^n + a_1 x^(n - 1) + dots.h.c + a_n . $
-In particular, when
-$ upright(bold(A)) = mat(delim: "(", 0, 1, , , ; #none, 0, 1, , ; #none, , dots.down, dots.down, ; #none, , , 0, 1; epsilon.alt, , , , 0) $
+In particular, if
+$ upright(bold(A)) = mat(delim: "(", 0, 1, , , ; #none, 0, 1, , ; #none, , dots.down, dots.down, ; #none, , , 0, 1; epsilon.alt, , , , 0) , $
 then
 $ p_n (x) = x^n - epsilon.alt . $
 

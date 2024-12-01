@@ -27,7 +27,7 @@
 <a-deflation-technique>
 For the matrix all of whose eigenvalues have different moduli, the power method can be used together with a technique called deflation to sequentially compute all of the eigenvalues of the matrix.
 
-Let $upright(bold(A))_n in bb(R)^(n times n)$ be such a matrix. Assume that we have already applied one of the power methods (for example, the Rayleigh inverse iteration) to find the an eigenvalue $lambda_m$ and the associated eigenvector $upright(bold(v))_m$ , whose 2-norm is equal to one, i.e., $norm(upright(bold(v))_m)_2$ .
+Let $upright(bold(A))_n in bb(R)^(n times n)$ be such a matrix. Assume that we have already applied one of the power methods (for example, the Rayleigh inverse iteration) to find the an eigenvalue $lambda_m$ and the associated eigenvector $upright(bold(v))_m$ , whose 2-norm is equal to one, i.e., $norm(upright(bold(v))_m)_2 = 1$ .
 
 In the next, we will see that the matrix $upright(bold(A))_n$ can be similarly transformed into a new matrix, which has the following form
 

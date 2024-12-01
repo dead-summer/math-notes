@@ -103,30 +103,34 @@ $ mat(delim: "(", #none, upright(bold(A))^(upright(T)); upright(bold(A)), ) vec(
 From this, we get
 
 $
-upright(bold(A))^(upright(T)) upright(bold(q))_i &= sigma_i upright(bold(p))_i ,\
+cases(
+upright(bold(A))^(upright(T)) upright(bold(q))_i &= sigma_i upright(bold(p))_i \, \
 upright(bold(A p))_i &= sigma_i upright(bold(q))_i .
+)
 $
 
-It is easy to see that $upright(bold(p))_i$ should be an eigenvector of $upright(bold(A))$ associated with the singular value $sigma_i$ and $upright(bold(q))_i$ should be an eigenvector of $upright(bold(A))^(upright(T))$ associated with the singular value $sigma_i$ . Thus, it is natural to choose
+It is easy to see that $upright(bold(p))_i$ should be an eigenvector of $upright(bold(A))^upright(T) upright(bold(A))$ associated with the singular value $sigma_i$ and $upright(bold(q))_i$ should be an eigenvector of $upright(bold(A)) upright(bold(A))^(upright(T))$ associated with the singular value $sigma_i$ . Thus, it is natural to choose (since $upright(bold(A))^(upright(T)) upright(bold(A)) = upright(bold(V)) upright(bold(D))^2upright(bold(V))^(upright(T)), upright(bold(A)) upright(bold(A))^(upright(T)) = upright(bold(U)) upright(bold(D))^2upright(bold(U))^(upright(T))$)
 
 $
-upright(bold(p))_i &= upright(bold(v))_i ,\
+cases(
+upright(bold(p))_i &= upright(bold(v))_i \, \
 upright(bold(q))_i &= upright(bold(u))_i .
+)
 $
 
 Similarly, for the eigenvectors associated with the negatives of the singular values, we have
 
 $
-mat(delim: "(", #none, upright(bold(A))^(upright(T)); upright(bold(A)), ) vec(upright(bold(p))_i, upright(bold(q))_i) = - sigma_i vec(upright(bold(p))_i, upright(bold(q))_i) 
+mat(delim: "(", #none, upright(bold(A))^(upright(T)); upright(bold(A)), ) vec(upright(bold(p))_i, upright(bold(q))_i) = - sigma_i vec(upright(bold(p))_i, upright(bold(q))_i) ,
 $
-
+then
 $
 cases(
 upright(bold(A))^(upright(T)) upright(bold(q))_i = - sigma_i upright(bold(p))_i \, ,
 upright(bold(A)) upright(bold(p))_i = - sigma_i upright(bold(q))_i .
 )
 $
-
+so take
 $
 cases(
 upright(bold(p))_i = - upright(bold(v))_i \, ,

@@ -53,7 +53,7 @@ $ [a_(p , q)^((k))]^2 gt.eq frac(1, n (n - 1)) Psi (upright(bold(A))_k) , $
 
 we have
 
-$ Psi (upright(bold(A))_(k + 1)) = Psi (upright(bold(A))_k) - 2 (a_(p , q)^((k)))^2 Psi (upright(bold(A))_k) lt.eq (1 - frac(2, n^2 - n)) Psi (upright(bold(A))_k) equiv mu Psi (upright(bold(A))_k) $
+$ Psi (upright(bold(A))_(k + 1)) = Psi (upright(bold(A))_k) - 2 (a_(p , q)^((k)))^2 lt.eq (1 - frac(2, n^2 - n)) Psi (upright(bold(A))_k) equiv mu Psi (upright(bold(A))_k) $
 
 with
 
@@ -209,9 +209,9 @@ Let $P_0 (lambda) = 1$ . Now we introduce a sequence
 
 $ {P_0 (lambda) , P_1 (lambda) , dots.h.c , P_n (lambda)} , $
 
-which is called the Sturm sequence.
+which is called the *Sturm sequence*.
 
-In the sequence, if $P_k (lambda) = 0$ , we assume that $P_(k - 1) (lambda)$ and $P_k (lambda)$ have the same sign while $P_k (lambda)$ and $P_(k + 1) (lambda)$ have opposite signs. For each given $lambda$ , let $S_n (lambda)$ be the times that two consecutive numbers in the Sturm sequence have the same sign. We call $S_n (lambda)$ as the Sturm function.
+In the sequence, if $P_k (lambda) = 0$ , we assume that $P_(k - 1) (lambda)$ and $P_k (lambda)$ have the same sign while $P_k (lambda)$ and $P_(k + 1) (lambda)$ have opposite signs. For each given $lambda$ , let $S_n (lambda)$ be the times that two consecutive numbers in the Sturm sequence have the same sign. We call $S_n (lambda)$ as the *Sturm function*.
 
 For $lambda > M$ , we have $S_n (lambda) = 0$ since $"sign" (P_k (lambda)) = (- 1)^k$ . For $lambda < mu$ , we have $S_n (lambda) = n$ since $"sign" (P_k (lambda)) = 1$ for all $k in { 0 , 1 , dots.h.c , n }$ .
 
