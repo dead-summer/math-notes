@@ -20,8 +20,8 @@
 
 // Fonts
 #let main-font = (
-  "Charter",
-  "Source Han Serif SC",
+  // "Charter",
+  // "Source Han Serif SC",
   // "Source Han Serif TC",
   // shiroa's embedded font
   // "Linux Libertine",
