@@ -1,26 +1,20 @@
 name: Deploy Typst Notes to GitHub Pages
 
 on:
-  # 在推送到 main 分支时触发
   push:
     branches: [ main ]
-  
-  # 允许手动触发工作流
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 确保只有一个部署作业同时运行
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # 构建作业
   build:
     runs-on: ubuntu-latest
     
@@ -28,7 +22,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # 获取完整历史以便正确计算文件修改时间
+        fetch-depth: 0
 
     - name: Setup Python
       uses: actions/setup-python@v5
@@ -38,24 +32,30 @@ jobs:
     - name: Setup Rust
       uses: dtolnay/rust-toolchain@stable
 
-    - name: Cache Rust dependencies
+    # 使用 Rust 缓存
+    - name: Install Artifact Cache
+      uses: Swatinem/rust-cache@v2
+      with:
+        # 为 shiroa 安装创建专门的缓存键
+        key: shiroa-v0.3.1-rc3
+
+    # 尝试从缓存恢复已编译的 shiroa 二进制文件
+    - name: Cache shiroa binary
+      id: cache-shiroa
       uses: actions/cache@v4
       with:
-        path: |
-          ~/.cargo/registry
-          ~/.cargo/git
-          target
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-cargo-
-            
+        path: ~/.cargo/bin/shiroa
+        key: shiroa-binary-v0.3.1-rc3-${{ runner.os }}
+
+    # 只有当缓存未命中时才编译 shiroa
     - name: Install shiroa
+      if: steps.cache-shiroa.outputs.cache-hit != 'true'
       run: |
-        cargo install --git https://github.com/Myriad-Dreamin/shiroa --tag v0.3.0 --locked shiroa
-
-        # 验证安装
+        cargo install --git https://github.com/Myriad-Dreamin/shiroa --tag v0.3.1-rc3 --locked shiroa
+        
+    - name: Verify shiroa installation
+      run: |
         shiroa --version
-
 
     - name: Install Python dependencies
       run: |
