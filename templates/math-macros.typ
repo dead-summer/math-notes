@@ -1,0 +1,26 @@
+#import "@preview/theorion:0.3.3": *
+#import cosmos.fancy: *
+
+// 基于 note-box 创建 question-box
+#let question-box = note-box.with(
+  fill: rgb("#0f766e"),
+  title: (
+    en: "Question",
+    zh: "问题"
+  ),
+  icon-name: "question", // icon to display from octicons set
+)
+
+#let claim(
+  title: (
+    en: "Claim",
+    zh: "断言"
+  ),
+  body,
+) = [#emph(theorion-i18n(title)).#sym.space#body]
+
+// 数学符号定义
+#let card = math.op("card")
+#let dist = math.op("dist")
+#let span = math.op("span")
+#let codim = math.op("codim")
