@@ -5,12 +5,12 @@
 #book-meta(
   title: "Analysis",
   summary: [
-    - #chapter("./ch1-measures/ch1-measures.typ", section: "1")[Measures]
-      - #chapter("./ch1-measures/measure-theory.typ", section: "1.1")[Motivation]
-      - #chapter("./ch1-measures/sigma-algebras.typ", section: "1.2")[Sigma Algebra]
-      - #chapter("./ch1-measures/measures.typ", section: "1.3")[Measures]
-      - #chapter("./ch1-measures/construct-of-measures.typ", section: "1.4")[Construct of Measures]
-      - #chapter("./ch1-measures/1-d-lebesgue-measure.typ", section: "1.5")[1-D Lebesgue Measure]
+    - #chapter("./ch1-measure/measure.typ", section: "1")[Measures]
+      - #chapter("./ch1-measure/measure-theory.typ", section: "1.1")[Motivation]
+      - #chapter("./ch1-measure/sigma-algebras.typ", section: "1.2")[Sigma Algebra]
+      - #chapter("./ch1-measure/measures.typ", section: "1.3")[Measures]
+      - #chapter("./ch1-measure/construct-of-measures.typ", section: "1.4")[Construct of Measures]
+      - #chapter("./ch1-measure/1-d-lebesgue-measure.typ", section: "1.5")[1-D Lebesgue Measure]
     - #chapter("./ch2-integration/integration.typ", section: "2")[Integration]
       - #chapter("./ch2-integration/measurable-functions.typ", section: "2.1")[Measurable Functions]
       - #chapter("./ch2-integration/integration-of-nonnegative-functions.typ", section: "2.2")[Integration of Nonnegative Functions]
