@@ -76,7 +76,8 @@
 
 // 尺寸配置
 #let main-size = if is-web-target { 16pt } else { 12.5pt }
-#let heading-sizes = (34pt, 30pt, 22pt, 20pt, main-size)
+// #let heading-sizes = (34pt, 30pt, 22pt, 20pt, main-size)
+#let heading-sizes = (34pt, 30pt, 22pt, main-size, main-size)
 #let list-indent = 0.5em
 
 
@@ -206,7 +207,7 @@
         #line(length: 100%, stroke: 0.6pt + dash-color)
         #v(0.1cm)
         #set align(left)
-        #set text(heading-sizes.at(it.level))
+        #set text(heading-sizes.at(it.level - 1))
         #text(dash-color)[Chapter
         #counter(heading).display(
           "1:" + it.numbering
@@ -222,7 +223,7 @@
         #line(length: 100%, stroke: 0.6pt + dash-color)
         #v(0.1cm)
         #set align(left)
-        #set text(heading-sizes.at(it.level))
+        #set text(heading-sizes.at(it.level - 1))
         #it.body
         #v(-0.5cm)
         #line(length: 100%, stroke: 0.6pt + dash-color)
@@ -238,7 +239,7 @@
   
   show heading: it => {
     let it = {
-      set text(size: heading-sizes.at(it.level))
+      set text(size: heading-sizes.at(it.level - 1))
       if is-web-target {
         heading-hash(it, hash-color: dash-color)
       } else {
@@ -252,9 +253,15 @@
       it,
     )
   }
+  // 章节开始于奇数页
   show heading.where(level: 1): it => {
       pagebreak(to: "odd", weak: true)
     it
+  }
+  // 四级标题不换行
+  show heading.where(level: 4): it => {
+    set text(heading-sizes.at(3))
+    box(it)
   }
 
   // ==========================================

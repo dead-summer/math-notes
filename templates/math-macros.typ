@@ -1,7 +1,7 @@
 #import "@preview/theorion:0.3.3": *
 #import cosmos.fancy: *
 
-// 基于 note-box 创建 question-box
+// 数学环境
 #let question-box = note-box.with(
   fill: rgb("#0f766e"),
   title: (
@@ -9,6 +9,18 @@
     zh: "问题"
   ),
   icon-name: "question", // icon to display from octicons set
+) // 基于 note-box 创建 question-box
+
+#let definition = definition.with(
+  breakable: true
+)
+
+#let theorem = theorem.with(
+  breakable: true
+)
+
+#let corollary = corollary.with(
+  breakable: true
 )
 
 #let claim(
@@ -24,3 +36,5 @@
 #let dist = math.op("dist")
 #let span = math.op("span")
 #let codim = math.op("codim")
+
+#let interior = math.circle
