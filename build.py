@@ -123,10 +123,10 @@ class NotesBuilder:
                 return True
             else:
                 stderr = result.stderr.strip()
-                if "already exists" in stderr:
-                    print(f"⚠️ {notebook['name']} 已存在构建输出，尝试清理后重试")
-                    shutil.rmtree(output_dir)
-                    return self.build_notebook(notebook)
+                # if "already exists" in stderr:
+                #     print(f"⚠️ {notebook['name']} 已存在构建输出，尝试清理后重试")
+                #     shutil.rmtree(output_dir)
+                #     return self.build_notebook(notebook)
                 print(f"❌ {notebook['name']} 构建失败:")
                 print(stderr)
                 return False
@@ -244,3 +244,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # builder = NotesBuilder(base_url='/')
+    # builder.serve(8000)
