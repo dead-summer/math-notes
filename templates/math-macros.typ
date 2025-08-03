@@ -23,6 +23,10 @@
   breakable: true
 )
 
+#let proposition = proposition.with(
+  breakable: true
+)
+
 #let claim(
   title: (
     en: "Claim",
@@ -36,5 +40,9 @@
 #let dist = math.op("dist")
 #let span = math.op("span")
 #let codim = math.op("codim")
-
 #let interior = math.circle
+#let weakTo = math.harpoon.rt
+#let graph = math.op("graph")
+
+#let ball = math.upright(math.bold("B"))
+#let imUnit = math.upright("i")
