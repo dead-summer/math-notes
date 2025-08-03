@@ -76,8 +76,7 @@
 
 // 尺寸配置
 #let main-size = if is-web-target { 16pt } else { 12.5pt }
-// #let heading-sizes = (34pt, 30pt, 22pt, 20pt, main-size)
-#let heading-sizes = (34pt, 30pt, 22pt, main-size, main-size)
+#let heading-sizes = (26pt, 22pt, 18pt, main-size, main-size)
 #let list-indent = 0.5em
 
 
