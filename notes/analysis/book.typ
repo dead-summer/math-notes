@@ -32,6 +32,8 @@
       - #chapter("./ch4-foundations-of-banach-space/separation.typ", section: "4.6")[Separation]
     - #chapter("./ch5-fundamental-theorems-and-duality/fundamental-theorems-and-duality.typ", section: "5")[Fundamental Theorems and Duality]
       - #chapter("./ch5-fundamental-theorems-and-duality/baire-category-theorem.typ", section: "5.1")[Baire Category Theorem]
+      - #chapter("./ch5-fundamental-theorems-and-duality/principle-of-uniform-boundedness-and-operator-topologies.typ", section: "5.2")[The Principle of Uniform Boundedness and Operator Topologies]
+      - #chapter("./ch5-fundamental-theorems-and-duality/the-open-mapping-theorem-and-its-consequences.typ", section: "5.3")[The Open Mapping Theorem and Its Consequences]
   ]
 )
 
