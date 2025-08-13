@@ -34,6 +34,15 @@
       - #chapter("./ch5-fundamental-theorems-and-duality/baire-category-theorem.typ", section: "5.1")[Baire Category Theorem]
       - #chapter("./ch5-fundamental-theorems-and-duality/principle-of-uniform-boundedness-and-operator-topologies.typ", section: "5.2")[The Principle of Uniform Boundedness and Operator Topologies]
       - #chapter("./ch5-fundamental-theorems-and-duality/the-open-mapping-theorem-and-its-consequences.typ", section: "5.3")[The Open Mapping Theorem and Its Consequences]
+      - #chapter("./ch5-fundamental-theorems-and-duality/adjoint-operators-in-banach-spaces.typ", section: "5.4")[Adjoint (Dual) Operators in Banach Spaces]
+      - #chapter("./ch5-fundamental-theorems-and-duality/weak-convergence.typ", section: "5.5")[Weak Convergence]
+      - #chapter("./ch5-fundamental-theorems-and-duality/the-direct-method-in-the-calculus-of-variations.typ", section: "5.6")[The Direct Method in the Calculus of Variations]
+    - #chapter("./ch6-compactness-and-spectral-theory/compactness-and-spectral-theory.typ", section: "5")[6 Compactness and Spectral Theory]
+      - #chapter("./ch6-compactness-and-spectral-theory/compact-operators.typ", section: "6.1")[Compact Operators]
+      - #chapter("./ch6-compactness-and-spectral-theory/fredholm-theory.typ", section: "6.2")[Fredholm Theory]
+      - #chapter("./ch6-compactness-and-spectral-theory/the-spectrum-of-compact-operators.typ", section: "6.3")[The Spectrum of Compact Operators]
+      - #chapter("./ch6-compactness-and-spectral-theory/the-fredholm-alternative.typ", section: "6.4")[The Fredholm Alternative]
+      - #chapter("./ch6-compactness-and-spectral-theory/hilbert-spaces.typ", section: "6.5")[Hilbert Spaces]
   ]
 )
 
