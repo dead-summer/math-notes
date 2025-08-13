@@ -136,6 +136,7 @@
 
   // 数学设置
   show math.equation: set text(weight: 400)
+  show math.equation: set block(breakable: true)
   set math.equation(numbering: (..nums) => {
     let h = counter(heading).get().first()
     numbering("(1.1)", h, ..nums)

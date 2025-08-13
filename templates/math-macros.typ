@@ -40,9 +40,16 @@
 #let dist = math.op("dist")
 #let span = math.op("span")
 #let codim = math.op("codim")
+#let coker = math.op("coker")
 #let interior = math.circle
 #let weakTo = math.harpoon.rt
 #let graph = math.op("graph")
+#let ran = math.op("ran") // the range of the operator
+#let ann(x) = $#x^circle.small$ // annihilator
+#let preann(x) = $#x _(circle.small)$ // pre-annihilator
+#let fred = math.upright("Fred")
+#let index = math.upright("index")
 
 #let ball = math.upright(math.bold("B"))
+#let disc = math.upright(math.bold("D"))
 #let imUnit = math.upright("i")
