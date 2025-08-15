@@ -6,11 +6,11 @@
   title: "Analysis",
   summary: [
     - #chapter("./ch1-measure/measure.typ", section: "1")[Measures]
-      - #chapter("./ch1-measure/measure-theory.typ", section: "1.1")[Motivation]
+      - #chapter("./ch1-measure/motivation-for-measure-theory.typ", section: "1.1")[Motivation for Measure Theory]
       - #chapter("./ch1-measure/sigma-algebras.typ", section: "1.2")[Sigma Algebra]
       - #chapter("./ch1-measure/measures.typ", section: "1.3")[Measures]
-      - #chapter("./ch1-measure/construct-of-measures.typ", section: "1.4")[Construct of Measures]
-      - #chapter("./ch1-measure/1-d-lebesgue-measure.typ", section: "1.5")[1-D Lebesgue Measure]
+      - #chapter("./ch1-measure/construction-of-measures.typ", section: "1.4")[Construction of Measures]
+      - #chapter("./ch1-measure/one-dimensional-lebesgue-stieltjes-measures.typ", section: "1.5")[One-Dimensional Lebesgue-Stieltjes Measures]
     - #chapter("./ch2-integration/integration.typ", section: "2")[Integration]
       - #chapter("./ch2-integration/measurable-functions.typ", section: "2.1")[Measurable Functions]
       - #chapter("./ch2-integration/integration-of-nonnegative-functions.typ", section: "2.2")[Integration of Nonnegative Functions]
@@ -37,7 +37,7 @@
       - #chapter("./ch5-fundamental-theorems-and-duality/adjoint-operators-in-banach-spaces.typ", section: "5.4")[Adjoint (Dual) Operators in Banach Spaces]
       - #chapter("./ch5-fundamental-theorems-and-duality/weak-convergence.typ", section: "5.5")[Weak Convergence]
       - #chapter("./ch5-fundamental-theorems-and-duality/the-direct-method-in-the-calculus-of-variations.typ", section: "5.6")[The Direct Method in the Calculus of Variations]
-    - #chapter("./ch6-compactness-and-spectral-theory/compactness-and-spectral-theory.typ", section: "5")[6 Compactness and Spectral Theory]
+    - #chapter("./ch6-compactness-and-spectral-theory/compactness-and-spectral-theory.typ", section: "5")[Compactness and Spectral Theory]
       - #chapter("./ch6-compactness-and-spectral-theory/compact-operators.typ", section: "6.1")[Compact Operators]
       - #chapter("./ch6-compactness-and-spectral-theory/fredholm-theory.typ", section: "6.2")[Fredholm Theory]
       - #chapter("./ch6-compactness-and-spectral-theory/the-spectrum-of-compact-operators.typ", section: "6.3")[The Spectrum of Compact Operators]
