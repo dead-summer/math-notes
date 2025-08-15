@@ -53,3 +53,4 @@
 #let ball = math.upright(math.bold("B"))
 #let disc = math.upright(math.bold("D"))
 #let imUnit = math.upright("i")
+#let indicator = math.upright(math.bold("1"))
