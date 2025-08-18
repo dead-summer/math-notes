@@ -8,7 +8,7 @@
 
 #definition[
 $nu : cal(F) arrow.r bb(C)$ is a complex measures, iff
-1. $nu (diameter) = 0$ ,
+1. $nu (nothing) = 0$ ,
 2. ${E_n} subset cal(F)$ disjoint $arrow.r.double nu (sum_(n = 1)^oo E_n) = sum_(n = 1)^oo nu (E_n)$ . (absolutly convergent)
 ]
 

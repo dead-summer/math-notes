@@ -15,6 +15,8 @@
       - #chapter("./ch2-integration/measurable-functions.typ", section: "2.1")[Measurable Functions]
       - #chapter("./ch2-integration/integration-of-nonnegative-functions.typ", section: "2.2")[Integration of Nonnegative Functions]
       - #chapter("./ch2-integration/integration-of-complex-functions.typ", section: "2.3")[Integration of Nonnegative Functions]
+      - #chapter("./ch2-integration/on-the-density-of-functions.typ", section: "2.4")[On the Density of Functions]
+      - #chapter("./ch2-integration/modes-of-convergence.typ", section: "2.5")[Modes of Convergence]
   
     - #chapter("./ch3-differentiation/differentiation.typ", section: "3")[Differentiation]
       - #chapter("./ch3-differentiation/differentiation-of-measures.typ", section: "3.1")[Differentiation of Measures]

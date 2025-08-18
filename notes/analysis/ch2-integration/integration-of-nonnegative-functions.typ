@@ -6,153 +6,131 @@
 
 == Integration of Nonnegative Functions
 
-Fix a measure space $(X , cal(F) , mu)$, set
+Let $(X , cal(F) , mu)$ be a measure space. We denote the set of all non-negative measurable functions $f : X arrow.r [0 , + oo]$ by $L^+$. Our objective is to define the integral for any function $f in L^+$, which will be a map from $L^+$ to the extended non-negative real line $[0 , + oo]$.
 
-$ cal(L)_(+)^0 (X , cal(F), mu) := { f : X arrow.r [0 , + oo] "measurable"} . $
+This construction, known as the #strong[Lebesgue integral];, is foundational to modern analysis. We will build it in two steps: first for simple functions, and then for all functions in $L^+$ by an approximation argument.
 
-Goal: define an integral
+=== The Integral of Simple Functions
 
-$ integral : cal(L)^0_+ arrow.r [0 , oo] . $
-
-The integral of simple functions is defined below.
+First, we define the integral for the simplest class of non-negative measurable functions.
 
 #definition[
-For simple $f in cal(L)^0_+$, with canonical representation
+The integral of a simple function $phi.alt = sum_(j = 1)^n alpha_j indicator_(E_j) (x)$ is defined as:
+$ integral_X phi.alt dif mu := sum_(j = 1)^n alpha_j mu (E_j). $
+]
 
-$  f = sum_(j = 1)^n alpha_j bb(1)_E_j $
-with $alpha_j$ distinct and $E_j$ disjoint. Define
-$
-integral_X f dif mu := sum_(j = 1)^n alpha_(j) mu (E_j) .
-$
+By convention, we set $0 dot.op oo = 0$. This definition is analogous to the area of a collection of rectangles, where $alpha_j$ is the height and $mu (E_j)$ is the measure of the base.
 
+#proposition[
+The integral for simple functions in $L^+$ has the following properties:
+1. #strong[Linearity:] For any simple functions $phi.alt , psi in L^+$ and any constant $c gt.eq 0$:
+  $ integral_X (phi.alt + psi) dif mu = integral_X phi.alt dif mu + integral_X psi dif mu, $
+  $ integral_X (c phi.alt) dif mu = c integral_X phi.alt dif mu. $
+2. #strong[Monotonicity:] If $phi.alt , psi in L^+$ are simple functions such that $phi.alt (x) lt.eq psi (x)$ for all $x in X$, then: $ integral_X phi.alt dif mu lt.eq integral_X psi dif mu. $
+3. #strong[Measure Property:] For a simple function $phi.alt in L^+$, the set function $nu (A) = integral_A phi.alt dif mu := integral_X phi.alt indicator_A dif mu$ for $A in cal(F)$ defines a measure on $(X , cal(F))$.
+]
+
+#proof[
+To prove additivity, let $phi.alt = sum_(i = 1)^n a_i indicator_(E_i)$ and $psi = sum_(j = 1)^m b_j indicator_(F_j)$. We consider a common refinement of the partitions, ${ E_i inter F_j }$, on which $phi.alt + psi$ has the constant value $a_i + b_j$.
+$ phi.alt + psi = sum_(i = 1)^n sum_(j = 1)^m (a_i + b_j) indicator_(E_i inter F_j). $
+Using the finite additivity of $mu$ (e.g., $mu (E_i) = sum_j mu (E_i inter F_j)$), the result follows by direct calculation: Homogeneity and monotonicity are proven similarly.
+]
+
+
+=== The Integral of General Nonnegative Functions
+
+A key theorem in measure theory states that any non-negative measurable function $f in L^+$ can be expressed as the pointwise limit of a monotonically increasing sequence of simple functions. This allows us to extend the definition of the integral to all functions in $L^+$.
+
+#definition[
+For any function $f in L^+$, its #strong[Lebesgue integral] with respect to the measure $mu$ is defined as:
+$ integral_X f dif mu := sup {integral_X phi.alt dif mu : 0 lt.eq phi.alt lt.eq f , phi.alt "is a simple function"}. $
+]
+
+This definition is consistent with the previous one for simple functions and inherits its properties of linearity and monotonicity.
+
+#theorem(title: "Monotone Convergence Theorem")[
+Let ${ f_n }_(n = 1)^oo$ be a sequence of functions in $L^+$ such that $0 lt.eq f_1 (x) lt.eq f_2 (x) lt.eq dots.h$ for all $x in X$. Let $f (x) = lim_(n arrow.r oo) f_n (x)$. Then $f$ is measurable and:
+$ integral_X f dif mu = lim_(n arrow.r oo) integral_X f_n dif mu. $
+In other words, the integral and the limit can be interchanged for a monotone sequence of non-negative functions.
+]
+
+#proof[
+- *$gt.eq$:* Since $f_n lt.eq f$ for every $n$, the monotonicity of the integral implies $integral_X f_n dif mu lt.eq integral_X f dif mu$. Taking the limit as $n arrow.r oo$, we get $lim_(n arrow.r oo) integral_X f_n dif mu lt.eq integral_X f dif mu$.
+
+- *$lt.eq$:* Let $phi.alt$ be any simple function such that $0 lt.eq phi.alt lt.eq f$, and let $alpha in (0 , 1)$. Define the sets $E_n = { x in X : f_n (x) gt.eq alpha phi.alt (x) }$. Since ${ f_n }$ is increasing, ${ E_n }$ is an increasing sequence of sets, and $union.big E_n = X$.
+
+  By monotonicity,
+  $ integral_X f_n dif mu gt.eq integral_(E_n) f_n dif mu gt.eq alpha integral_(E_n) phi.alt dif mu. $
+  As $n arrow.r oo$, $integral_(E_n) phi.alt dif mu arrow.r integral_(union E_n) phi.alt dif mu = integral_X phi.alt dif mu$ by continuity of the measure $nu (A) = integral_A phi.alt dif mu$. Thus,
+  $ lim_(n arrow.r oo) integral_X f_n dif mu gt.eq alpha integral_X phi.alt dif mu. $
+  This holds for any $alpha in (0 , 1)$, so we can let $alpha arrow.r 1^(-)$, giving
+  $ lim_(n arrow.r oo) integral_X f_n dif mu gt.eq integral_X phi.alt dif mu. $
+  Since this is true for any simple function $phi.alt lt.eq f$, taking the supremum over all such $phi.alt$ yields $lim_(n arrow.r oo) integral_X f_n dif mu gt.eq integral_X f dif mu$. Combining both inequalities proves the theorem.
+]
+
+#corollary[
+For a sequence ${ h_n }_(n = 1)^oo$ of functions in $L^+$, we have:
+$ integral_X (sum_(n = 1)^oo h_n) dif mu = sum_(n = 1)^oo integral_X h_n dif mu. $
+]
+
+#proof[
+Apply the Monotone Convergence Theorem to the sequence of partial sums $f_k = sum_(n = 1)^k h_n$. This is a non-decreasing sequence of non-negative measurable functions.
+]
+
+#theorem(title: "Fatou's Lemma")[
+For any sequence of functions ${ f_n }_(n = 1)^oo$ in $L^+$, we have:
+$ integral_X (liminf_(n arrow.r oo) f_n) dif mu lt.eq liminf_(n arrow.r oo) integral_X f_n dif mu. $
+]
+
+#proof[
+For each $k in bb(N)$, define the function $g_k (x) = inf_(n gt.eq k) f_n (x)$. The sequence ${ g_k }_(k = 1)^oo$ is a non-decreasing sequence of non-negative measurable functions. By definition,
+$ lim_(k arrow.r oo) g_k (x) = sup_k (inf_(n gt.eq k) f_n (x)) = liminf_(n arrow.r oo) f_n (x). $
+Applying the Monotone Convergence Theorem to ${ g_k }$ gives:
+$ integral_X (lim_(k arrow.r oo) g_k) dif mu = lim_(k arrow.r oo) integral_X g_k dif mu. $
+By construction, $g_k lt.eq f_m$ for any $m gt.eq k$, so $integral_X g_k dif mu lt.eq integral_X f_m dif mu$. This implies $integral_X g_k dif mu lt.eq inf_(m gt.eq k) integral_X f_m dif mu$. Taking the limit as $k arrow.r oo$:
+$ lim_(k arrow.r oo) integral_X g_k dif mu lt.eq lim_(k arrow.r oo) (inf_(m gt.eq k) integral_X f_m dif mu) = liminf_(k arrow.r oo) integral_X f_k dif mu. $
+Combining these steps yields the lemma.
+]
+
+=== Properties Related to "Almost Everywhere"
+
+A key concept in measure theory is that sets of measure zero are "negligible."
+
+#definition[
+A property is said to hold #strong[almost everywhere] (a.e.) with respect to a measure $mu$ if the set of points where the property fails has measure zero.
 ]
 
 #proposition[
-The integral $integral : {"simple functions in" cal(L)^0_+} arrow.r [0 , oo]$ is $RR_+$ linear and monotone: $phi lt.eq psi arrow.r.double integral phi lt.eq integral psi$.Moreover, $A arrow.r.bar integral_A phi dif mu equiv integral_X phi bb(1)_A dif mu$ defines a measure.
+For a function $f in L^+$, we have: $ integral_X f dif mu = 0 quad arrow.l.r.double quad f (x) = 0 "for" mu "-a.e." x in X. $
 ]
 
 #proof[
-Additivity: Let $phi = sum_(j = 1)^n a_j bb(1)_(epsilon_j) , psi = sum_(j = 1)^m b_j bb(1)_(F_j)$ s.t. ${E_j}_1^n , {F_k}_1^m$ are disjoint and
+- *$arrow.r.double$:* Suppose $integral_X f dif mu = 0$. The set ${ x : f (x) > 0 } = union.big_(n = 1)^oo { x : f (x) > 1 \/ n }$. For any $n$, let $E_n = { x : f (x) > 1 \/ n }$. Then $0 = integral_X f dif mu gt.eq integral_(E_n) f dif mu gt.eq integral_(E_n) 1 / n dif mu = 1 / n mu (E_n)$. This implies $mu (E_n) = 0$ for all $n$. By subadditivity, $mu ({ x : f (x) > 0 }) lt.eq sum_(n = 1)^oo mu (E_n) = 0$.
 
-$ union.big_(j = 1)^n E_j = X = union.big_(k = 1)^m F_k . $
-
-Then $phi + psi = sum_(i = 1)^n sum_(j = 1)^m (a_i + b_j) bb(1)_(E_i inter F_j)$. Moreover,
-
-$ integral_X phi dif mu + integral_X psi dif mu & = sum_(i = 1)^n a_i mu (E_i) + sum_(j = 1)^m b_j mu (F_j)\
- & = sum_(i = 1)^n a_i sum_(j = 1)^m mu (E_i inter F_j) + sum_(j = 1)^m b_j sum_(i = 1)^n mu (E_i inter F_j)\
- & = sum_(i = 1)^n sum_(j = 1)^m (a_i + b_j) mu (E_i inter E_j) = integral_X (phi + psi) dif mu . $
+- *$arrow.l.double$:* Suppose $f = 0$ a.e. Let $phi.alt$ be any simple function such that $0 lt.eq phi.alt lt.eq f$. Then $phi.alt$ must also be 0 a.e. If $phi.alt = sum alpha_j upright(bold(1))_(E_j)$, then for any $alpha_j > 0$, we must have $mu (E_j) = 0$. Thus, $integral_X phi.alt dif mu = sum alpha_j mu (E_j) = 0$. Since this holds for all simple functions $phi.alt lt.eq f$, the supremum in the definition of the integral is $0$. Therefore, $integral_X f dif mu = 0$.
 ]
 
-
-
-Recall : $f in cal(L)^0_+$ can be approximately monotonically from below by simple functions.
-
-We now can extend the integral to all functions $f in cal(L)^0_+$. Define
-$ integral_X f dif mu &:= sup {integral_X phi dif mu : 0 lt.eq phi lt.eq f , phi "is simple"} \
-&equiv sup {sum_(j = 1)^n alpha_j mu (E_j), "if" phi = sum_1^n alpha_j L_(E_j)} .
-$
-
-Note: If $lambda gt.eq 0 , integral_X (lambda f) dif mu = lambda integral_X f dif mu$. If $f lt.eq g$ in $cal(L)_(+)^0$, then $integral_X f dif mu lt.eq integral_X g dif mu$.
-
-#theorem(title: [Monotone Convergence Theorem])[
-Let ${f_n} subset cal(L)_(+)^0$ be s.t. $f_n lt.eq f_(n + 1)$, then
-
-$ integral_X lim_(n arrow.r oo) f_n dif mu = lim_(n arrow.r oo) integral_X f_n dif mu . $
-]<thm:MCT>
-
-#proof[
-$lim_(n arrow.r oo) f_n = : f$ exists since $f_n$ is an increasing and $[0 , oo]$-valued function, and so is ${integral f_n}$ (possibly equal to $oo$ ) .
-
-#box(stroke: .5pt, inset: 3pt, baseline: 25%,)[$>=$] : $integral f dif mu gt.eq integral_X f_n dif mu , forall n in bb(N)$. Send $n -> infinity$, the inequation still preserves.
-
-#box(stroke: .5pt, inset: 3pt, baseline: 25%,)[$<=$] : Pick any $0 < alpha < 1$ and any simple function $ phi in cal(L)^0_+$ with $0 lt.eq phi lt.eq f $. Consider ${f_n gt.eq alpha phi} = : E_n$, then
-$ E , subset E_2 subset dots.h.c "with" union.big_(n = 1)^oo E_n = X . $
-Observe that $integral_(E_n) phi dif mu arrow.r integral_X phi dif mu$, since $rho : A arrow.r.bar integral_A phi dif mu$ is a measure, $lim_(n arrow.r oo) rho (E_n) = rho (union.big_(n = 1)^infinity E_n) = rho (X)$. But
-$
-integral_(E_n) phi dif mu &= integral_X phi bb(1)_(E_n) dif mu \
-& = integral_X phi bb(1)_({f_n gt.eq alpha phi}) dif mu\
- & lt.eq integral_X (alpha^(- 1) f_n) bb(1)_({f_n gt.eq alpha phi}) dif mu\
- & lt.eq 1 / alpha integral_X f_n dif mu
-$
-Sending  $alpha -> 1$, taking the supremum over all simple $phi lt.eq f$, and sending $n arrow.r oo$, we obtain that $integral_X f dif mu lt.eq lim_(n arrow.r oo) integral_X f_n dif mu$.
-]
-
-
-
-The monotonicity in the theorem is essential, otherwise take
-
-$ f_n = cases(
-- n^2 x + 1 / n \, & 0 < x < 1 /n \
-0 \, & x gt.eq 1 / n .
-)
-$
-then $f_(n) arrow.r f equiv 0$ on $X =\(0 , oo)$, but $integral_0^oo f_(n) dif x equiv 1 / 2 eq.not 0 = integral_0^oo f dif x$.
-
-#corollary[
-For ${h_n} subset cal(L)^0_+$, we have
-
-$ integral_X (sum_(n = 1)^oo h_n) dif mu = sum_(n = 1)^oo integral_X h_n dif mu . $
+#proposition(title: "Markov's Inequality")[
+For any $f in L^+$ and any constant $k > 0$: $ mu ({ x in X : f (x) gt.eq k }) lt.eq 1 / k integral_X f dif mu. $
 ]
 
 #proof[
-Take $f_n equiv sum_(i = 1)^n h_i$ in @thm:MCT.
+We observe that $k dot indicator_({ f gt.eq k }) lt.eq f$. By monotonicity of the integral,
+$ integral_X k dot.op indicator_({ f gt.eq k }) dif mu lt.eq integral_X f dif mu. $
+The left side is $k dot.op mu ({ f gt.eq k })$. Dividing by $k$ yields the result.
 ]
-
-
-A property holds "$mu$-a.e." iff the set ${"the property does not hold"}$ is $mu$-null.
 
 #proposition[
-For $f in cal(L)^0_+ , integral_X f dif mu = 0 arrow.l.r.double f = 0$, a.e. .
+If ${ f_n } subset L^+$ is a non-decreasing sequence of functions and $f_n (x) arrow.r f (x)$ for $mu$-a.e. $x in X$, then $lim_(n arrow.r oo) integral_X f_n dif mu = integral_X f dif mu$.
 ]
 
 #proof[
-#box(stroke: .5pt, inset: 3pt, baseline: 25%,)[$arrow.l.double$] : trivial.
-
-#box(stroke: .5pt, inset: 3pt, baseline: 25%,)[$arrow.r.double$] : Note that ${ f eq.not 0 } = union.big_(n = 1)^oo {f > 1 / n}$, then
-$ & 0 lt.eq integral_({f > 1 / n}) f dif mu lt.eq integral_X f dif mu = 0 \
-=> & 1 / n mu {f > 1 / n} = 0 , forall n in bb(N) .
-$
-Thus $mu ({ f eq.not 0 }) lt.eq sum_(n = 1)^oo mu {f > 1 / n} = 0$.
-]
-
-Note: The Markov/Chebyshev inequation:
-
-$ mu { lr(|f|) gt.eq k } & = integral_X bb(1)_({ lr(|f|) gt.eq k }) dif mu\
- & lt.eq integral_X lr(|f|) / k bb(1)_({ lr(|f|) gt.eq k }) dif mu\
- & lt.eq 1 / k integral_X lr(|f|) dif mu . $
-
-#corollary[
-If ${f_n} , f subset cal(L)^0_+ , f_n arrow.tr f, mu$-a.e., then
-
-$ lim_(n arrow.r oo) integral_X f_n dif mu = integral_X f dif mu . $
-]
-
-#proof[
-If $lim_(n arrow.r oo) f_n = f$ for $x in E$ where $mu (E^c) = 0$, then $f - f bb(1)_E = 0 "a.e." f_n - f bb(1)_E = 0 "a.e."$.
+If $lim_(n arrow.r oo) f_n = f$ for $x in E$ where $mu (E^c) = 0$, then $f - f bb(1)_E = 0$ a.e. and $ f_n - f bb(1)_E = 0$ a.e.
 so
 $
-integral_X f - f bb(1)_E dif mu = 0 , quad integral_X f_n - f_n bb(1)_E dif mu = 0 .
+integral_X f - f bb(1)_E dif mu = 0 , quad integral_X f_n - f_n bb(1)_E dif mu = 0.
 $
-By the @thm:MCT, we have
-$
-integral_X f dif mu = integral_X f bb(1)_E dif mu = lim_(n arrow.r oo) integral_X f_n bb(1)_E dif mu = lim_(n arrow.r oo) integral_X f_n dif mu . $
-]
-
-#lemma(title: [Fatou's Lemma])[
-Let ${f_n} subset cal(L)^0_+$, then
-
-$ integral_X liminf_(n arrow.r oo) f_n dif mu lt.eq liminf_(n arrow.r oo) integral_X f_n dif mu . $
-]
-
-#proof[
-Set $g_k = inf_(n gt.eq k) f_n$, then $sup_(k in bb(N)) g_k = liminf_(n arrow.r oo) f_n = lim_(k arrow.r oo) g_k$.
-
-
-Then
-$
-"LHS" &= integral_X lim_(k arrow.r oo) g_k dif mu \
-& =^("MST") lim_(k arrow.r oo) integral_X g_k dif mu\
-& lt.eq liminf_(n arrow.r oo) integral_X f_k dif mu = "RHS"
-$
+By the Monotone Convergence Theorem, we have
+$ integral_X f dif mu = integral_X f bb(1)_E dif mu = lim_(n arrow.r oo) integral_X f_n bb(1)_E dif mu = lim_(n arrow.r oo) integral_X f_n dif mu. $
 ]
 
