@@ -170,7 +170,7 @@ Let $X$ and $Y$ be normed vector spaces and $T in cal(L) (X , Y)$ be a linear op
 ]
 
 #proof[
-- #strong[(1)) $=>$ (2):] If $T$ is an open map, then the image of the open unit ball $ball_X$, which is an open set containing $0 in X$, must be an open set in $Y$ containing $T (0) = 0 in Y$. By definition of an open set in a normed space, $T (ball_X)$ must contain an open ball centered at $0$, which is condition (2).
+- #strong[(1) $=>$ (2):] If $T$ is an open map, then the image of the open unit ball $ball_X$, which is an open set containing $0 in X$, must be an open set in $Y$ containing $T (0) = 0 in Y$. By definition of an open set in a normed space, $T (ball_X)$ must contain an open ball centered at $0$, which is condition (2).
 
 - #strong[(2) $=>$ (1):] Assume $ball_Y (0 , delta) subset.eq T (ball_X)$. To show $T$ is an open map, we need to show $T (O)$ is open for any open set $O subset.eq X$. For any $x in O$, there exists a radius $r > 0$ such that the ball $ball_X (x , r) = x + r ball_X$ is contained in $O$. The image is $T (ball_X ( x , r) ) = T (x) + r T (ball_X)$. Using our assumption, we have: $ T (ball_X ( x , r) ) supset.eq T (x) + r ball_Y (0 , delta) = ball_Y (T ( x) , r delta ) $ This shows that the image $T (O)$ contains an open ball around each of its points, and is therefore open.
 

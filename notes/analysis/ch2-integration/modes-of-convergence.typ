@@ -53,7 +53,7 @@ Let $f : bb(R)^d arrow.r bb(R)$ be a Lebesgue measurable function. For any $epsi
 $ f (x) = g (x) quad "for all" x in.not E. $
 
 and the Lebesgue measure of the exceptional set is small, i.e., $mu (E) < epsilon$.
-]
+]<thm:lusin>
 
 In essence, Lusin's theorem states that any measurable function is continuous outside a set of arbitrarily small measure. 
 
@@ -211,7 +211,7 @@ We saw that pointwise convergence on a finite measure space implies convergence 
 
 #theorem(title: "Egoroff's Theorem")[
 Let $(X , cal(M) , mu)$ be a measure space with $mu (X) < oo$. Let ${ f_n }$ be a sequence of measurable functions that converges to $f$ a.e. on $X$. Then for every $epsilon > 0$, there exists a measurable set $E subset X$ with $mu (E) < epsilon$ such that $f_n$ converges to $f$ uniformly on the complement $X \\ E$.
-]
+]<thm:egoroff>
 
 Egoroff's theorem shows that on a finite measure space, pointwise convergence is nearly uniform.
 
