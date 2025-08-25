@@ -123,6 +123,7 @@
   set enum(
     indent: list-indent * 0.618,
     body-indent: list-indent,
+    numbering: "1.a."
   )
   set list(
     indent: list-indent * 0.618,
@@ -191,7 +192,7 @@
   ) if is-web-target
 
   // Web 标题样式
-  show heading: set text(weight: "regular") if is-web-target
+  show heading: set text(weight: "bold") if is-web-target
   
   // ==========================================
   // PDF Target 特定设置

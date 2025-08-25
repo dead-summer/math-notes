@@ -49,8 +49,17 @@
 #let preann(x) = $#x _(circle.small)$ // pre-annihilator
 #let fred = math.upright("Fred")
 #let index = math.upright("index")
+#let supp = math.op("supp") // support set
+#let diam = math.op("diam") // diameter
+#let aplim = math.op("ap lim", limits: true) // approximate limit
 
 #let ball = math.upright(math.bold("B"))
+#let sphere = math.upright(math.bold("S"))
 #let disc = math.upright(math.bold("D"))
 #let imUnit = math.upright("i")
 #let indicator = math.upright(math.bold("1"))
+
+#let bv = math.upright("BV") // bounded value functions
+#let tv = math.upright("T.V.") // total variation
+#let ac = math.upright("AC") // absolute continuity
+#let aut = math.upright("Aut")

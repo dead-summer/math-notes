@@ -6,39 +6,37 @@
 
 == Banach Spaces
 
+=== Definitions and Properties
+
 #definition[
-A complete normed vector space is a Banach space.
+A #strong[Banach space] is a complete normed vector space.
 ]
 
 
-A norm $norm(dot.op)$ on $X: X arrow.r \[ 0 , oo \)$ satisfying
 
-+ *Nondegeneracy*: $norm(x) = 0 arrow.l.r.double x = 0$ .
-+ *1-homogeneity*: $forall lambda in bb(F) = bb(R)$ or $bb(C)$ , $forall x in X , norm(lambda x) = abs(lambda) norm(x)$ .
-+ *Triangle inequality*: $forall x , y in X , norm(x + y) lt.eq norm(x) + norm(y)$
+A #strong[norm] on a vector space $X$ over a field $bb(F)$ (where $bb(F)$ is either $bb(R)$ or $bb(C)$) is a function $norm(dot.op) : X arrow.r [ 0 , oo )$ that satisfies the following axioms for all $x , y in X$ and $lambda in bb(F)$:
 
-All normed vector spaces are metric spaces since we can let $norm(x - y) := d (x , y)$ , $forall x, y in X$. Converse is false.
+1. #strong[Positive-definiteness:] $norm(x) = 0$ if and only if $x = 0$.
+2. #strong[Absolute homogeneity:] $norm(lambda x) = abs(lambda) norm(x)$.
+3. #strong[Triangle inequality:] $norm(x + y) lt.eq norm(x) + norm(y)$.
 
-#example[
-Both $bb(R)^d$ and $bb(C)^d$ are normed vector spaces under whatever norm. Common norms such as
-$
-norm(x)_1 = sum_(i=1)^(d) abs(x_i), quad norm(x)_2 = sqrt(sum_(i=1)^(d) x_i^2), quad norm(x)_infinity = max{x_i: 1 angle.l= i angle.l= d} ,
-$
-where $x = (x_1, x_2, ..., x_d)$ .
-]
+Every normed vector space is a metric space with the metric $d (x , y) = norm(x - y)$. However, the converse is not true; not every metric space can be derived from a norm.
 
-*Fact*: Finite dimensional normed vector space are all Banach spaces.
+=== Examples of Banach Spaces
 
-For $1 lt.eq p lt.eq oo$, let
+==== Finite-Dimensional Spaces
 
-$
-norm(x)_p := cases(delim: "{", (sum_(i = 1)^d abs(x_i)^p)^(1 \/ p) & "for " 1 lt.eq p angle.l oo, max { abs(x_1) , . . . , abs(x_d) } & "for " p = oo .)
-$
+The spaces $bb(R)^d$ and $bb(C)^d$ are finite-dimensional normed vector spaces under various norms. Common examples include the $p$-norms for a vector $x = (x_1 , x_2 , dots.h , x_d)$:
 
-#question-box[
-Question: What does the unit ball, $bold(B)_1 (0) subset (bb(R)^d , norm(dot.op)_p)$ look like?
-]
+- The $1$-norm: $norm(x)_1 = sum_(i = 1)^d abs(x_i)$.
+- The Euclidean norm (or $2$-norm): $norm(x)_2 = sqrt(sum_(i = 1)^d abs(x_i)^2)$.
+- The $oo$-norm: $norm(x)_oo = max_(1 lt.eq i lt.eq d) abs(x_i)$.
 
+For $1 lt.eq p < oo$, the $p$-norm is defined as $norm(x)_p = (sum_(i = 1)^d abs(x_i)^p)^(1 \/ p)$. The $oo$-norm is the limit of the $L^p$-norms as $p arrow.r oo$.
+
+A fundamental result in functional analysis is that #strong[all finite-dimensional normed vector spaces are complete];, and therefore, they are all Banach spaces. Furthermore, any two norms on a finite-dimensional vector space are equivalent.
+
+The #strong[unit ball] in $(bb(R)^d , norm(dot.op)_p)$ is the set $ball (0, 1) = { x in bb(R)^d : norm(x)_p lt.eq 1 }$. The shape of the unit ball depends on the norm.
 
 #import "@preview/cetz:0.4.0": canvas, draw
 
@@ -77,65 +75,89 @@ Question: What does the unit ball, $bold(B)_1 (0) subset (bb(R)^d , norm(dot.op)
   caption: [The unit ball for different $p$]
 )
 
+The concept of #strong[uniform convexity] is an important geometric property of a Banach space. A normed space $X$ is uniformly convex if for every $epsilon > 0$, there exists a $delta > 0$ such that for any $x , y in X$ with $norm(x) = 1 , norm(y) = 1$ and $norm(x - y) gt.eq epsilon$, we have $norm((x + y) \/ 2) lt.eq 1 - delta$. This property implies that the unit ball is "round" and has no "flat" parts. The spaces $(bb(R)^d , norm(dot.op)_p)$ are uniformly convex for $1 < p < oo$.
+
+==== Infinite-Dimensional Spaces
+
+The finite-dimensional spaces serve as a foundation for understanding their infinite-dimensional counterparts:
+
+- #strong[Sequence spaces] $ell^p$: For $1 lt.eq p < oo$, the space $ell^p$ consists of all sequences $alpha = (alpha_j)_(j = 1)^oo$ such that $sum_(j = 1)^oo abs(alpha_j)^p < oo$. The norm is defined as $norm(alpha)_(ell^p) = (sum_(j = 1)^oo abs(alpha_j)^p)^(1 \/ p)$. The space $ell^oo$ consists of all bounded sequences with the norm $norm(alpha)_(ell^infinity) = sup_(j in bb(N)) abs(alpha_j)$.
+
+- #strong[Function spaces] $L^p$: For $1 lt.eq p < oo$, the space $L^p ([ 0 , 1 ])$ consists of all (equivalence classes of) functions $f : [ 0 , 1 ] arrow.r bb(R)$ such that $integral_0^1 abs(f (x))^p dif x < oo$. The norm is given by $norm(f)_(L^p) = (integral_0^1 abs(f (x))^p dif x)^(1 \/ p)$.
+
+All these spaces, $(ell^p , norm(dot.op)_(ell^p))$ and $(L^p , norm(dot.op)_(L^p))$, for $1 lt.eq p lt.eq oo$, are complete and thus are Banach spaces.
+
+The space $L^2 (bb(R)^d)$ is of particular importance as it possesses an inner product, making it a #strong[Hilbert space];: $ angle.l f , g angle.r = integral_(bb(R)^d) f (x) overline(g (x)) dif x $ The norm induced by this inner product is $norm(f)_(L^2) = sqrt((angle.l f , f angle.r)) = (integral_(bb(R)^d) abs(f (x))^2 dif x)^(1 \/ 2)$.
+
+==== Spaces of Bounded and Continuous Functions
+
+Let $Omega subset bb(R)^d$ be a set.
+
+1. The space of bounded real-valued functions on $Omega$, denoted by $cal(F)_b (Omega)$, is a Banach space under the supremum norm: $norm(f)_oo = sup_(x in Omega) abs(f (x))$.
+2. The space of continuous and bounded functions on $Omega$, denoted by $C_b (Omega)$, is a closed subspace of $cal(F)_b (Omega)$ and is therefore a Banach space.
+3. The space of functions vanishing at infinity, $C_0 (bb(R)^d)$, consists of all continuous functions $f : bb(R)^d arrow.r bb(R)$ such that for every $epsilon > 0$, there exists a compact set $K$ where $abs(f (x)) < epsilon$ for all $x in.not K$. $C_0 (bb(R)^d)$ is a closed subspace of $cal(F)_b (bb(R)^d)$ and is a Banach space.
+4. The space of continuous functions with compact support, $C_c (bb(R)^d)$, is a subspace of $C_0 (bb(R)^d)$, but it is #strong[not] a Banach space under the supremum norm because it is not complete. For example, a sequence of functions in $C_c (bb(R)^d)$ can converge uniformly to a function in $C_0 (bb(R)^d)$ that does not have compact support.
 
 
+=== Completeness and Subspaces
 
-Observe that $bold(B)_1 (0) subset (bb(R)^d , norm(dot.op)_p), forall 1 lt.eq p angle.l oo$ is uniformly convex. I.e., $forall x , y in partial bold(B)_1 (0) ,  "dist" (frac(x + y, 2) , partial bold(B)_1 (0)) gt.eq delta angle.r 0$. (Intuitively: unit ball is round).
-
-Toy model $(bb(R)^d , norm(dot.op)_p)$ essentially captures the geometry of the $oo$-dimensional analogues:
-
-$
-ell^p := {{ alpha_j }_(j = 1)^oo : (sum_(j = 1)^oo abs(alpha_j)^p)^(1 / p) angle.l oo } ,
-$
-
-$
-L^p ([0 , 1]) := { f : [0 , 1] arrow.r bb(R) , (integral_0^1 abs(f)^p)^(1 / p) angle.l oo } .
-$
-
-Only $L^2 (bb(R)^d , bb(C))$ has an inner product (so it is a Hilbert space) :
-
-$
-angle.l f , g angle.r := integral_(bb(R)^d) f overline(g) thin dif x .
-$
-Then $angle.l f, f angle.r = integral_(bb(R)^d) f overline(f) thin dif x =: norm(f)^2$ .
-
-#example[
-Consider supremum - norm on $Omega subset bb(R)^d$: $norm(f) := sup_(x in Omega) abs(f (x))$ .
-
-1. $cal(F)^b (Omega) := { f : Omega arrow.r bb(R) : f "is bounded"}$ is a Banach space.
-2. $C (Omega) = { f in cal(F)^b (Omega) : f "is continuous" }$.  is a Banach space.
-3. Both $C_0 (bb(R)^d)$ and $C_c (bb(R)^d)$ are Banach spaces.
-]
+A crucial theorem connects the property of being a Banach space to the closedness of its subspaces.
 
 #theorem[
-Let $(X , norm(dot.op))$ be a Banach space, $Y subset.eq X$ be a vector subspace. Then $(Y , norm(dot.op))$ is a Banach space iff $Y$ is a closed subspace of $X$ (i.e., if ${ y_j } subset Y$ s.t. $norm(y_j - x) arrow.r 0$ as $j arrow.r oo$ for some $x in X$, then $x in Y$).
+Let $(X , norm(dot.op))$ be a Banach space, and let $Y$ be a vector subspace of $X$. Then $(Y , norm(dot.op))$ is a Banach space if and only if $Y$ is a closed subspace of $X$.
 ]
 
 #proof[
-$arrow.r.double$: Let ${ y_j } subset Y$ be a sequence in $Y$ s.t. $y_j arrow.r x$ in $(X , norm(dot.op))$. Then ${ y_j }$ is Cauchy in $(Y , norm(dot.op))$, which is a Banach space. Hence $exists y in Y$ s.t. $y_j arrow.r y$, so $(Y , norm(dot.op))$ is closed.
+- *$arrow.r.double.long$:* Assume $Y$ is a Banach space. Let ${y_j}_(j in bb(N))$ be a sequence in $Y$ that converges to some $x in X$ (i.e., $norm(y_j - x) arrow.r 0$ as $j arrow.r oo$). A convergent sequence is a Cauchy sequence, so ${y_j}$ is a Cauchy sequence in $X$. Since ${y_j}$ is also a sequence in the Banach space $Y$, it must converge to a limit in $Y$. Let this limit be $y in Y$. By the uniqueness of limits in a metric space, we must have $x = y$. Therefore, $x in Y$, which proves that $Y$ is closed in $X$.
 
-$arrow.l.double$: Assume $Y subset.eq (X , norm(dot.op))$ is a closed subspace. Take any ${ y_j }$ Cauchy in $(Y , norm(dot.op))$. Then ${ y_j }$ is Cauchy in $(X , norm(dot.op))$. So $exists x in X$ s.t. $norm(y_j - x) arrow.r 0$. But $Y$ is closed, so $x in Y$. Hence $Y$ is Banach space.
+- *$arrow.l.double.long$:* Assume $Y$ is a closed subspace of $X$. Let ${y_j}_(j in bb(N))$ be a Cauchy sequence in $Y$. Since $Y subset X$, ${y_j}$ is also a Cauchy sequence in the Banach space $X$. By the completeness of $X$, there exists a limit $x in X$ such that $y_j arrow.r x$ in $X$. Since $Y$ is a closed subspace and the sequence ${y_j}$ is in $Y$, its limit $x$ must also be in $Y$. Therefore, every Cauchy sequence in $Y$ converges to a limit in $Y$, which means $Y$ is complete. Hence, $Y$ is a Banach space.
 ]
-
-If $(X , norm(dot.op)_X)$, $(Y , norm(dot.op)_Y)$ are Banach spaces, then $X xor Y$ (or $X times Y$) is a Banach space. Write $norm((x , y)) := norm(x)_X + norm(y)_Y$ or $max { norm(x)_X , norm(y)_Y }$.
-
-Let $(X , norm(dot.op))$ be a Banach space. Let $X_1$, $X_2$ be closed subspaces s.t. $X_1 inter X_2 = { 0 }$. Consider the (internal) direct sum $X_1 xor X_2$. Then it's not necessarily closed in $X$.
 
 #example[
-Consider
+Let
 
-$
-c &= { upright("convergent sequences") } subset l^oo = { { a_j }_(j = 1)^infinity : sup_(j in bb(N)) abs(a_j) angle.l oo } , \
-c_0 &= { { a_j }_(j = 1)^infinity in c : abs(a_j) arrow.r 0 } , \
-c_(00) &= { { a_j }_(j = 1)^infinity in c_0 : upright("all but finitely many ") a_j "are " 0 }
-$
-on $norm(dot.op)_oo$ . Let $X = c_0$ , $X_1 = { (a_1, a_2, ...) in c_0 : a_(2 j - 1) = 0 , forall j gt.eq 1 , 2 , . . . }$ and $X_2 = { (a_1, a_2, ...) in c_0 : a_(2 j) = j^2 a_(2 j - 1) , forall j gt.eq 1 , 2 , . . . }$ be closed subspaces. Then $X_1 inter X_2 = { 0 }$.
+$ Z = c_00 = { x = (x_1 , x_2 , dots.h) in ell^p : x_j = 0 "for all but a finite number of ") j }. $
 
-Take $x = (1 , 0 , 1 / 4 , 0 , 1 / 9 , 0 , . . .)$. If $x in X_1 + X_2$, say $x = y + z$, $y in X_1$, $z in X_2$. Then $z = (1 , * , 1 / 4 , * , 1 / 9 , . . .)$. But $z in X_2$. So
-$
-z = (1 , 1 , 1 / 4 , 1 , 1 / 9 , 1 , . . .) in.not c_0 .
-$
-However, $x in overline(X_1 xor X_2)$ since $exists x_n arrow.r x$, where $x_n$ is the cutoff of $x$ by $(2 n)$-th coordinate with $x_n in X_1 xor X_2, forall n in bb(N)$.
+This is a subspace of $ell^p$ for any $1 lt.eq p < oo$. $Z$ is #strong[dense] in $ell^p$. For any $x = { x_j }_(j = 1)^oo in ell^p$, consider the sequence of vectors $x^((n)) = (x_1 , x_2 , dots.h , x_n , 0 , 0 , dots.h) in Z$. Then
+
+$ norm(x - x^((n)))_(ell^p) = (sum_(j = n + 1)^oo abs(x_j)^p)^(1 \/ p) arrow.r 0, quad "as" n arrow.r oo. $
+
+However, $Z$ is #strong[not closed] in $ell^p$. For example, the vector $x = (1 , 1 \/ 2 , 1 \/ 3 , dots.h , 1 \/ j , dots.h)$ is in $ell^2$ but not in $Z$. It can be shown that $x$ is not a finite linear combinationmof ${e_i}_1^infinity$. Because $Z$ is a dense but not closed proper subspace of $ell^p$, it is not a complete space. Therefore, $(Z , norm(dot.op)_(ell^p))$ is not a Banach space.
 ]
 
-*Conclusion*: $x in overline(X_1 xor X_2)$ and $x in.not X_1 xor X_2$ .
+=== #strong[Direct Sums of Subspaces]
+
+If $(X , norm(dot.op)_X)$ and $(Y , norm(dot.op)_Y)$ are Banach spaces, their product space $X times Y$ is also a Banach space under a variety of equivalent product norms, such as $norm((x , y)) = norm(x)_X + norm(y)_Y$ or $norm((x , y)) = max { norm(x)_X , norm(y)_Y }$.
+
+However, the internal direct sum of two closed subspaces of a Banach space is not necessarily a closed subspace itself. The sum of two subspaces $X_1$ and $X_2$ of a vector space $X$ is defined as $X_1 + X_2 = { x_1 + x_2 : x_1 in X_1 , x_2 in X_2 }$. This sum is an #strong[algebraic direct sum];, denoted $X_1 xor X_2$, if $X_1 inter X_2 = { 0 }$.
+
+#example(title: "Counterexample")[
+Consider the Banach space $X = c_0 subset ell^infinity$, the space of all sequences of real numbers that converge to zero, with the supremum norm $norm(alpha)_(ell^infinity) = sup_(j in bb(N)) abs(alpha_j)$.
+
+Let $X_1$ and $X_2$ be two closed subspaces of $c_0$:
+- $X_1 = { (a_j) in c_0 : a_(2 j - 1) = 0, forall j gt.eq 1 }$.
+- $X_2 = { (a_j) in c_0 : a_(2 j) = j^2 a_(2 j - 1), forall j gt.eq 1 }$.
+
+It can be verified that $X_1$ and $X_2$ are closed subspaces and $X_1 inter X_2 = { 0 }$.
+
+Now consider the sequence $x = (1 , 0 , 1 / 4 , 0 , 1 / 9 , 0 , dots.h) in c_0$. Suppose $x in X_1 xor X_2$. Then $x$ can be written uniquely as $x = y + z$ with $y in X_1$ and $z in X_2$.
+
+- Since $y in X_1$, its odd-indexed terms are zero: $y = (0 , y_2 , 0 , y_4 , dots.h)$.
+- Since $z in X_2$, its even-indexed terms are determined by its odd-indexed terms: $z = (z_1 , z_2 , z_3 , dots.h)$ with $z_(2 j) = j^2 z_(2 j - 1)$.
+
+From $x = y + z$, we have:
+- For odd indices, $x_(2 j - 1) = y_(2 j - 1) + z_(2 j - 1) = 0 + z_(2 j - 1)$. Thus, $z_(2 j - 1) = x_(2 j - 1) = 1 / j^2$.
+- For even indices, $x_(2 j) = y_(2 j) + z_(2 j) = 0$. Thus, $y_(2 j) = - z_(2 j)$.
+
+Since $z in X_2$, its even-indexed terms must be $z_(2 j) = j^2 z_(2 j - 1) = j^2 (1 / j^2) = 1$. This implies that the sequence $z$ would be $z = (1 , 1 , 1 / 4 , 1 , 1 / 9 , 1 , dots.h)$. However, this sequence #strong[does not converge to zero];, so $z in.not c_0$. This is a contradiction, meaning $x in.not X_1 xor X_2$.
+
+However, $x$ is in the #strong[closure] of $X_1 xor X_2$. Consider the sequence of "truncated" vectors $x_n in X_1 xor X_2$ defined as: $x_n = (1 , 0 , 1 / 4 , 0 , dots.h , 1 / n^2 , 0 , dots.h)$. For each $n$, $x_n$ is in $X_1 xor X_2$ (as it is a finite linear combination of basis vectors), and we have
+
+$ norm(x_n - x)_oo = sup_(j > n) abs(1 \/ j^2) = 1 \/ (n + 1)^2 arrow.r 0, $
+
+as $n arrow.r oo$.
+]
+
+#conclusion[
+The sum $X_1 xor X_2$ is not a closed subspace of $c_0$.
+]
