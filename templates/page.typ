@@ -123,7 +123,7 @@
   set enum(
     indent: list-indent * 0.618,
     body-indent: list-indent,
-    numbering: "1.a."
+    numbering: "1.a.i."
   )
   set list(
     indent: list-indent * 0.618,
@@ -138,6 +138,7 @@
   // 数学设置
   show math.equation: set text(weight: 400)
   show math.equation: set block(breakable: true)
+  show math.equation.where(block: true): block.with(width: 100%)
   set math.equation(numbering: (..nums) => {
     let h = counter(heading).get().first()
     numbering("(1.1)", h, ..nums)

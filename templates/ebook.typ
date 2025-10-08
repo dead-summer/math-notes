@@ -25,7 +25,6 @@
         pad(x: 2cm, y: 1cm)[
           #text(size: 3em, weight: 900, title)
           #v(1cm, weak: true)
-          // #text(size: 3em, project-meta.at("subtitle", default: none))
           #text(size: 2em, display-title)
           #v(1cm, weak: true)
           #text(size: 1em, weight: "bold", authors-text)
@@ -77,9 +76,9 @@
 
 #let project(title: "", display-title: none, authors: (), spec: "", content, styles: default-styles) = {
   let display-title = display-title
-  if display-title == none {
-    display-title = title
-  }
+  // if display-title == none {
+  //   display-title = title
+  // }
 
   // inherit styles
   let styles = default-styles + styles
