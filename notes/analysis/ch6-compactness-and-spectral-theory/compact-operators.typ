@@ -26,14 +26,14 @@ The set of all compact operators from $X$ to $Y$ is denoted by $cal(K) (X , Y)$.
 There are several equivalent characterizations of a compact operator $T in cal(B) (X , Y)$, the space of bounded linear operators from $X$ to $Y$.
 
 - #strong[Sequential Criterion:] An operator $T in cal(B) (X , Y)$ is compact if and only if for every bounded sequence ${ x_n } subset X$, the sequence ${ T x_n } subset Y$ contains a convergent subsequence.
-- #strong[Image of the Unit Ball:] An operator $T in cal(B) (X , Y)$ is compact if and only if it maps the open (or closed) unit ball in $X$ to a precompact set in $Y$. That is, $T (ball_X)$ is precompact in $Y$.
+- #strong[Image of the Unit Ball:] An operator $T in cal(B) (X , Y)$ is compact if and only if it maps the open (or closed) unit ball in $X$ to a precompact set in $Y$.
 
 #example(title: "The Identity Operator")[
 The identity operator $I : X arrow.r X$ is compact if and only if the space $X$ is finite-dimensional.
 ]
 
 #proof[
-If $I$ is compact, then the image of the unit ball $ball_X$, which is $ball_X$ itself, must be precompact, meaning $overline(ball)_X = ball_X$ is compact. By the Riesz Lemma, the closed unit ball in a normed linear space is compact only if the space is finite-dimensional.
+If $I$ is compact, then the image of the open unit ball $ball_X$, which is $ball_X$ itself, must be precompact, meaning $overline(ball)_X$ is compact. By the Riesz Lemma, the closed unit ball in a normed linear space is compact only if the space is finite-dimensional.
 
 Conversely, if $X$ is finite-dimensional, then the closed unit ball is closed and bounded, and by the Heine-Borel theorem, it is compact. Thus, $I$ is a compact operator.
 ]
@@ -79,9 +79,9 @@ This shows that ${ T y_k }$ is a Cauchy sequence. Since $Y$ is a Banach space (a
 We have shown that for an arbitrary bounded sequence ${ x_n }$, its image ${ T x_n }$ contains a convergent subsequence. Therefore, $T$ is a compact operator, and $cal(K) (X, Y)$ is a closed subspace of $cal(B) (X , Y)$.
 ]
 
-The norm-limit of a sequence of finite-rank operators is always a compact operator (every finite-rank operator is compact, and the space $cal(K)(X,Y)$ is a closed). A natural question arises: is the converse true? Can every compact operator be approximated in norm by finite-rank operators?
+The norm-limit of a sequence of finite-rank operators is always a compact operator (every finite-rank operator is compact, and the space $cal(K)(X, Y)$ is a closed). A natural question arises: is the converse true? Can every compact operator be approximated in norm by finite-rank operators?
 
-If $H$ is a Hilbert space, then every compact operator $T in K (H)$ is the norm-limit of a sequence of finite-rank operators. However, this statement is #strong[false for general Banach spaces];. There exist Banach spaces and compact operators on them that cannot be approximated by finite-rank operators. This famous counterexample was constructed by Per Enflo in 1973, solving a long-standing open problem in functional analysis. A Banach space for which this property holds is said to have the "Approximation Property".
+If $H$ is a Hilbert space, then every compact operator $T in cal(K) (H)$ is the norm-limit of a sequence of finite-rank operators. However, this statement is #strong[false for general Banach spaces];. There exist Banach spaces and compact operators on them that cannot be approximated by finite-rank operators. This famous counterexample was constructed by Per Enflo in 1973, solving a long-standing open problem in functional analysis. A Banach space for which this property holds is said to have the "Approximation Property".
 
 === Analytical and Algebraic Properties
 
@@ -107,7 +107,7 @@ Let $W , X , Y , Z$ be Banach spaces. Consider operators $R in cal(B) (W , X)$, 
 ]
 
 #corollary[
-The space of compact operators on a Banach space $X$, denoted $cal(K) (X)$, forms a closed, two-sided ideal wi the algebra of bounded operators $cal(B) (X)$.
+The space of compact operators on a Banach space $X$, denoted $cal(K) (X)$, forms a closed, two-sided ideal in the algebra of bounded operators $cal(B) (X)$.
 ]
 
 
@@ -157,7 +157,7 @@ Let $X$ and $Y$ be Banach spaces and $T in cal(B) (X , Y)$. Then $T$ is compact 
 #proof[
 - #strong[($arrow.r.double$) Assume $T$ is compact. We show $T^*$ is compact.] Let ${ f_n }$ be a bounded sequence in the dual space $Y^*$; say $norm(f_n)_(Y^*) lt.eq M$ for all $n$. We want to show that ${ T^* f_n }$ has a convergent subsequence in $X^*$.
 
-  Let $ball_X$ be the closed unit ball in $X$. Since $T$ is compact, the set $K = overline(T (ball_X))$ is a compact subset of $Y$. Consider the sequence of functions ${ Phi_n }$ obtained by restricting each functional $f_n$ to the compact set $K$. That is, $Phi_n = f_n mid(|)_K : K arrow.r bb(F)$ (where $bb(F)$ is $bb(R)$ or $bb(C)$).
+  Let $sphere_X = {x in X: norm(x) = 1}$ be the unit sphere in $X$. Since $T$ is compact, the set $K = overline(T (sphere_X))$ is a compact subset of $Y$. Consider the sequence of functions ${ Phi_n }$ obtained by restricting each functional $f_n$ to the compact set $K$. That is, $Phi_n = f_n mid(|)_K : K arrow.r bb(F)$ (where $bb(F)$ is $bb(R)$ or $bb(C)$).
 
   This sequence of functions ${ Phi_n }$ on $K$ is:
   1. #strong[Uniformly bounded:] For any $y in K$, $abs(Phi_n (y)) = abs(f_n (y)) lt.eq norm(f_n)_(Y^*) norm(y) lt.eq M dot.op sup_(z in K) norm(z)$.
@@ -165,14 +165,17 @@ Let $X$ and $Y$ be Banach spaces and $T in cal(B) (X , Y)$. Then $T$ is compact 
 
   By the Arzelà-Ascoli theorem, there exists a subsequence ${ Phi_(n_k) }$ that converges uniformly on $K$ to some continuous function $g : K arrow.r bb(F)$.
 
-  Now we examine the sequence ${ T^* f_(n_k) }$ in $X^*$. For any $x in ball_X$, we have $T x in T (ball_X) subset.eq K$. Thus,
+  Now we examine the sequence ${ T^* f_(n_k) }$ in $X^*$. For any $x in sphere_X$, we have $T x in T (sphere_X) subset.eq K$. Thus,
   $
   abs((T^* f_(n_(k_1))) (x) - (T^* f_(n_(k_2))) (x)) &= abs(f_(n_(k_1)) (T x) - f_(n_(k_2)) (T x)) \
   &= abs(Phi_(n_(k_1)) (T x) - Phi_(n_(k_2)) (T x)). $
-  Taking the supremum over $x in ball_X$:
+  Taking the supremum over $x in sphere_X$:
+  
   $
-  norm(T^* f_(n_(k_1)) - T^* f_(n_(k_2)))_(X^*) &= sup_(x in ball_X) abs((T^* f_(n_(k_1))) (x) - (T^* f_(n_(k_2))) (x)) \
-  &lt.eq sup_(y in K) abs(Phi_(n_(k_1)) (y) - Phi_(n_(k_2)) (y)). $
+  norm(T^* f_(n_(k_1)) - T^* f_(n_(k_2)))_(X^*) &= sup_(x in sphere_X) abs((T^* f_(n_(k_1))) (x) - (T^* f_(n_(k_2))) (x)) \
+  &lt.eq sup_(y in K) abs(Phi_(n_(k_1)) (y) - Phi_(n_(k_2)) (y)).
+  $
+
   Since ${ Phi_(n_k) }$ converges uniformly on $K$, the right-hand side tends to 0 as $k_1 , k_2 arrow.r oo$. This means ${ T^* f_(n_k) }$ is a Cauchy sequence in $X^*$. Since $X^*$ is a Banach space, this subsequence converges. Hence, $T^*$ is compact.
 
 - #strong[($arrow.l.double$) Assume $T^*$ is compact. We show $T$ is compact.] Let ${ x_n }$ be a bounded sequence in $X$. We need to show that ${ T x_n }$ has a convergent subsequence. This part of the proof cleverly uses the bidual (or double dual) operator, $T^(**) : X^(**) arrow.r Y^(**)$.
@@ -181,5 +184,9 @@ Let $X$ and $Y$ be Banach spaces and $T in cal(B) (X , Y)$. Then $T$ is compact 
 
   Now, since ${ x_n }$ is a bounded sequence in $X$ and $J_X$ is an isometry, the sequence ${ J_X (x_n) }$ is a bounded sequence in $X^(**)$. Since $T^(**)$ is compact, there exists a subsequence ${ x_(n_k) }$ such that ${ T^(**) (J_X (x_(n_k))) }$ converges in $Y^(**)$. Using the identity, this means the sequence ${ J_Y (T x_(n_k)) }$ converges in $Y^(**)$. Because convergent sequences are Cauchy sequences, ${ J_Y (T x_(n_k)) }$ is a Cauchy sequence.
 
-  Finally, since $J_Y$ is an isometry, it preserves distances: $ norm(T x_(n_k) - T x_(n_l))_Y = norm(J_Y (T x_(n_k)) - J_Y (T x_(n_l)))_(Y^(**)) $ Since ${ J_Y (T x_(n_k)) }$ is a Cauchy sequence, the right-hand side goes to 0 as $k , l arrow.r oo$. Therefore, ${ T x_(n_k) }$ is a Cauchy sequence in $Y$. As $Y$ is a Banach space, this sequence must converge. This proves that $T$ is compact.
+  Finally, since $J_Y$ is an isometry, it preserves distances:
+  
+  $ norm(T x_(n_k) - T x_(n_l))_Y = norm(J_Y (T x_(n_k)) - J_Y (T x_(n_l)))_(Y^(**)). $
+  
+  Since ${ J_Y (T x_(n_k)) }$ is a Cauchy sequence, the right-hand side goes to 0 as $k , l arrow.r oo$. Therefore, ${ T x_(n_k) }$ is a Cauchy sequence in $Y$. As $Y$ is a Banach space, this sequence must converge. This proves that $T$ is compact.
 ]

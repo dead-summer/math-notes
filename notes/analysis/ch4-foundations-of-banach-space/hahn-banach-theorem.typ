@@ -30,6 +30,12 @@ Let $X$ be a vector space over $bb(R)$. A function $p : X arrow.r bb(R)$ is call
 2. #strong[Subadditivity:] $p (x + y) lt.eq p (x) + p (y)$ for all $x , y in X$.
 ]
 
+#definition(title: "Seminorm")[
+Let $X$ be a vector space over a field $bb(F)$, where $bb(F) = bb(R)$ or $bb(F) = bb(C)$. A function $p : X arrow.r [0, +infinity)$ is called a #strong[seminorm] if it satisfies the following two conditions:
+1. #strong[Absolutely Homogeneity:] $p (lambda x) = abs(lambda) p (x)$ for all $x in X$ and for all $lambda in FF$.
+2. #strong[Subadditivity:] $p (x + y) lt.eq p (x) + p (y)$ for all $x , y in X$.
+]
+
 #example[
 Any norm or seminorm on a real vector space is a sublinear functional.
 ]

@@ -25,7 +25,7 @@ The proof relies fundamentally on the Baire Category Theorem.
 
 + #strong[Define a sequence of sets:] For each integer $n gt.eq 1$, define the set $G_n$ as follows: $ G_n = { x in X : sup_(T in cal(F)) norm(T x)_Y lt.eq n } = inter.big_(T in cal(F)) { x in X : norm(T x)_Y lt.eq n } $ 
 
-+ #strong[Show that each $G_n$ is closed:] For any fixed $T in cal(F)$, the operator $T$ is continuous. The norm function $norm(dot.op)_Y : Y arrow.r bb(R)$ is also continuous. Therefore, the function $x mapsto norm(T x)_Y$ is a continuous real-valued function on $X$. Consequently, the set ${ x in X : norm(T x)_Y lt.eq n }$ is a closed set (as it's the preimage of the closed set $\[ 0 , n \]$ under a continuous function). Since $G_n$ is the intersection of closed sets, $G_n$ is itself a closed set in $X$.
++ #strong[Show that each $G_n$ is closed:] For any fixed $T in cal(F)$, the operator $T$ is continuous. The norm function $norm(dot.op)_Y : Y arrow.r bb(R)$ is also continuous. Therefore, the function $x mapsto norm(T x)_Y$ is a continuous real-valued function on $X$. Consequently, the set ${ x in X : norm(T x)_Y lt.eq n }$ is a closed set (as it's the preimage of the closed set $[ 0 , n ]$ under a continuous function). Since $G_n$ is the intersection of closed sets, $G_n$ is itself a closed set in $X$.
 
 + #strong[Apply the Baire Category Theorem:] The initial hypothesis of the theorem is that for every $x in X$, the set ${ norm(T x)_Y : T in cal(F) }$ is bounded. Therefore, $ X = union.big_(n = 1)^oo G_n $ 
 
@@ -73,14 +73,14 @@ There are several important ways to define convergence for a sequence of operato
 
 - #strong[Strong Operator Topology (SOT):] $T_n arrow.r T$ in SOT if for every $x in X$, the sequence of vectors ${ T_n x }$ converges to $T x$ in the norm of $Y$. That is, $norm(T_n x - T x)_Y arrow.r 0$. 
 
-- #strong[Weak Operator Topology (WOT):] $T_n arrow.r T$ in WOT if for every $x in X$ and every continuous linear functional $f in Y^(\*)$, the sequence of scalars ${ f (T_n x) }$ converges to $f (T x)$ in the scalar field. That is, $f (T_n x) arrow.r f (T x)$. 
+- #strong[Weak Operator Topology (WOT):] $T_n arrow.r T$ in WOT if for every $x in X$ and every continuous linear functional $f in Y^*$, the sequence of scalars ${ f (T_n x) }$ converges to $f (T x)$ in the scalar field. That is, $f (T_n x) arrow.r f (T x)$. 
 
 
 
-#strong[Relationship between Topologies:] Norm convergence is stronger than SOT, which in turn is stronger than WOT.  $ upright("Norm Convergence") => upright("SOT Convergence") => upright("WOT Convergence") $ This hierarchy can be seen from the following inequalities for any $x in X$ and $f in Y^(\*)$:
+#strong[Relationship between Topologies:] Norm convergence is stronger than SOT, which in turn is stronger than WOT.  $ upright("Norm Convergence") => upright("SOT Convergence") => upright("WOT Convergence") $ This hierarchy can be seen from the following inequalities for any $x in X$ and $f in Y^*$:
 
 $
-abs(f (T_n x) - f (T x)) lt.eq norm(f)_(Y^(\*)) norm((T_n - T) x)_Y lt.eq norm(f)_(Y^(\*)) norm(T_n - T)_(B (X, Y)) norm(x)_X.
+abs(f (T_n x) - f (T x)) lt.eq norm(f)_(Y^*) norm((T_n - T) x)_Y lt.eq norm(f)_(Y^*) norm(T_n - T)_(B (X, Y)) norm(x)_X.
 $
 
 If $norm(T_n - T) arrow.r 0$, the right side goes to 0, implying SOT and WOT convergence. If $norm((T_n - T) x)_Y arrow.r 0$, the middle term goes to 0, implying WOT convergence.
@@ -88,31 +88,31 @@ If $norm(T_n - T) arrow.r 0$, the right side goes to 0, implying SOT and WOT con
 Related to the WOT is the concept of weak convergence for vectors.
 
 #definition(title: "Weak Convergence")[
-Let $X$ be a Banach space.  A sequence ${ x_n }$ in $X$ is said to #strong[converge weakly] to a vector $x in X$ if for every continuous linear functional $f in X^(\*)$, we have $f (x_n) arrow.r f (x)$.  This is denoted by $x_n weakTo x$.
+Let $X$ be a Banach space.  A sequence ${ x_n }$ in $X$ is said to #strong[converge weakly] to a vector $x in X$ if for every continuous linear functional $f in X^*$, we have $f (x_n) arrow.r f (x)$.  This is denoted by $x_n weakTo x$.
 ]
 
 Here are two illustrative examples.
 
-The following example demonstrates a sequence of functions in a Hilbert space that converges weakly to zero but not strongly. It uses the standard orthonormal basis of complex exponentials in $L^2 (\[ 0 , 2 pi\])$ 
+The following example demonstrates a sequence of functions in a Hilbert space that converges weakly to zero but not strongly. It uses the standard orthonormal basis of complex exponentials in $L^2 ([ 0 , 2 pi])$ 
 
-#example(title: [Weak but not Strong Convergence in $L^2 (\[ 0 , 2 pi\])$])[
-Consider the Hilbert space $X = L^2 (\[ 0 , 2 pi \] , bb(C))$ and the sequence of functions $e_n (x) = 1 / sqrt(2 pi) e^(imUnit n x)$ for $n in bb(Z)$. This is an orthonormal basis for the space. Let's show that $e_n weakTo 0$ as $abs(n) arrow.r oo$, but $e_n$ does not converge to 0 in norm.
+#example(title: [Weak but not Strong Convergence in $L^2 ([ 0 , 2 pi])$])[
+Consider the Hilbert space $X = L^2 ([ 0 , 2 pi ] , bb(C))$ and the sequence of functions $e_n (x) = 1 / sqrt(2 pi) e^(imUnit n x)$ for $n in bb(Z)$. This is an orthonormal basis for the space. Let's show that $e_n weakTo 0$ as $abs(n) arrow.r oo$, but $e_n$ does not converge to 0 in norm.
 
-- #strong[Weak Convergence:] To show $e_n weakTo 0$, we must show that for every continuous linear functional $T in (L^2)^(\*)$, we have $T (e_n) arrow.r 0$. By the Riesz Representation Theorem for Hilbert spaces, every such functional $T$ corresponds to taking the inner product with some fixed function $f in L^2$. Thus, we need to show that for any $f in L^2 (\[ 0 , 2 pi \])$: $ lim_(abs(n) arrow.r oo) angle.l e_n , f angle.r = 0 $ The inner product is $angle.l e_n , f angle.r = integral_0^(2 pi) e_n (x) overline(f (x)) dif x = 1 / sqrt(2 pi) integral_0^(2 pi) e^(i n x) overline(f (x)) dif x$. The term $integral_0^(2 pi) overline(f (x)) e^(i n x) dif x$ is, up to a constant, the $n$-th Fourier coefficient of the function $overline(f)$. The Riemann-Lebesgue Lemma states that the Fourier coefficients of any $L^1$ function (and thus any $L^2$ function) must tend to zero as $abs(n) arrow.r oo$.  Therefore, $e_n weakTo 0$.
+- #strong[Weak Convergence:] To show $e_n weakTo 0$, we must show that for every continuous linear functional $T in (L^2)^*$, we have $T (e_n) arrow.r 0$. By the Riesz Representation Theorem for Hilbert spaces, every such functional $T$ corresponds to taking the inner product with some fixed function $f in L^2$. Thus, we need to show that for any $f in L^2 ([ 0 , 2 pi ])$: $ lim_(abs(n) arrow.r oo) angle.l e_n , f angle.r = 0 $ The inner product is $angle.l e_n , f angle.r = integral_0^(2 pi) e_n (x) overline(f (x)) dif x = 1 / sqrt(2 pi) integral_0^(2 pi) e^(i n x) overline(f (x)) dif x$. The term $integral_0^(2 pi) overline(f (x)) e^(i n x) dif x$ is, up to a constant, the $n$-th Fourier coefficient of the function $overline(f)$. The Riemann-Lebesgue Lemma states that the Fourier coefficients of any $L^1$ function (and thus any $L^2$ function) must tend to zero as $abs(n) arrow.r oo$.  Therefore, $e_n weakTo 0$.
 
 - #strong[No Strong Convergence:] To check for strong (norm) convergence, we compute the norm of $e_n$: $ norm(e_n)_(L^2)^2 = angle.l e_n , e_n angle.r = integral_0^(2 pi) abs( 1 / sqrt(2 pi) e^(i n x))^2 dif x = frac(1, 2 pi) integral_0^(2 pi) 1 thin dif x = 1 $  Since $norm(e_n)_(L^2) = 1$ for all $n$, the norm does not converge to $norm(0)_(L^2) = 0$. Therefore, the sequence ${ e_n }$ does not converge strongly to 0. 
 ]
 
-The next example illustrates a sequence of linear functionals on $ell^2$that converges in the strong operator topology (SOT) but not in norm. It highlights the distinction between different types of operator convergence in functional analysis.
+The next example illustrates a sequence of linear functionals on $ell^2$that converges in the strong operator topology (SOT) but not in norm.
 
 #example(title: [SOT but not Norm Convergence on $ell^2$])[
 Consider the Hilbert space $ell^2$ of square-summable sequences. For each $n gt.eq 1$, define the linear functional $T_n : ell^2 arrow.r bb(C)$ by $T_n (x) = a_n$, where $x = (a_1 , a_2 , a_3 , dots.h)$.  Each $T_n$ is a continuous linear functional. Let's analyze the convergence of the sequence ${ T_n }$ to the zero operator $T = 0$.
 
-- #strong[SOT Convergence:] We check if $T_n x arrow.r 0$ for every $x in ell^2$. For any $x = (a_k) in ell^2$, the defining property is that $sum_(k = 1)^oo abs(a_k)^2 < oo$. Therefore, $lim_(k arrow.r oo) abs(a_k) = 0$. This means for any $x in ell^2$, we have $lim_(n arrow.r oo) T_n x = lim_(n arrow.r oo) a_n = 0$.  This is precisely the definition of SOT convergence to the zero operator. (Since the codomain is $bb(C)$, WOT and SOT are equivalent here). 
+- #strong[SOT Convergence:] We check if $T_n x arrow.r 0$ for every $x in ell^2$. For any $x = (a_k) in ell^2$, the defining property is that $sum_(k = 1)^oo abs(a_k)^2 < oo$. Therefore, $lim_(k arrow.r oo) abs(a_k) = 0$. This means for any $x in ell^2$, we have $lim_(n arrow.r oo) T_n x = lim_(n arrow.r oo) a_n = 0$.  This is precisely the definition of SOT convergence to the zero operator.
 
 - #strong[No Norm Convergence:] Now we compute the operator norm of $T_n$:
   $ norm(T_n) = sup_(norm(x)_(ell^2) = 1) abs(T_n x) = sup_(norm(x)_(ell^2) = 1) abs(a_n).
   $
-  To find this supremum, we can choose a specific vector. Let $e_n = (0 , 0 , dots.h , 1 , 0 , dots.h)$ be the sequence with a 1 in the $n$-th position and zeros elsewhere. Clearly, $norm(e_n)_(ell^2) = 1$. For this vector, $abs(T_n (e_n)) = 1$.  Therefore, the supremum must be at least 1. We also have $abs(T_n (x)) = abs(a_n) lt.eq norm(x)_(ell^2)$, so $norm(T_n) lt.eq 1$. Combining these, we have $norm(T_n)  = 1$ for all $n$.  Since $norm(T_n)$ does not converge to 0, the sequence of operators ${ T_n }$ does not converge to the zero operator in the uniform operator norm.
+  To find this supremum, we can choose a specific vector. Let $e_n = (0 , 0 , dots.h , 1 , 0 , dots.h)$ be the sequence with a 1 in the $n$-th position and zeros elsewhere. Clearly, $norm(e_n)_(ell^2) = 1$. For this vector, $abs(T_n (e_n)) = 1$.  Therefore, the supremum must be at least $1$. We also have $abs(T_n (x)) = abs(a_n) lt.eq norm(x)_(ell^2)$, so $norm(T_n) lt.eq 1$. Combining these, we have $norm(T_n)  = 1$ for all $n$.  Since $norm(T_n)$ does not converge to 0, the sequence of operators ${ T_n }$ does not converge to the zero operator in the uniform operator norm.
 ]
 

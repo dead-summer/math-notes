@@ -31,16 +31,6 @@ A set $B subset.eq X$ is #strong[balanced] (or circled) if for every $lambda in 
 ]
 
 Minkowski functionals are deeply connected to seminorms and, more generally, sublinear functionals.
-
-#definition[
-Let $p : X arrow.r \[ 0 , oo \)$ be a functional on a vector space $X$.
-
-- $p$ is a #strong[seminorm] if it is absolutely homogeneous ($p (lambda x) = abs(lambda) p (x)$) and subadditive ($p (x + y) lt.eq p (x) + p (y)$).
-- $p$ is a #strong[sublinear functional] if it is positively homogeneous ($p (lambda x) = lambda p (x)$ for $lambda gt.eq 0$) and subadditive.
-
-Every seminorm is a sublinear functional, but the converse is not true.
-]
-
 The following theorems establish the precise relationship between these concepts.
 
 #theorem[
@@ -226,8 +216,9 @@ This yields the contradiction $1 \/ 2 < 1 \/ 2$. Thus, our assumption was false,
 ]
 
 #remark[
-The converse of this proposition is false. A standard counterexample is $X = ell^1$. - $ell^1$ is separable.
+The converse of this proposition is false. A standard counterexample is $X = ell^1$.
 
+- $ell^1$ is separable.
 - Its dual is $(ell^1)^* tilde.equiv ell^oo$.
 - We have shown that $ell^oo$ is not separable.
 ]

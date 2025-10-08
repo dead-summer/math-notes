@@ -23,7 +23,13 @@ It is important to note that continuity and openness are independent properties.
 The proof of the main theorem relies on the following key lemma.
 
 #lemma(title: "Successive Approximation")[
-Let $X$ and $Y$ be Banach spaces, and let $T in cal(B) (X , Y)$ be a bounded linear operator from $X$ to $Y$. Suppose for some $r > 0$ and a constant $s in (0 , 1)$, we have that for any $y in ball_Y (0 , 1)$, the distance from $y$ to the set $overline(T (ball_X ( 0 , r) ))$ is less than $s$. That is: $ dist(y , overline(T ( ball_X ( 0 , r) )) ) < s $ Then, the image of a slightly larger ball in $X$ under $T$ contains the open unit ball in $Y$: $ ball_Y (0 , 1) subset T (ball_X (0 , frac(r, 1 - s))) $
+Let $X$ and $Y$ be Banach spaces, and let $T in cal(B) (X , Y)$ be a bounded linear operator from $X$ to $Y$. Suppose for some $r > 0$ and a constant $s in (0 , 1)$, we have that for any $y in ball_Y (0 , 1)$, the distance from $y$ to the set $overline(T (ball_X ( 0 , r) ))$ is less than $s$. That is:
+
+$ dist(y , overline(T ( ball_X ( 0 , r) )) ) < s. $
+
+Then, the image of a slightly larger ball in $X$ under $T$ contains the open unit ball in $Y$:
+
+$ ball_Y (0 , 1) subset T (ball_X (0 , frac(r, 1 - s))). $
 ]
 
 #proof[
@@ -49,9 +55,17 @@ Now, consider the series $sum_(k = 0)^oo tilde(x)_k$. We examine the sum of thei
 
 $ sum_(k = 0)^oo norm(tilde(x)_k)_X < sum_(k = 0)^oo s^k r = frac(r, 1 - s). $
 
-Since the series of norms converges, and $X$ is a Banach space, the series $sum_(k = 0)^oo tilde(x)_k$ converges to some point $x in X$. Let $x = sum_(k = 0)^oo tilde(x)_k$. The norm of this limit is bounded: $ norm(x)_X = norm(sum_(k = 0)^oo tilde(x)_k)_X lt.eq sum_(k = 0)^oo norm(tilde(x)_k)_X < frac(r, 1 - s) $ So, $x in ball_X (0 , frac(r, 1 - s))$.
+Since the series of norms converges, and $X$ is a Banach space, the series $sum_(k = 0)^oo tilde(x)_k$ converges to some point $x in X$. Let $x = sum_(k = 0)^oo tilde(x)_k$. The norm of this limit is bounded:
 
-Since $T$ is a bounded (and therefore continuous) operator: $ T (x) = T (sum_(k = 0)^oo tilde(x)_k) = sum_(k = 0)^oo T (tilde(x)_k) = y $ This completes the proof.
+$ norm(x)_X = norm(sum_(k = 0)^oo tilde(x)_k)_X lt.eq sum_(k = 0)^oo norm(tilde(x)_k)_X < frac(r, 1 - s). $
+
+So, $x in ball_X (0 , frac(r, 1 - s))$.
+
+Since $T$ is a bounded (and therefore continuous) operator:
+
+$ T (x) = T (sum_(k = 0)^oo tilde(x)_k) = sum_(k = 0)^oo T (tilde(x)_k) = y. $
+
+This completes the proof.
 ]
 
 #corollary[
@@ -88,17 +102,38 @@ Let $X$ and $Y$ be Banach spaces and let $T in cal(B) (X , Y)$ be a bounded, sur
 ]
 
 #proof[
-+ #strong[Applying the Baire Category Theorem:] Since $T$ is surjective, we can write $Y$ as the union of the images of balls of integer radius in $X$: $ Y = T (X) = T (union.big_(n = 1)^oo ball_X (0 , n)) = union.big_(n = 1)^oo T (ball_X ( 0 , n) ) $ Taking the closure of each set in the union: $ Y = union.big_(n = 1)^oo overline(T (ball_X ( 0 , n) )) $
-  Since $Y$ is a Banach space, it is a complete metric space.  The Baire Category Theorem states that a complete metric space cannot be written as a countable union of nowhere dense sets. Therefore, there must exist some integer $n_0 in bb(N)$ such that the set $overline(T (ball_X ( 0 , n_0) ))$ has a non-empty interior.  This means there exists a point $y_0 in Y$ and a radius $rho > 0$ such that: $ ball_Y (y_0 , rho) subset overline(T (ball_X ( 0 , n_0) )) $
++ #strong[Applying the Baire Category Theorem:] Since $T$ is surjective, we can write $Y$ as the union of the images of balls of integer radius in $X$:
+  
+  $ Y = T (X) = T (union.big_(n = 1)^oo ball_X (0 , n)) = union.big_(n = 1)^oo T (ball_X ( 0 , n) ). $
+  
+  Taking the closure of each set in the union:
+  
+  $ Y = union.big_(n = 1)^oo overline(T (ball_X ( 0 , n) )). $
+  
+  Since $Y$ is a Banach space, it is a complete metric space.  The Baire Category Theorem states that a complete metric space cannot be written as a countable union of nowhere dense sets. Therefore, there must exist some integer $n_0 in bb(N)$ such that the set $overline(T (ball_X ( 0 , n_0) ))$ has a non-empty interior.  This means there exists a point $y_0 in Y$ and a radius $rho > 0$ such that:
+  
+  $ ball_Y (y_0 , rho) subset overline(T (ball_X ( 0 , n_0) )). $
 
 + #strong[Centering the Ball at the Origin:] The set $overline(T (ball_X ( 0 , n_0) ))$ is convex and symmetric with respect to the origin. Since $ball_Y (y_0 , rho) subset overline(T (ball_X ( 0 , n_0) ))$, and also by symmetry $- y_0$ can be approximated by elements in this set, we also have $ball_Y (- y_0 , rho) subset overline(T (ball_X ( 0 , n_0) ))$.  Any element $z in ball_Y (0 , rho)$ can be written as $z = 1 / 2 (y_0 + z) + 1 / 2 (- y_0 + z)$. Notice that $(y_0 + z) in ball_Y (y_0 , rho)$ and $(- y_0 + z) in ball_Y (- y_0 , rho)$. Because $overline(T (ball_X ( 0 , n_0) ))$ is convex:
   $ ball_Y (0 , rho) subset 1 / 2 overline(T (ball_X ( 0 , n_0) )) + 1 / 2 overline(T (ball_X ( 0 , n_0) )) = overline(T (ball_X ( 0 , n_0) )). $
   By linearity, $overline(T (ball_X ( 0 , n_0) )) = n_0 overline(T (ball_X ( 0 , 1) ))$. So, after rescaling, there is a $delta > 0$ such that:
   $ ball_Y (0 , delta) subset overline(T (ball_X ( 0 , 1) )). $
 
-+ #strong[Applying the Successive Approximation Lemma:] From the previous step, for any $s in (0 , 1)$, we have $s ball_Y (0 , delta) subset overline(T (ball_X ( 0 , s) ))$. This implies that for any $y in ball_Y (0 , delta)$, the distance from $y$ to $overline(T (ball_X ( 0 , 1) ))$ is 0, which is less than any $s$. Applying a slight variation of the Successive Approximation Lemma (or its underlying principle), we can show that: $ ball_Y (0 , delta) subset T (ball_X ( 0 , 2) ) $ Let's scale this. Let $r_Y > 0$ be arbitrary. We can find a corresponding $r_X > 0$ such that $ball_Y (0 , r_Y) subset T (ball_X ( 0 , r_X) )$.
++ #strong[Applying the Successive Approximation Lemma:] From the previous step, for any $s in (0 , 1)$, we have $s ball_Y (0 , delta) subset overline(T (ball_X ( 0 , s) ))$. This implies that for any $y in ball_Y (0 , delta)$, the distance from $y$ to $overline(T (ball_X ( 0 , 1) ))$ is 0, which is less than any $s$. Applying a slight variation of the Successive Approximation Lemma (or its underlying principle), we can show that:
+  
+  $ ball_Y (0 , delta) subset T (ball_X ( 0 , 2) ). $
+  
+  Let's scale this. Let $r_Y > 0$ be arbitrary. We can find a corresponding $r_X > 0$ such that $ball_Y (0 , r_Y) subset T (ball_X ( 0 , r_X) )$.
 
-+ #strong[Showing T is Open:] To show $T$ is an open map, we must show that for any open set $U subset X$, its image $T (U)$ is open in $Y$.  Let $x_0 in U$. Since $U$ is open, there exists an $r > 0$ such that the open ball $ball_X (x_0 , r) subset U$. The image of this ball is: $ T (ball_X ( x_0 , r) ) = T (x_0 + ball_X ( 0 , r) ) = T (x_0) + T (ball_X ( 0 , r) ) $ From step 3, we know there exists some $delta' > 0$ such that $ball_Y (0 , delta') subset T (ball_X ( 0 , r) )$. Therefore: $ T (ball_X ( x_0 , r) ) supset T (x_0) + ball_Y (0 , delta') = ball_Y (T ( x_0) , delta' ) $ This means that for any point $y in T (U)$, we have found an open ball centered at $y$ that is fully contained in $T (U)$. Thus, $T (U)$ is an open set.
++ #strong[Showing T is Open:] To show $T$ is an open map, we must show that for any open set $U subset X$, its image $T (U)$ is open in $Y$.  Let $x_0 in U$. Since $U$ is open, there exists an $r > 0$ such that the open ball $ball_X (x_0 , r) subset U$. The image of this ball is:
+  
+  $ T (ball_X ( x_0 , r) ) = T (x_0 + ball_X ( 0 , r) ) = T (x_0) + T (ball_X ( 0 , r) ). $
+  
+  From step 3, we know there exists some $delta' > 0$ such that $ball_Y (0 , delta') subset T (ball_X ( 0 , r) )$. Therefore:
+  
+  $ T (ball_X ( x_0 , r) ) supset T (x_0) + ball_Y (0 , delta') = ball_Y (T ( x_0) , delta' ). $
+  
+  This means that for any point $y in T (U)$, we have found an open ball centered at $y$ that is fully contained in $T (U)$. Thus, $T (U)$ is an open set.
 ]
 
 #corollary(title: "The Inverse Mapping Theorem")[
@@ -129,7 +164,7 @@ However, if $f$ is a non-zero functional, it is an open map.
 #proof[
 Let $f : X arrow.r bb(R)$ be a non-zero continuous linear functional on a Banach space $X$. Since $f$ is non-zero, there exists some $x_0 in X$ such that $f (x_0) eq.not 0$. Define:
 
-$ x_1 := frac(x_0, f (x_0)) quad "so that" quad f (x_1) = 1 $
+$ x_1 := frac(x_0, f (x_0)) quad "so that" quad f (x_1) = 1. $
 
 Let $delta := frac(1, 2 norm(x_1)) > 0$. Then for any scalar $alpha in (- delta , delta)$, we have:
 
@@ -172,13 +207,25 @@ Let $X$ and $Y$ be normed vector spaces and $T in cal(L) (X , Y)$ be a linear op
 #proof[
 - #strong[(1) $=>$ (2):] If $T$ is an open map, then the image of the open unit ball $ball_X$, which is an open set containing $0 in X$, must be an open set in $Y$ containing $T (0) = 0 in Y$. By definition of an open set in a normed space, $T (ball_X)$ must contain an open ball centered at $0$, which is condition (2).
 
-- #strong[(2) $=>$ (1):] Assume $ball_Y (0 , delta) subset.eq T (ball_X)$. To show $T$ is an open map, we need to show $T (O)$ is open for any open set $O subset.eq X$. For any $x in O$, there exists a radius $r > 0$ such that the ball $ball_X (x , r) = x + r ball_X$ is contained in $O$. The image is $T (ball_X ( x , r) ) = T (x) + r T (ball_X)$. Using our assumption, we have: $ T (ball_X ( x , r) ) supset.eq T (x) + r ball_Y (0 , delta) = ball_Y (T ( x) , r delta ) $ This shows that the image $T (O)$ contains an open ball around each of its points, and is therefore open.
+- #strong[(2) $=>$ (1):] Assume $ball_Y (0 , delta) subset.eq T (ball_X)$. To show $T$ is an open map, we need to show $T (O)$ is open for any open set $O subset.eq X$. For any $x in O$, there exists a radius $r > 0$ such that the ball $ball_X (x , r) = x + r ball_X$ is contained in $O$. The image is $T (ball_X ( x , r) ) = T (x) + r T (ball_X)$. Using our assumption, we have:
+  
+  $ T (ball_X ( x , r) ) supset.eq T (x) + r ball_Y (0 , delta) = ball_Y (T ( x) , r delta ). $
+  
+  This shows that the image $T (O)$ contains an open ball around each of its points, and is therefore open.
 
 - #strong[(3) $=>$ (2):] Assume condition (3). For any $y in ball_Y (0 , 1 \/ M)$, we have $norm(y)_Y < 1 \/ M$. By (3), there exists an $x in X$ such that $T x = y$ and $norm(x)_X lt.eq M norm(y)_Y < 1$. This means $x in ball_X$. Therefore, $ball_Y (0 , 1 \/ M) subset.eq T (ball_X)$, which is condition (2) with $delta = 1 \/ M$.
 
 - #strong[(2) $=>$ (3):] Assume $ball_Y (0 , delta) subset.eq T (ball_X)$. This immediately implies that $T$ is surjective, since any $y in Y$ can be written as $y = frac(norm(y)_Y, delta') z$ where $z = frac(delta', norm(y)_Y) y$ has norm $delta'$ for any $delta' < delta$. Since $z in ball_Y (0 , delta)$, there exists an $x_z in ball_X$ with $T x_z = z$. Then $T (frac(norm(y)_Y, delta') x_z) = y$.
   
-  To establish the bound, for any non-zero $y in Y$, consider the element $y' = frac(delta, 2 norm(y)_Y) y$. Since $norm(y')_Y = delta \/ 2$, $y' in ball_Y (0 , delta)$. Thus, there exists an $x' in ball_X$ (so $norm(x')_X < 1$) such that $T x' = y'$. Let $x = frac(2 norm(y)_Y, delta) x'$. Then: $ T x = frac(2 norm(y)_Y, delta) T x' = frac(2 norm(y)_Y, delta) y' = frac(2 norm(y)_Y, delta) (frac(delta, 2 norm(y)_Y) y) = y $ And the norm of $x$ is bounded: $ norm(x)_X = frac(2 norm(y)_Y, delta) norm(x')_X < frac(2 norm(y)_Y, delta) $ Thus, condition (3) holds with $M = 2 \/ delta$.
+  To establish the bound, for any non-zero $y in Y$, consider the element $y' = frac(delta, 2 norm(y)_Y) y$. Since $norm(y')_Y = delta \/ 2$, $y' in ball_Y (0 , delta)$. Thus, there exists an $x' in ball_X$ (so $norm(x')_X < 1$) such that $T x' = y'$. Let $x = frac(2 norm(y)_Y, delta) x'$. Then:
+  
+  $ T x = frac(2 norm(y)_Y, delta) T x' = frac(2 norm(y)_Y, delta) y' = frac(2 norm(y)_Y, delta) (frac(delta, 2 norm(y)_Y) y) = y. $
+  
+  And the norm of $x$ is bounded:
+  
+  $ norm(x)_X = frac(2 norm(y)_Y, delta) norm(x')_X < frac(2 norm(y)_Y, delta). $
+  
+  Thus, condition (3) holds with $M = 2 \/ delta$.
 ]
 
 Another major consequence of the Open Mapping Theorem is the Closed Graph Theorem, which provides a practical criterion for determining if a linear operator is bounded.
@@ -205,7 +252,7 @@ Let $X$ and $Y$ be Banach spaces and let $T : X arrow.r Y$ be a linear operator 
 
   + Suppose $graph(T) subset X times Y$ is closed. Since both $X$ and $Y$ are Banach spaces, the product space $X times Y$ with norm
 
-    $ norm((x , y))_(X times Y) := norm(x)_X + norm(y)_Y $
+    $ norm((x , y))_(X times Y) := norm(x)_X + norm(y)_Y. $
 
     is also a Banach space. Hence, $graph(T)$, being a closed subspace of a Banach space, is itself a Banach space under the induced norm.
 

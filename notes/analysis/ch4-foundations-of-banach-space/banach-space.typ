@@ -87,7 +87,7 @@ The finite-dimensional spaces serve as a foundation for understanding their infi
 
 All these spaces, $(ell^p , norm(dot.op)_(ell^p))$ and $(L^p , norm(dot.op)_(L^p))$, for $1 lt.eq p lt.eq oo$, are complete and thus are Banach spaces.
 
-The space $L^2 (bb(R)^d)$ is of particular importance as it possesses an inner product, making it a #strong[Hilbert space];: $ angle.l f , g angle.r = integral_(bb(R)^d) f (x) overline(g (x)) dif x $ The norm induced by this inner product is $norm(f)_(L^2) = sqrt((angle.l f , f angle.r)) = (integral_(bb(R)^d) abs(f (x))^2 dif x)^(1 \/ 2)$.
+The space $L^2 (bb(R)^d)$ is of particular importance as it possesses an inner product, making it a #strong[Hilbert space];: $ angle.l f , g angle.r = integral_(bb(R)^d) f (x) overline(g (x)) dif x $ The norm induced by this inner product is $norm(f)_(L^2) = sqrt(angle.l f \, f angle.r) = (integral_(bb(R)^d) abs(f (x))^2 dif x)^(1 \/ 2)$.
 
 ==== Spaces of Bounded and Continuous Functions
 

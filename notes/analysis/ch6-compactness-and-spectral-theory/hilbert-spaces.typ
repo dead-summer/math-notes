@@ -12,14 +12,14 @@
 An inner product space is the foundational structure upon which a Hilbert space is built. It endows a vector space with a geometric structure involving notions of length and angle.
 
 #definition[
-Let $X$ be a vector space over a field $bb(F)$, where $bb(F)$ is either the field of real numbers $bb(R)$ or the field of complex numbers $bb(C)$. An #strong[inner product] on $X$ is a function $angle.l dot.op , dot.op angle.r : X times X arrow.r bb(F)$ that satisfies the following axioms for all vectors $x , y , x_1 , x_2 , y_1 , y_2 in X$ and any scalar $alpha in bb(F)$:
+Let $X$ be a vector space over a field $bb(F)$, where $bb(F)$ is either $bb(R)$ or $bb(C)$. An #strong[inner product] on $X$ is a function $angle.l dot.op , dot.op angle.r : X times X arrow.r bb(F)$ that satisfies the following axioms for all vectors $x , y , x_1 , x_2 , y_1 , y_2 in X$ and any scalar $alpha in bb(F)$:
 
 + #strong[Sesquilinearity:] The inner product is linear in its first argument and conjugate linear in its second argument.
   - $angle.l x_1 + x_2 , y angle.r = angle.l x_1 , y angle.r + angle.l x_2 , y angle.r$.
   - $angle.l alpha x , y angle.r = alpha angle.l x , y angle.r$.
   - $angle.l x , y_1 + y_2 angle.r = angle.l x , y_1 angle.r + angle.l x , y_2 angle.r$.
   - $angle.l x , alpha y angle.r = overline(alpha) angle.l x , y angle.r$.
-+ #strong[Conjugate Symmetry:] $angle.l x , y angle.r = overline((angle.l y , x angle.r))$.
++ #strong[Conjugate Symmetry:] $angle.l x , y angle.r = overline(angle.l y \, x angle.r)$.
 + #strong[Positive-Definiteness:]
   - $angle.l x , x angle.r gt.eq 0$.
   - $angle.l x , x angle.r = 0$ if and only if $x = 0$.
@@ -28,18 +28,20 @@ Let $X$ be a vector space over a field $bb(F)$, where $bb(F)$ is either the fiel
 
 A vector space $X$ equipped with an inner product $angle.l dot.op , dot.op angle.r$ is called an #strong[inner product space];.
 
-Every inner product naturally induces a norm on the vector space, defined as: $ norm(x) = sqrt((angle.l x , x angle.r)). $
+Every inner product naturally induces a norm on the vector space, defined as:
+
+$ norm(x) = sqrt(angle.l x \, x angle.r). $
 
 This induced norm satisfies the triangle inequality, a fact that follows directly from the #strong[Cauchy-Schwarz Inequality];:
-$ abs((angle.l x , y angle.r)) lt.eq norm(x) norm(y). $
+$ abs(angle.l x \, y angle.r) lt.eq norm(x) norm(y). $
 
 Indeed, for any $x , y in X$, we have:
 $
 norm(x + y)^2 &= angle.l x + y , x + y angle.r = angle.l x , x angle.r + angle.l x , y angle.r + angle.l y , x angle.r + angle.l y , y angle.r \
-&= norm(x)^2 + norm(y)^2 + angle.l x , y angle.r + overline((angle.l x , y angle.r)) \
-&= norm(x)^2 + norm(y)^2 + 2 Re(angle.l x , y angle.r).
+&= norm(x)^2 + norm(y)^2 + angle.l x , y angle.r + overline(angle.l x \, y angle.r) \
+&= norm(x)^2 + norm(y)^2 + 2 Re angle.l x \, y angle.r.
 $
-By the Cauchy-Schwarz inequality, $2 Re(angle.l x , y angle.r) lt.eq 2 abs((angle.l x , y angle.r)) lt.eq 2 norm(x) norm(y)$, so:
+By the Cauchy-Schwarz inequality, $2 Re angle.l x \, y angle.r lt.eq 2 abs(angle.l x \, y angle.r) lt.eq 2 norm(x) norm(y)$, so:
 $ norm(x + y)^2 lt.eq norm(x)^2 + norm(y)^2 + 2 norm(x) norm(y) = (norm(x) + norm(y))^2. $
 Taking the square root of both sides yields $norm(x + y) lt.eq norm(x) + norm(y)$.
 
@@ -57,13 +59,11 @@ If the Parallelogram Law holds, the inner product can be recovered from the norm
 A Hilbert space is an inner product space that is also a complete metric space with respect to the metric induced by its norm.
 
 #definition[
-An inner product space $(X , angle.l dot.op , dot.op angle.r)$ is called a #strong[Hilbert space] if it is a complete space with respect to the induced norm $norm(x) = sqrt((angle.l x , x angle.r))$. Completeness means that every Cauchy sequence in $X$ converges to a limit that is also in $X$.
+An inner product space $(X , angle.l dot.op , dot.op angle.r)$ is called a #strong[Hilbert space] if it is a complete space with respect to the induced norm $norm(x) = sqrt(angle.l x \, x angle.r)$. Completeness means that every Cauchy sequence in $X$ converges to a limit that is also in $X$.
 ]
 
 #example(title: "Examples of Hilbert Spaces")[
-+ #strong[Finite-Dimensional Euclidean and Unitary Spaces:]
-
-  - $bb(R)^d$ and $bb(C)^d$ with the standard inner product $angle.l x , y angle.r = sum_(i = 1)^d x_i overline(y_i)$ are Hilbert spaces.
++ #strong[Finite-Dimensional Euclidean and Unitary Spaces:] $bb(R)^d$ and $bb(C)^d$ with the standard inner product $angle.l x , y angle.r = sum_(i = 1)^d x_i overline(y_i)$ are Hilbert spaces.
 
 + #strong[Sequence Space $ell^2$:] The space of all square-summable sequences of complex numbers, with the inner product $angle.l { x_n } , { y_n } angle.r = sum_(n = 1)^oo x_n overline(y_n)$.
 
@@ -126,8 +126,16 @@ Let $H$ be a Hilbert space and $Y subset.eq H$ be a closed subspace. Then every 
 ]
 
 #proof[
-1. #strong[Decomposition:] For any $x in H$, let $y_0$ be its unique nearest point projection onto the closed subspace $Y$. We must show that the vector $z = x - y_0$ belongs to $Y^perp$. By the nature of the projection, for any $y in Y$ and $t in bb(R)$, we have $norm(x - y_0)^2 lt.eq norm(x - (y_0 - t y))^2$. Expanding this inequality leads to $2 t Re(angle.l x - y_0 , y angle.r) + t^2 norm(y)^2 gt.eq 0$. For this quadratic in $t$ to always be non-negative, the linear term must be zero, implying $Re(angle.l x - y_0 , y angle.r) = 0$. A similar argument with $t$ replaced by $imUnit t$ (for complex scalars) shows that the imaginary part is also zero. Thus, $angle.l x - y_0 , y angle.r = 0$ for all $y in Y$, so $x - y_0 in Y^perp$.
+1. #strong[Decomposition:] For any $x in H$, let $y_0$ be its unique nearest point projection onto the closed subspace $Y$. We must show that the vector $z = x - y_0$ belongs to $Y^perp$.
+
+  By the nature of the projection, for any $y in Y$ and $t in bb(R)$, we have $norm(x - y_0)^2 lt.eq norm(x - (y_0 - t y))^2$. Expanding this inequality leads to
+  
+  $ 2 t Re(angle.l x - y_0 , y angle.r) + t^2 norm(y)^2 gt.eq 0. $
+  
+  For this quadratic in $t$ to always be non-negative, the linear term must be zero, implying $Re(angle.l x - y_0 , y angle.r) = 0$. A similar argument with $t$ replaced by $imUnit t$ (for complex scalars) shows that the imaginary part is also zero. Thus, $angle.l x - y_0 , y angle.r = 0$ for all $y in Y$, so $x - y_0 in Y^perp$.
 2. #strong[Uniqueness:] If $x = y_1 + z_1 = y_2 + z_2$ where $y_1 , y_2 in Y$ and $z_1 , z_2 in Y^perp$, then $y_1 - y_2 = z_2 - z_1$. The left side is in $Y$ and the right side is in $Y^perp$. Since $Y inter Y^perp = { 0 }$, both sides must be zero, so $y_1 = y_2$ and $z_1 = z_2$.
 ]
 
-This property that every closed subspace $Y$ has a complementary subspace $Y^perp$ such that $H = Y plus.circle Y^perp$ is a defining feature of Hilbert spaces. A famous result by Lindenstrauss and Tzafriri states that if every closed subspace of an infinite-dimensional Banach space is complemented, then that space must be isomorphic to a Hilbert space.
+This property that every closed subspace $Y$ has a complementary subspace $Y^perp$ such that $H = Y plus.circle Y^perp$ is a defining feature of Hilbert spaces.
+
+A famous result by Lindenstrauss and Tzafriri states that if every closed subspace of an infinite-dimensional Banach space is complemented, then that space must be isomorphic to a Hilbert space.

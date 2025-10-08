@@ -50,9 +50,17 @@ Let $X$ and $Y$ be Banach spaces. Then:
   $ X = ker T xor X_1 quad "and" quad Y = ran T xor Y_1. $
   Note that $dim (Y_1) = codim (ran T) < oo$.
 
-+ #strong[Constructing an Isomorphism:] Consider the restriction of $T$ to $X_1$, denoted $T mid(|)_(X_1) : X_1 arrow.r ran T$. This map is a linear bijection. By the Banach isomorphism theorem, it is an isomorphism. Now, define a new operator $tilde(T) : X_1 xor Y_1 arrow.r Y$ by: $ tilde(T) (x_1 , y_1) = T x_1 + y_1 $ This operator $tilde(T)$ is a linear bijection between Banach spaces, and thus it is also a Banach space isomorphism. 
++ #strong[Constructing an Isomorphism:] Consider the restriction of $T$ to $X_1$, denoted $T mid(|)_(X_1) : X_1 arrow.r ran T$. This map is a linear bijection. By the Banach isomorphism theorem, it is an isomorphism. Now, define a new operator $tilde(T) : X_1 xor Y_1 arrow.r Y$ by:
 
-+ #strong[Perturbation:] Let $S in cal(B)(X, Y)$ be an operator close to $T$. We construct a corresponding perturbed operator $tilde(S) : X_1 xor Y_1 arrow.r Y$: $ tilde(S) (x_1 , y_1) = S x_1 + y_1 $ The difference between $tilde(T)$ and $tilde(S)$ can be bounded: $ norm(tilde(T) - tilde(S)) = sup_(norm(x_1) + norm(y_1) = 1) norm((tilde(T) - tilde(S)) (x_1 , y_1)) = sup_(norm(x_1) + norm(y_1) = 1) norm((T - S) x_1) lt.eq norm(T - S). $ Since the set of invertible operators in $cal(B) (X_1 xor Y_1 , Y)$ is open, if we choose $norm(T - S)$ to be sufficiently small, $tilde(S)$ will also be an isomorphism. 
+  $ tilde(T) (x_1 , y_1) = T x_1 + y_1. $
+  
+  This operator $tilde(T)$ is a linear bijection between Banach spaces, and thus it is also a Banach space isomorphism. 
+
++ #strong[Perturbation:] Let $S in cal(B)(X, Y)$ be an operator close to $T$. We construct a corresponding perturbed operator $tilde(S) : X_1 xor Y_1 arrow.r Y$:
+  
+  $ tilde(S) (x_1 , y_1) = S x_1 + y_1. $
+  
+  The difference between $tilde(T)$ and $tilde(S)$ can be bounded: $ norm(tilde(T) - tilde(S)) = sup_(norm(x_1) + norm(y_1) = 1) norm((tilde(T) - tilde(S)) (x_1 , y_1)) = sup_(norm(x_1) + norm(y_1) = 1) norm((T - S) x_1) lt.eq norm(T - S). $ Since the set of invertible operators in $cal(B) (X_1 xor Y_1 , Y)$ is open, if we choose $norm(T - S)$ to be sufficiently small, $tilde(S)$ will also be an isomorphism. 
 
 + #strong[Properties of S:] Assuming $tilde(S)$ is an isomorphism, we can deduce the properties of $S$.
 
@@ -75,7 +83,11 @@ Let $X$ be a Banach space and $K in cal(K) (X)$ be a compact operator. Then the 
 
 + #strong[$ran(I - K)$ is closed:]  We can write $X = ker (I - K) xor V$ for some closed subspace $V$. The restriction $(I - K) mid(|)_V$ is injective. We can show this restriction has a bounded inverse. Assume for contradiction it does not. Then there exists a sequence ${ v_n } subset V$ with $norm(v_n) = 1$ such that $(I - K) v_n arrow.r 0$. Since $K$ is compact, there is a subsequence (which we still label $v_n$) such that $K v_n arrow.r z in X$. Then $v_n = (I - K) v_n + K v_n arrow.r 0 + z = z$. Since $V$ is closed, $z in V$. Also, $(I - K) z = lim_(n->infinity) (I - K) v_n = 0$, so $z in ker (I - K)$. This means $z in ker (I - K) inter V = { 0 }$, so $z = 0$. This contradicts $norm(z) = lim_(n->infinity) norm(v_n) = 1$.  Thus, $(I - K) mid(|)_V$ has a bounded inverse, which implies that its range, $ran(I - K)$, is closed.
 
-+ #strong[$ran(I - K)$ has finite codimension:]  This can be proven by considering the adjoint operator $T^* = (I - K)^* = I^* - K^*$. Since the adjoint of a compact operator is compact, $K^*$ is compact. From Step 1, we know $dim (ker (I^* - K^*))$ is finite. By standard results from functional analysis, we have the relationship: $ overline(ran(I - K)) = (ker ((I - K)^*))^perp = (ker (I^* - K^*))^perp $ Since we know from Step 2 that $ran(I - K)$ is closed, we have: $ codim (ran(I - K)) = dim (X \/ ran(I - K)) = dim (ker (I^* - K^*)) < oo. $ This establishes that the codimension is finite.
++ #strong[$ran(I - K)$ has finite codimension:]  This can be proven by considering the adjoint operator $T^* = (I - K)^* = I^* - K^*$. Since the adjoint of a compact operator is compact, $K^*$ is compact. From Step 1, we know $dim (ker (I^* - K^*))$ is finite. By standard results from functional analysis, we have the relationship:
+
+  $ overline(ran(I - K)) = (ker ((I - K)^*))^perp = (ker (I^* - K^*))^perp. $
+  
+  Since we know from Step 2 that $ran(I - K)$ is closed, we have: $ codim (ran(I - K)) = dim (X \/ ran(I - K)) = dim (ker (I^* - K^*)) < oo. $ This establishes that the codimension is finite.
 + #strong[$index(I - K) = 0$:] The set of operators of the form $I - t K$ for $t in [0 , 1]$ forms a continuous path within $cal(B) (X , X)$. Since $fred(X)$ is open, this entire path lies within $fred(X)$. As the index function is continuous (and integer-valued), it must be constant along this path. Therefore:
 $
 index(I - K) &= index(I - 0 dot.op K) \
@@ -90,8 +102,8 @@ The intuitive idea that Fredholm operators are "almost invertible" can be made p
 
 #definition[
 An operator $T in cal(B)(X, Y)$ is said to be #strong[invertible modulo the compact operators] if there exists an operator $S in cal(B) (Y , X)$ (called a #strong[parametrix];) such that:
-- $S T = I_X - K_1$ for some compact operator $K_1 in cal(B) (X , X)$.
-- $T S = I_Y - K_2$ for some compact operator $K_2 in cal(B) (Y , Y)$.
+- $S T = I_X - K_1$ for some compact operator $K_1 in cal(K) (X , X)$.
+- $T S = I_Y - K_2$ for some compact operator $K_2 in cal(K) (Y , Y)$.
 ]
 
 #theorem(title: "Atkinson's Theorem")[

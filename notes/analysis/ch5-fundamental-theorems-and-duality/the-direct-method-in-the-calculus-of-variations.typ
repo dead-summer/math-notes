@@ -55,9 +55,13 @@ Let $X$ be a reflexive Banach space and let $J : X arrow.r bb(R)$ be a functiona
 
 + Since $X$ is a #strong[reflexive Banach space];, every bounded sequence has a weakly convergent subsequence. Therefore, there exists a subsequence ${ x_(n_k) }_(k in bb(N))$ and an element $x in X$ such that $x_(n_k) weakTo x$ as $k arrow.r oo$. 
 
-+ By the #strong[sequential weak lower semi-continuity] of $J$, we have: $ J (x) lt.eq liminf_(k arrow.r oo) J (x_(n_k)) $ 
++ By the #strong[sequential weak lower semi-continuity] of $J$, we have:
+  
+  $ J (x) lt.eq liminf_(k arrow.r oo) J (x_(n_k)). $ 
 
-+ Combining these steps, we arrive at the conclusion: $ J (x) lt.eq liminf_(k arrow.r oo) J (x_(n_k)) = lim_(n arrow.r oo) J (x_n) = inf_(tilde(x) in X) J (tilde(x)) $ 
++ Combining these steps, we arrive at the conclusion:
+  
+  $ J (x) lt.eq liminf_(k arrow.r oo) J (x_(n_k)) = lim_(n arrow.r oo) J (x_n) = inf_(tilde(x) in X) J (tilde(x)). $ 
 
 Since $J (x)$ cannot be less than the infimum of $J$ over all of $X$, it must be that $J (x) = inf_(tilde(x) in X) J (tilde(x))$.  Thus, $x$ is a minimizer, and the proof is complete.
 ]
@@ -76,9 +80,15 @@ Let $X$ be a normed vector space. If a functional $J : X arrow.r bb(R)$ is both 
 
 + Since $J$ is convex, we have: $ J (u_m) = J (sum_(k = m)^(N (m)) lambda_k^((m)) x_(n_k)) lt.eq sum_(k = m)^(N (m)) lambda_k^((m)) J (x_(n_k)). $ 
 
-+ Because $J$ is also lower semi-continuous with respect to the norm, and $u_m arrow.r x$ in norm, we have: $ J (x) lt.eq liminf_(m arrow.r oo) J (u_m) $ 
++ Because $J$ is also lower semi-continuous with respect to the norm, and $u_m arrow.r x$ in norm, we have:
+  
+  $ J (x) lt.eq liminf_(m arrow.r oo) J (u_m). $ 
 
-+ Combining these inequalities, we get: $ J (x) lt.eq liminf_(m arrow.r oo) J (u_m) lt.eq liminf_(m arrow.r oo) (sum_(k = m)^(N (m)) lambda_k^((m)) J (x_(n_k))) lt.eq lim_(k arrow.r oo) J (x_(n_k)) = liminf_(n arrow.r oo) J (x_n). $
++ Combining these inequalities, we get:
+ 
+  $
+  J (x) &lt.eq liminf_(m arrow.r oo) J (u_m) lt.eq liminf_(m arrow.r oo) (sum_(k = m)^(N (m)) lambda_k^((m)) J (x_(n_k))) \
+  &lt.eq lim_(k arrow.r oo) J (x_(n_k)) = liminf_(n arrow.r oo) J (x_n). $
   This shows that $J$ is sequentially weakly lower semi-continuous.
 ]
 

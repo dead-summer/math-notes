@@ -61,7 +61,7 @@ Let $T in cal(K)(X)$ be a compact operator on a Banach space $X$.
 
   Let's rewrite $T y_n$ as: $ T y_n = lambda_n y_n - (lambda_n y_n - T y_n). $ The vector $v_n = lambda_n y_n - T y_n = lambda_n sum_(i = 1)^n c_i x_i - sum_(i = 1)^n c_i lambda_i x_i = sum_(i = 1)^(n - 1) c_i (lambda_n - lambda_i) x_i$. As $v_n$ is a linear combination of ${ x_1 , dots.h , x_(n - 1) }$, it belongs to the subspace $H_(n - 1)$.
 
-  Also, since $m < n$, we have $y_m in H_m subset H_(n - 1)$, which implies $T y_m in H_(n - 1)$. Therefore, the vector $z = T y_m + v_n = T y_m + lambda_n y_n - T y_n$ is in $H_(n - 1)$.
+  Also, since $m < n$, we have $y_m in H_m subset H_(n - 1)$, which implies $T y_m in H_(n - 1)$. Therefore, the vector $z = T y_m + v_n$ is in $H_(n - 1)$.
 
   Now we can evaluate the norm of the difference:
   $ norm(T y_n - T y_m) = norm(lambda_n y_n - z) = abs(lambda_n ) norm(y_n - z / lambda_n). $

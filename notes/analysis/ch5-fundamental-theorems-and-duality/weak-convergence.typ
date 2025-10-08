@@ -50,7 +50,19 @@ We claim that the sequence ${ e_n }$ converges weakly to 0:
 $ e_n weakTo 0. $
 
 To prove this, we recall that the dual space of $ell^p$ is isometrically isomorphic to $ell^q$, where $1 / p + 1 / q = 1$. 
-Any functional $f in (ell^p)^*$ can be represented by a sequence $y = (y_k) in ell^q$ such that for any $x = (x_k) in ell^p$: $ f (x) = sum_(k = 1)^oo x_k y_k $ Applying this to our sequence $e_n$, we have: $ f (e_n) = sum_(k = 1)^oo (e_n)_k y_k = y_n $ Since $y in ell^q$, the terms of the sequence must converge to zero, i.e., $lim_(n arrow.r oo) y_n = 0$. Therefore, for any $f in (ell^p)^*$, we have: $ lim_(n arrow.r oo) f (e_n) = 0 = f (0) $ This confirms that $e_n weakTo 0$. It is important to note that ${ e_n }$ does not converge strongly (in norm), as $norm(e_n - 0)_(ell^p) = norm(e_n)_(ell^p) = 1$ for all $n$.
+Any functional $f in (ell^p)^*$ can be represented by a sequence $y = (y_k) in ell^q$ such that for any $x = (x_k) in ell^p$:
+
+$ f (x) = sum_(k = 1)^oo x_k y_k. $
+
+Applying this to our sequence $e_n$, we have:
+
+$ f (e_n) = sum_(k = 1)^oo (e_n)_k y_k = y_n. $
+
+Since $y in ell^q$, the terms of the sequence must converge to zero, i.e., $lim_(n arrow.r oo) y_n = 0$. Therefore, for any $f in (ell^p)^*$, we have:
+
+$ lim_(n arrow.r oo) f (e_n) = 0 = f (0). $
+
+This confirms that $e_n weakTo 0$. It is important to note that ${ e_n }$ does not converge strongly (in norm), as $norm(e_n - 0)_(ell^p) = norm(e_n)_(ell^p) = 1$ for all $n$.
 
 This example illustrates that in infinite-dimensional spaces, weak convergence is a strictly weaker condition than strong (norm) convergence.
 ]
@@ -74,7 +86,11 @@ Specifically, for each $n$, $u_n$ has the form: $ u_n = sum_(k = n)^(N (n)) a_k^
   $ f (x_k) gt.eq inf_(y in W_n) f (y) > f (x) quad "for all" k gt.eq n. $
   However, we are given that $x_n weakTo x$. This leads to a contradiction. Therefore, our initial assumption must be false, and we conclude that $x in overline(W_n)$ for all $n$.
 
-+ #strong[Construct the Strongly Convergent Sequence:] Since $x in overline(W_n)$ for every $n$, the distance from $x$ to the set $W_n$ is zero. This means for any $delta > 0$, we can find an element in $W_n$ that is within a distance $delta$ of $x$. We can construct the desired sequence ${ u_n }$ by choosing, for each $n in bb(N)$, an element $u_n in W_n$ such that: $ norm(u_n - x) < 1 / n $ As $n arrow.r oo$, it is clear that $norm(u_n - x) arrow.r 0$. By definition, each $u_n$ is an element of $W_n$ and is therefore a finite convex combination of elements from ${ x_k }_(k gt.eq n)$. This completes the proof.
++ #strong[Construct the Strongly Convergent Sequence:] Since $x in overline(W_n)$ for every $n$, the distance from $x$ to the set $W_n$ is zero. This means for any $delta > 0$, we can find an element in $W_n$ that is within a distance $delta$ of $x$. We can construct the desired sequence ${ u_n }$ by choosing, for each $n in bb(N)$, an element $u_n in W_n$ such that:
+
+  $ norm(u_n - x) < 1 / n. $
+ 
+  As $n arrow.r oo$, it is clear that $norm(u_n - x) arrow.r 0$. By definition, each $u_n$ is an element of $W_n$ and is therefore a finite convex combination of elements from ${ x_k }_(k gt.eq n)$. This completes the proof.
 ]
 
 === Weak-\* Convergence in the Dual Space
@@ -167,9 +183,25 @@ Let ${ x_n }_(n = 1)^oo$ be a bounded sequence in a reflexive Banach space $X$. 
 
 + #strong[Apply Banach-Alaoglu to the Dual:] Since $Y$ is reflexive, its dual space $Y^*$ has a separable bidual ($Y^(**) tilde.equiv Y$ is separable). A standard theorem states that if a dual space $Z^*$ has a separable bidual $Z^(**)$, then $Z^*$ must be separable. Applying this to $Z = Y^*$, we conclude that #strong[$Y^*$ is separable];.
 
-+ #strong[Find a Weak-\* Convergent Subsequence in the Bidual:] Consider the sequence ${ x_n }$ as a sequence in $Y$. Through the canonical embedding $J : Y arrow.r Y^(**)$, we can view ${ J (x_n) }$ as a sequence in $Y^(**)$. This sequence is norm-bounded: $ norm(J (x_n))_(Y^(**)) = norm(x_n)_Y lt.eq M $ We have a bounded sequence ${ J (x_n) }$ in the dual space of $Y^*$, which is $Y^(**)$. Since $Y^*$ is separable (from step 2), we can apply the sequential #strong[Banach-Alaoglu Theorem] to ${ J (x_n) }$. This guarantees the existence of a subsequence ${ J (x_(n_k)) }$ and an element $phi.alt in Y^(**)$ such that $J (x_(n_k)) weakTo phi.alt$.
++ #strong[Find a Weak-\* Convergent Subsequence in the Bidual:] Consider the sequence ${ x_n }$ as a sequence in $Y$. Through the canonical embedding $J : Y arrow.r Y^(**)$, we can view ${ J (x_n) }$ as a sequence in $Y^(**)$. This sequence is norm-bounded:
+  
+  $ norm(J (x_n))_(Y^(**)) = norm(x_n)_Y lt.eq M. $
+  
+  We have a bounded sequence ${ J (x_n) }$ in the dual space of $Y^*$, which is $Y^(**)$. Since $Y^*$ is separable (from step 2), we can apply the sequential #strong[Banach-Alaoglu Theorem] to ${ J (x_n) }$. This guarantees the existence of a subsequence ${ J (x_(n_k)) }$ and an element $phi.alt in Y^(**)$ such that $J (x_(n_k)) weakTo phi.alt$.
 
-+ #strong[Use Reflexivity:] By definition, the weak-\* convergence $J (x_(n_k)) weakTo phi.alt$ means that for every functional $g in Y^*$: $ lim_(k arrow.r oo) (J (x_(n_k))) (g) = phi.alt (g) $ Since $Y$ is reflexive, the canonical map $J : Y arrow.r Y^(**)$ is a surjective isometry. Therefore, the limit element $phi.alt in Y^(**)$ must be the image of some element $x in Y$, i.e., $phi.alt = J (x)$. Substituting this back and using the definition of the canonical map, $(J (z)) (g) = g (z)$, we get: $ lim_(k arrow.r oo) g (x_(n_k)) = g (x) quad "for all" g in Y^* $ This is the definition of weak convergence in the space $Y$. So, $x_(n_k) weakTo x$ in $Y$.
++ #strong[Use Reflexivity:] By definition, the weak-\* convergence $J (x_(n_k)) weakTo phi.alt$ means that for every functional $g in Y^*$:
+  
+  $ lim_(k arrow.r oo) (J (x_(n_k))) (g) = phi.alt (g). $
+  
+  Since $Y$ is reflexive, the canonical map $J : Y arrow.r Y^(**)$ is a surjective isometry. Therefore, the limit element $phi.alt in Y^(**)$ must be the image of some element $x in Y$, i.e., $phi.alt = J (x)$. Substituting this back and using the definition of the canonical map, $(J (z)) (g) = g (z)$, we get:
+  
+  $ lim_(k arrow.r oo) g (x_(n_k)) = g (x) quad "for all" g in Y^*. $
+  
+  This is the definition of weak convergence in the space $Y$. So, $x_(n_k) weakTo x$ in $Y$.
 
-+ #strong[Extend Convergence to the Full Space:] Finally, we must show that this convergence holds not just for functionals in $Y^*$ but for all functionals in the larger space $X^*$. Let $f in X^*$ be an arbitrary functional. Its restriction to the subspace $Y$, denoted $f mid(|)_Y$, is a continuous linear functional on $Y$, so $f mid(|)_Y in Y^*$. Since $x_(n_k) weakTo x$ in $Y$, we know that $(f mid(|)_Y) (x_(n_k)) arrow.r (f mid(|)_Y) (x)$. By definition of restriction, this means: $ f (x_(n_k)) arrow.r f (x) $ Since this holds for an arbitrary $f in X^*$, we have proven that the subsequence ${ x_(n_k) }$ converges weakly to $x$ in the space $X$. This completes the proof.
++ #strong[Extend Convergence to the Full Space:] Finally, we must show that this convergence holds not just for functionals in $Y^*$ but for all functionals in the larger space $X^*$. Let $f in X^*$ be an arbitrary functional. Its restriction to the subspace $Y$, denoted $f mid(|)_Y$, is a continuous linear functional on $Y$, so $f mid(|)_Y in Y^*$. Since $x_(n_k) weakTo x$ in $Y$, we know that $(f mid(|)_Y) (x_(n_k)) arrow.r (f mid(|)_Y) (x)$. By definition of restriction, this means:
+
+  $ f (x_(n_k)) arrow.r f (x). $
+  
+  Since this holds for an arbitrary $f in X^*$, we have proven that the subsequence ${ x_(n_k) }$ converges weakly to $x$ in the space $X$. This completes the proof.
 ]

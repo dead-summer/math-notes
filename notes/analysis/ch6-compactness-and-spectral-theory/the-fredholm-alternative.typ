@@ -22,7 +22,7 @@ To fully understand the Fredholm Alternative, we must first introduce the concep
 #definition[
 For a bounded linear operator $T in cal(B)(X)$, its #strong[adjoint operator];, denoted by $T^* : X^* arrow.r X^*$, is defined by the relation:
 
-$ angle.l T x , f angle.r = angle.l x , T^* f angle.r quad "for all" x in X "and" f in X^* $
+$ angle.l T x , f angle.r = angle.l x , T^* f angle.r quad "for all" x in X "and" f in X^*. $
 
 Here, $angle.l x , f angle.r$ is another notation for $f (x)$, representing the action of the functional $f$ on the vector $x$. The adjoint operator $T^*$ is itself a bounded linear operator on the dual space $X^*$.
 ]

@@ -74,7 +74,7 @@ Let $X$ be a metric space.
 #proof(title: [Proof of 4])[
 Let ${ O_n }_(n = 1)^oo$ be a sequence of dense open sets in $X$. We want to show that their interinterion, $E = inter.big_(n = 1)^oo O_n$, is residual.
 
-Using De Morgan's laws, we have: $ X \\ E = X \\ (inter.big_(n = 1)^oo O_n) = union.big_(n = 1)^oo \( X \\ O_n \) $ Let $F_n = X \\ O_n$. To show that $X \\ E$ is meagre, we need to show that each $F_n$ is nowhere dense. Since $O_n$ is an open set, $F_n$ is a closed set, so $overline(F_n) = F_n$. The interior of $F_n$ is given by:
+Using De Morgan's laws, we have: $ X \\ E = X \\ (inter.big_(n = 1)^oo O_n) = union.big_(n = 1)^oo (X \\ O_n) $ Let $F_n = X \\ O_n$. To show that $X \\ E$ is meagre, we need to show that each $F_n$ is nowhere dense. Since $O_n$ is an open set, $F_n$ is a closed set, so $overline(F_n) = F_n$. The interior of $F_n$ is given by:
 
 $ interior(F_n) = interior((X \\ O_n)) = X \\ overline(O_n). $
 
@@ -88,19 +88,19 @@ Let $(X, d)$ be a nonempty, complete metric space. If ${ U_n }_(n = 1)^oo$ is a 
 #proof[
 To show that $E = inter.big_(n = 1)^oo U_n$ is dense in $X$, we must show that for any nonempty open set $W subset.eq X$, the interinterion $E inter W$ is nonempty.
 
-Let $W$ be an arbitrary nonempty open set. Since $U_1$ is dense and open, the interinterion $W inter U_1$ is also a nonempty open set. Therefore, we can find a point $x_1$ and a radius $r_1 > 0$ such that the closed ball $overline(B \( x_1 \, r_1 \))$ satisfies:
-$ overline(B \( x_1 \, r_1 \)) subset.eq W inter U_1 quad upright("and") quad 0 < r_1 < 1. $
+Let $W$ be an arbitrary nonempty open set. Since $U_1$ is dense and open, the interinterion $W inter U_1$ is also a nonempty open set. Therefore, we can find a point $x_1$ and a radius $r_1 > 0$ such that the closed ball $overline(ball (x_1 , r_1))$ satisfies:
+$ overline(ball (x_1 , r_1)) subset.eq W inter U_1 quad "and" quad 0 < r_1 < 1. $
 
-Now, since $U_2$ is dense and open, the interinterion $B \( x_1 \, r_1 \) inter U_2$ is a nonempty open set. We can choose a point $x_2$ and radius $r_2 > 0$ such that:
-$ overline(B \( x_2 \, r_2 \)) subset.eq B \( x_1 \, r_1 \) inter U_2 quad upright("and") quad 0 < r_2 < 1 \/ 2. $
+Now, since $U_2$ is dense and open, the interinterion $ball (x_1 , r_1) inter U_2$ is a nonempty open set. We can choose a point $x_2$ and radius $r_2 > 0$ such that:
+$ overline(ball (x_2 , r_2)) subset.eq ball (x_1 , r_1) inter U_2 quad "and" quad 0 < r_2 < 1 \/ 2. $
 
-We proceed inductively. Assume we have constructed a nested sequence of closed balls $overline(B \( x_k \, r_k \))$ for $k = 1 \, dots.h \, m$, such that:
-$ overline(B \( x_k \, r_k \)) subset.eq B \( x_(k - 1) \, r_(k - 1) \) inter U_k quad upright("and") quad 0 < r_k < 1 \/ k. $
+We proceed inductively. Assume we have constructed a nested sequence of closed balls $overline(ball (x_k , r_k))$ for $k = 1 , dots.h , m$, such that:
+$ overline(ball (x_k , r_k)) subset.eq ball (x_(k - 1) , r_(k - 1)) inter U_k quad "and" quad 0 < r_k < 1 \/ k. $
 
-Since $U_(m + 1)$ is dense and open, $B \( x_m \, r_m \) inter U_(m + 1)$ is a nonempty open set. We can thus find a closed ball $overline(B \( x_(m + 1) \, r_(m + 1) \))$ such that:
-$ overline(B \( x_(m + 1) \, r_(m + 1) \)) subset.eq B \( x_m \, r_m \) inter U_(m + 1) quad upright("and") quad 0 < r_(m + 1) < 1 \/ \( m + 1 \). $
+Since $U_(m + 1)$ is dense and open, $ball (x_m , r_m) inter U_(m + 1)$ is a nonempty open set. We can thus find a closed ball $overline(ball (x_(m + 1) , r_(m + 1)))$ such that:
+$ overline(ball (x_(m + 1) , r_(m + 1))) subset.eq ball (x_m , r_m) inter U_(m + 1) quad "and" quad 0 < r_(m + 1) < 1 \/ (m + 1). $
 
-This construction yields a nested sequence of non-empty closed balls $overline(B_1) supset.eq overline(B_2) supset.eq overline(B_3) supset.eq dots.h$, where $B_k = B \( x_k \, r_k \)$. The sequence of centers ${ x_n }$ is a Cauchy sequence, since for $m > n$, both $x_m$ and $x_n$ are in $B_(n - 1)$, so $d \( x_n \, x_m \) < 2 r_(n - 1) < 2 \/ \( n - 1 \)$, which approaches 0 as $n arrow.r oo$.
+This construction yields a nested sequence of non-empty closed balls $overline(B_1) supset.eq overline(B_2) supset.eq overline(B_3) supset.eq dots.h$, where $B_k = ball (x_k , r_k)$. The sequence of centers ${ x_n }$ is a Cauchy sequence, since for $m > n$, both $x_m$ and $x_n$ are in $B_(n - 1)$, so $d (x_n , x_m) < 2 r_(n - 1) < 2 \/ (n - 1)$, which approaches 0 as $n arrow.r oo$.
 
 Since $X$ is a complete metric space, the sequence ${ x_n }$ converges to a limit $x in X$. For any $k gt.eq 1$, the point $x$ is the limit of the sequence ${ x_n }_(n = k)^oo$, which is entirely contained in the closed ball $overline(B_k)$. Thus, $x in overline(B_k)$ for all $k gt.eq 1$.
 
@@ -109,10 +109,10 @@ By our construction, $x in overline(B_1) subset.eq W inter U_1$, so $x in W$. Al
 
 #corollary[
 A non-empty, complete metric space is of the second category in itself (i.e., it is non-meagre).
-]
+]<cor:complete-metric-space-is-non-meagre>
 
 #proof[
-Suppose for contradiction that $X$ is meagre. Then $X = union.big_(n = 1)^oo F_n$ where each $F_n$ is nowhere dense. Let $U_n = X \\ overline(F_n)$. Since $overline(F_n)$ has an empty interior, $U_n$ is a dense open set. By @thm:BCT, $inter.big U_n$ is dense in $X$ and thus nonempty. But $inter.big U_n = inter.big \( X \\ overline(F_n) \) = X \\ union.big overline(F_n) subset.eq X \\ union.big F_n = X \\ X = nothing$, a contradiction.
+Suppose for contradiction that $X$ is meagre. Then $X = union.big_(n = 1)^oo F_n$ where each $F_n$ is nowhere dense. Let $U_n = X \\ overline(F_n)$. Since $overline(F_n)$ has an empty interior, $U_n$ is a dense open set. By @thm:BCT, $inter.big U_n$ is dense in $X$ and thus nonempty. But $inter.big U_n = inter.big (X \\ overline(F_n)) = X \\ union.big overline(F_n) subset.eq X \\ union.big F_n = X \\ X = nothing$, a contradiction.
 ]
 
 #corollary(title: [Characterization of Residual Sets])[
@@ -120,7 +120,7 @@ In a complete metric space $X$, a set $E subset.eq X$ is residual if and only if
 ]<cor:characterization-of-residual-sets>
 
 #proof[
-($arrow.r.double$) If $E$ is residual, its complement $X \\ E$ is meagre. So, $X \\ E = union.big_(n = 1)^oo M_n$, where each $M_n$ is nowhere dense. Then $E = inter.big_(n = 1)^oo \( X \\ M_n \)$.
+($arrow.r.double$) If $E$ is residual, its complement $X \\ E$ is meagre. So, $X \\ E = union.big_(n = 1)^oo M_n$, where each $M_n$ is nowhere dense. Then $E = inter.big_(n = 1)^oo (X \\ M_n)$.
 
 Let $U_n = X \\ overline(M_n)$. Each $U_n$ is a dense open set. Indeed, $overline(U_n) = X \\ interior(overline(M_n)) = X$. Let $G = inter.big_(n = 1)^oo U_n$. Then $G$ is a $G_delta$ set. By @thm:BCT, $G$ is dense. Furthermore, since $M_n subset.eq overline(M_n)$, we have $X \\ overline(M_n) subset.eq X \\ M_n$, which implies $G subset.eq E$. So $E$ contains a dense $G_delta$ set.
 
@@ -160,7 +160,7 @@ Assume such a function $f$ exists. Let $C subset.eq [0, 1]$ be the set of points
 $
 C &= {x in [0, 1]: forall epsilon > 0, exists delta > 0,
 "s.t." forall y in {abs(x - y) < delta}, abs(f(x) - f(y)) < epsilon} \
-&= inter.big_(n=1)^infinity union.big_(m=1)^infinity {x in [0, 1]: f(B(x, 1/m)) subset B(f(x), 1/n)}.
+&= inter.big_(n=1)^infinity union.big_(m=1)^infinity {x in [0, 1]: f(ball(x, 1/m)) subset ball(f(x), 1/n)}.
 $
 
 So, if $C = bb(Q) inter [0, 1]$, then $C$ would be a dense $G_delta$ subset of $[0, 1]$. By @cor:characterization-of-residual-sets, this would imply that $bb(Q) inter [0, 1]$ is a residual set in $[0, 1]$. However, we know that $bb(Q) inter [0, 1]$ is a meagre set. This is a contradiction. Therefore, no such function can exist.
@@ -175,10 +175,10 @@ In the space $(C ([0,1]), norm(dot.op)_infinity)$, the set of functions that are
 This implies that a "generic" continuous function is nowhere differentiable.
 
 #proof[
-Let $cal(D)$ be the set of functions in $C ([0,1])$ that are differentiable at one or more points. We want to show $cal(D)$ is meagre. For integers $n \, m gt.eq 1$, define the set $E_(n, m)$ as:
+Let $cal(D)$ be the set of functions in $C ([0,1])$ that are differentiable at one or more points. We want to show $cal(D)$ is meagre. For integers $n , m gt.eq 1$, define the set $E_(n, m)$ as:
 
 $ E_(n, m) = {f in C ([0,1]):& exists x in [0, 1] "s.t."\
-&forall y in \( x - 1 \/ n \, x + 1 \/ n \) inter [0, 1] \, lr(|frac(f \( y \) - f \( x \), y - x)|) lt.eq m} $
+&forall y in (x - 1 \/ n , x + 1 \/ n) inter [0, 1] , lr(|frac(f (y) - f (x), y - x)|) lt.eq m}. $
 
 The set of all functions differentiable at some point is contained in the union $cal(D) subset.eq union.big_(m = 1)^oo union.big_(n = 1)^oo E_(n, m)$. We need to show that each set $E_(n, m)$ is a #strong[nowhere dense] subset of $C ([0,1])$. 
 
@@ -190,7 +190,7 @@ Since $cal(D)$ is a subset of a countable union of nowhere dense sets, it is mea
 ]
 
 #corollary[
-For any integer $k >=1$, the space of $k$-times continuously differentiable functions, $C^k([0,1])$, is a meagre subset of $C^(k-1)([0, 1])$. Here, the space $C^k([0,1])$ is equipped with the norm:
+For any integer $k >=1$, the space of $k$-times continuously differentiable functions, $C^k ([0,1])$, is a meagre subset of $C^(k-1)([0, 1])$. Here, the space $C^k ([0,1])$ is equipped with the norm:
 $
 norm(f)_(C^k) := sup_(1 <= j <= k) norm(f^((j)))_infinity,
 $
@@ -205,9 +205,9 @@ An infinite-dimensional Banach space cannot have a countable Hamel basis.
 ]
 
 #proof[
-Let $X$ be an infinite-dimensional Banach space. A Hamel basis is a maximal linearly independent set, such that every vector in $X$ is a #emph[finite] linear combination of basis vectors. Assume for contradiction that $X$ has a countable Hamel basis ${ e_n }_(n = 1)^oo$. For each $k in bb(N)$, define the subspace $X_k = upright("span") { e_1 \, e_2 \, dots.h \, e_k }$. By definition of a Hamel basis, we can write the entire space as the union of these subspaces: $ X = union.big_(k = 1)^oo X_k $ Each $X_k$ is a finite-dimensional subspace of the normed space $X$. Since
+Let $X$ be an infinite-dimensional Banach space. A Hamel basis is a maximal linearly independent set, such that every vector in $X$ is a #emph[finite] linear combination of basis vectors. Assume for contradiction that $X$ has a countable Hamel basis ${ e_n }_(n = 1)^oo$. For each $k in bb(N)$, define the subspace $X_k = upright("span") { e_1 , e_2 , dots.h , e_k }$. By definition of a Hamel basis, we can write the entire space as the union of these subspaces: $ X = union.big_(k = 1)^oo X_k $ Each $X_k$ is a finite-dimensional subspace of the normed space $X$. Since
 - Any finite-dimensional subspace of a normed space is a #strong[closed set].
 - In an infinite-dimensional normed space, any proper finite-dimensional subspace has an #strong[empty interior];. 
 
-Therefore, each $X_k$ is a closed set with an empty interior, which means each $X_k$ is a #strong[nowhere dense] set. This implies that $X = union.big_(k = 1)^oo X_k$ is a meagre set. However, since $X$ is a Banach space, it is a complete metric space. By Corollary 1 of the BCT, $X$ must be of the second category in itself (i.e., non-meagre). This is a contradiction. Thus, an infinite-dimensional Banach space cannot have a countable Hamel basis.
+Therefore, each $X_k$ is a closed set with an empty interior, which means each $X_k$ is a #strong[nowhere dense] set. This implies that $X = union.big_(k = 1)^oo X_k$ is a meagre set. However, since $X$ is a Banach space, it is a complete metric space. By @cor:complete-metric-space-is-non-meagre of the BCT, $X$ must be of the second category in itself (i.e., non-meagre). This is a contradiction. Thus, an infinite-dimensional Banach space cannot have a countable Hamel basis.
 ]

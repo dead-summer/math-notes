@@ -18,7 +18,19 @@ Here, $X^*$ and $Y^*$ denote the continuous dual spaces of $X$ and $Y$, respecti
 ]
 
 
-The operator $T^*$ is a well-defined linear operator. Furthermore, it is bounded. For any $f in Y^*$: $ norm(T^* f)_(X^*) = sup_(x in X , norm(x)_X lt.eq 1) abs((T^* f) (x)) = sup_(x in X , norm(x)_X lt.eq 1) abs(f (T x)) $ By the definition of the operator norm, $abs(f (T x)) lt.eq norm(f)_(Y^*) norm(T x)_Y lt.eq norm(f)_(Y^*) norm(T)_(cal(B) (X , Y)) norm(x)_X$. Thus, for $norm(x)_X lt.eq 1$: $ norm(T^* f)_(X^*) lt.eq norm(f)_(Y^*) norm(T)_(cal(B) (X , Y)) $ This shows that $T^*$ is a bounded operator, i.e., $T^* in cal(B) (Y^* , X^*)$, and its norm is bounded by $norm(T^*) lt.eq norm(T)$.
+The operator $T^*$ is a well-defined linear operator. Furthermore, it is bounded. For any $f in Y^*$:
+
+$ norm(T^* f)_(X^*) = sup_(x in X , norm(x)_X lt.eq 1) abs((T^* f) (x)) = sup_(x in X , norm(x)_X lt.eq 1) abs(f (T x)). $
+
+By the definition of the operator norm,
+
+$ abs(f (T x)) lt.eq norm(f)_(Y^*) norm(T x)_Y lt.eq norm(f)_(Y^*) norm(T)_(cal(B) (X , Y)) norm(x)_X. $
+
+Thus, for $norm(x)_X lt.eq 1$:
+
+$ norm(T^* f)_(X^*) lt.eq norm(f)_(Y^*) norm(T)_(cal(B) (X , Y)). $
+
+This shows that $T^*$ is a bounded operator, i.e., $T^* in cal(B) (Y^* , X^*)$, and its norm is bounded by $norm(T^*) lt.eq norm(T)$.
 
 #proposition[
 Let $X$ and $Y$ be Banach spaces, and let $T in cal(B) (X , Y)$. The following properties hold:
@@ -98,7 +110,7 @@ Let $X , Y$ be Banach spaces and $T in cal(B) (X , Y)$. The following relationsh
 These identities lead to profound connections between the properties of $T$ and $T^*$.
 
 #proposition[
-1. $T$ is injective if and only if the range of $T^*$ is weak-\*-dense in $X^*$.
+1. $T$ is injective if and only if the range of $T^*$ is weak-\* dense in $X^*$.
 2. $T^*$ is injective if and only if the range of $T$ is norm-dense in $Y$.
 ]<prp:injective>
 
